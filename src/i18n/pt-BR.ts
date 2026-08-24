@@ -1,6 +1,16 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    repoPrivate: "Repositório privado",
+    lhMono: "apps/api e apps/ui compartilham schema, serviços e cliente HTTP.",
+    lhSec: "Autenticação híbrida (JWT + master keys) e hash bcrypt.",
+    lhPg: "Drizzle ORM sobre PostgreSQL, com transações manuais onde a integridade é crítica.",
+    lhDocker: "Orquestração de containers com proxy reverso e SSL.",
+    lhStack: "Monorepo, do banco ao painel",
+    lhP2: "Gerencia autenticação multi-tenant, permissões e segurança via tokens JWT e master keys — a espinha dorsal do ecossistema de aplicações.",
+    lhP1: "Um <strong>Identity Provider (IdP)</strong> centralizado, organizado como monorepo: a API em Express e o painel SPA em React convivem no mesmo repositório, compartilhando esquema, serviços e cliente HTTP por pacotes internos.",
+    projMoneyApp: "PWA de controle financeiro pessoal. Dashboard em dark mode com transações, contas, assinaturas, investimentos e empréstimos — mais um bot de Telegram.",
+    projLoginHub: "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT e master keys.",
     btnArch: "Arquitetura",
     tagSideProject: "Projeto paralelo",
     visitsTitle: "Contador de visitas",
@@ -138,10 +148,6 @@ export default {
     filterFrontend: "Front-End &amp; Full-Stack",
     filterPython: "Python &amp; Tools",
     portfolioEmpty: "Nenhum projeto nesta categoria.",
-    projLoginHubApi:
-        "Backend IdP Enterprise. PostgreSQL (ACID), Docker, Nginx, segurança com JWT e Master Key.",
-    projLoginHubUi:
-        "Painel administrativo do IdP. React 19, Vite, glassmorphism e gestão de multi-tenants.",
     projAmbev:
         "Sistema de vendas com .NET 8, Clean Architecture, DDD e CQRS. PostgreSQL (write), MongoDB (read) e Kafka.",
     projTracker:
@@ -237,14 +243,7 @@ export default {
 
     // Modal LoginHub
     lhWhat: "O que é este projeto?",
-    lhP1: "Um sistema de <strong>Identity Provider (IdP)</strong> centralizado. Gerencia autenticação multi-tenant (múltiplas empresas), permissões de usuários e segurança via tokens JWT e master keys.",
-    lhP2: "Projetado para ser a espinha dorsal de segurança de todo o ecossistema de aplicações da empresa.",
-    lhStack: "Stack de Infraestrutura &amp; Backend",
-    lhDocker: "Orquestração de containers com proxy reverso e SSL.",
-    lhCf: "Exposição segura sem abrir portas no firewall (Zero Trust).",
-    lhPg: "Transações manuais (commit/rollback) para integridade crítica.",
     lhSecTitle: "Segurança",
-    lhSec: "Autenticação híbrida (JWT + master keys) e hash bcrypt.",
     lhBtnAccess: "<i class='fas fa-external-link-alt me-2' aria-hidden='true'></i> Acessar Sistema",
     lhBtnRepo: "<i class='fab fa-github me-2' aria-hidden='true'></i> Repositório",
 

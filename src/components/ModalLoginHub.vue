@@ -3,7 +3,7 @@ import BaseModal from "./BaseModal.vue";
 
 const pilares = [
     { id: "docker", icone: "fab fa-docker", titulo: "Docker & Nginx", textoKey: "lhDocker" },
-    { id: "cf", icone: "fas fa-cloud", titulo: "Cloudflare Tunnels", textoKey: "lhCf" },
+    { id: "mono", icone: "fas fa-cubes", titulo: "npm workspaces", textoKey: "lhMono" },
     { id: "pg", icone: "fas fa-database", titulo: "PostgreSQL (ACID)", textoKey: "lhPg" },
     { id: "sec", icone: "fas fa-shield-alt", tituloKey: "lhSecTitle", textoKey: "lhSec" },
 ];
@@ -17,8 +17,8 @@ const pilares = [
 
         <h3 class="mt-8 text-sm font-bold tracking-[-0.01em]" v-html="$t('lhStack')"></h3>
         <img
-            src="https://skillicons.dev/icons?i=docker,cloudflare,postgres,nginx,nodejs,ts,linux"
-            alt="Docker, Cloudflare, PostgreSQL, Nginx, Node.js, TypeScript, Linux"
+            src="https://skillicons.dev/icons?i=ts,react,express,postgres,docker,nginx,cloudflare"
+            alt="TypeScript, React, Express, PostgreSQL, Docker, Nginx, Cloudflare"
             class="mt-4 max-w-full"
             loading="lazy"
         />
@@ -42,7 +42,7 @@ const pilares = [
                 v-html="$t('lhBtnAccess')"
             ></a>
             <a
-                href="https://github.com/moablive/AWLSRV_LoginHub"
+                href="https://github.com/moablive/LoginHUB"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="rounded-full border border-hairline px-5 py-3 text-[13px] font-semibold transition-colors hover:border-brand hover:text-brand"

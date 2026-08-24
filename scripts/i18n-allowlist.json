@@ -179,6 +179,17 @@
     "G",
     "Tunnel",
     "Tunnels",
-    "GB"
+    "GB",
+    "MoneyAPP",
+    "LoginHUB",
+    "Drizzle",
+    "ORM",
+    "Telegram",
+    "PWA",
+    "Pinia",
+    "workspaces",
+    "apps",
+    "api",
+    "ui"
   ]
 }
