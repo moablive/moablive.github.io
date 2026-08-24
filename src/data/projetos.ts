@@ -13,6 +13,7 @@ export const projetos: Projeto[] = [
         stack: `${SK}nodejs,ts,postgres,docker,nginx`,
         stackAlt: "Node.js, TypeScript, PostgreSQL, Docker, Nginx",
         href: "https://github.com/moablive/AWLSRV_LoginHub",
+        modalId: "modalLoginHub",
         cats: ["backend"],
     },
     {
@@ -46,6 +47,7 @@ export const projetos: Projeto[] = [
         stack: `${SK}nodejs,express,ts,postgres,docker`,
         stackAlt: "Node.js, Express, TypeScript, PostgreSQL, Docker",
         href: "https://github.com/moablive/portfolio-track-visit",
+        modalId: "modalTechStack",
         cats: ["backend"],
     },
     {
