@@ -4,12 +4,15 @@ export default {
     lhMono: "apps/api and apps/ui share schema, services and HTTP client.",
     lhSec: "Hybrid authentication (JWT + master keys) and bcrypt hashing.",
     lhPg: "Drizzle ORM over PostgreSQL, with manual transactions where integrity is critical.",
-    lhDocker: "Container orchestration with reverse proxy and SSL.",
+    lhDocker:
+        "Containers on the internal network, with the /api proxy in the Vite dev server and SSL through the Cloudflare tunnel.",
     lhStack: "Monorepo, from database to panel",
-    lhP2: "It manages multi-tenant authentication, permissions and security via JWT tokens and master keys — the backbone of the application ecosystem.",
+    lhP2:
+        "It manages multi-tenant authentication, permissions and security via JWT tokens and master keys, with single-use Magic Links for first access and password resets — the backbone of the application ecosystem.",
     lhP1: "A centralized <strong>Identity Provider (IdP)</strong>, organized as a monorepo: the Express API and the React SPA admin panel live in the same repository, sharing schema, services and HTTP client through internal packages.",
     projMoneyApp: "Personal finance PWA. Dark-mode dashboard with transactions, accounts, subscriptions, investments and loans — plus a Telegram bot.",
-    projLoginHub: "Multi-tenant Identity Provider in a monorepo: Express API and React SPA in the same repository, with Drizzle ORM over PostgreSQL, JWT and master keys.",
+    projLoginHub:
+        "Multi-tenant Identity Provider in a monorepo: Express API and React SPA in the same repository, with Drizzle ORM over PostgreSQL, JWT, Magic Link and master keys.",
     projAstralWave:
         "Electronic music marketplace and label of my own company. Polyglot back-end (.NET Core, Node.js and Go) behind Cloudflare as the gateway, with Pix checkout, webhook confirmation and automated WAV delivery.",
     projPortfolio:
