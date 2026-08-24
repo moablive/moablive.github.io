@@ -8,12 +8,14 @@
    Sistema visual — vidro fosco + gradiente contido
    ========================================================= */
 @theme {
-    /* Preenchimentos de gradiente. Acompanham o tema (o escuro é redefinido
-       em .dark), mas o texto por cima é sempre branco, então os dois pares
-       precisam ficar acima de 4.5:1 com branco.
-       Claro: #7c3aed = 5.70:1, #c026d3 = 4.71:1. */
-    --color-fill: #7c3aed;
-    --color-fill-2: #c026d3;
+    /* Preenchimentos de gradiente. Ficam dentro da mesma família de violeta:
+       o salto para magenta que havia antes deixava o botão com cara de
+       arco-íris. Acompanham o tema (o escuro é redefinido em .dark) e o
+       texto por cima é sempre branco, então os dois pares precisam ficar
+       acima de 4.5:1 com branco.
+       Claro: #5b21b6 = 8.98:1, #7c3aed = 5.70:1. */
+    --color-fill: #5b21b6;
+    --color-fill-2: #7c3aed;
 
     /* A mesma marca usada como TEXTO sobre o fundo da página precisa mudar
        com o tema — senão fica ilegível no escuro (a versão anterior batia
@@ -41,11 +43,11 @@
 }
 
 .dark {
-    /* Gradiente mais fundo no escuro: o vivo do tema claro brilha demais
-       contra o fundo quase preto. Branco sobre #6a35dc = 6.65:1, sobre
-       #a82fc4 = 5.43:1. */
-    --color-fill: #6a35dc;
-    --color-fill-2: #a82fc4;
+    /* Um passo mais claro que no tema claro: violeta muito fundo perde
+       presença contra o quase-preto. Branco sobre #6d28d9 = 7.10:1, sobre
+       #7c3aed = 5.70:1. */
+    --color-fill: #6d28d9;
+    --color-fill-2: #7c3aed;
 
     /* Tons claros da marca: sobre o fundo quase preto, escuro não se lê. */
     --color-brand: #b79bff;
