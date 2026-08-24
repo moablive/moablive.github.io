@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moablive.github.io/sitemap.xml

@@ -1,0 +1,17 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependências / build (caso o projeto cresça)
+node_modules/
+dist/
+.cache/
+
+# Ambiente
+.env
+.env.local
