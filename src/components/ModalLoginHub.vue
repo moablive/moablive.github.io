@@ -10,19 +10,12 @@ const pilares = [
 </script>
 
 <template>
-    <BaseModal id="modalLoginHub" titulo="AWLSRV LoginHub (IdP)" icone="fa-fingerprint" tom="accent">
-        <div class="grid gap-6 sm:grid-cols-12 sm:items-center">
-            <div class="hard-2 flex items-center justify-center bg-ink py-8 sm:col-span-4">
-                <i class="fas fa-server text-6xl text-sun" aria-hidden="true"></i>
-            </div>
-            <div class="sm:col-span-8">
-                <h3 class="font-display text-lg tracking-[-0.02em]">{{ $t("lhWhat") }}</h3>
-                <p class="mt-3 text-[15px] leading-relaxed" v-html="$t('lhP1')"></p>
-                <p class="mt-3 text-[15px] leading-relaxed text-ink-soft">{{ $t("lhP2") }}</p>
-            </div>
-        </div>
+    <BaseModal id="modalLoginHub" titulo="AWLSRV LoginHub (IdP)" icone="fa-fingerprint">
+        <h3 class="text-lg font-bold tracking-[-0.02em]">{{ $t("lhWhat") }}</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-2" v-html="$t('lhP1')"></p>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-2">{{ $t("lhP2") }}</p>
 
-        <h3 class="mt-8 font-display text-sm tracking-[-0.01em] uppercase" v-html="$t('lhStack')"></h3>
+        <h3 class="mt-8 text-sm font-bold tracking-[-0.01em]" v-html="$t('lhStack')"></h3>
         <img
             src="https://skillicons.dev/icons?i=docker,cloudflare,postgres,nginx,nodejs,ts,linux"
             alt="Docker, Cloudflare, PostgreSQL, Nginx, Node.js, TypeScript, Linux"
@@ -31,11 +24,12 @@ const pilares = [
         />
 
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
-            <div v-for="pilar in pilares" :key="pilar.id" class="hard-2 bg-paper p-4">
-                <p class="flex items-center gap-2 font-mono text-xs font-bold">
-                    <i :class="pilar.icone" aria-hidden="true"></i>{{ pilar.tituloKey ? $t(pilar.tituloKey) : pilar.titulo }}
+            <div v-for="pilar in pilares" :key="pilar.id" class="rounded-2xl border border-hairline p-4">
+                <p class="flex items-center gap-2 text-[13px] font-semibold">
+                    <i :class="pilar.icone" class="text-brand" aria-hidden="true"></i>
+                    {{ pilar.tituloKey ? $t(pilar.tituloKey) : pilar.titulo }}
                 </p>
-                <p class="mt-2 text-sm leading-relaxed text-ink-soft">{{ $t(pilar.textoKey) }}</p>
+                <p class="mt-2 text-sm leading-relaxed text-ink-2">{{ $t(pilar.textoKey) }}</p>
             </div>
         </div>
 
@@ -44,14 +38,14 @@ const pilares = [
                 href="https://loginhub.astralwavelabel.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hard-2 bg-sun px-5 py-3 font-mono text-xs font-bold text-ink transition-transform hover:-translate-y-0.5"
+                class="rounded-full bg-linear-100 from-brand to-brand-2 px-5 py-3 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
                 v-html="$t('lhBtnAccess')"
             ></a>
             <a
                 href="https://github.com/moablive/AWLSRV_LoginHub"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hard-2 bg-ink px-5 py-3 font-mono text-xs font-bold text-paper transition-transform hover:-translate-y-0.5"
+                class="rounded-full border border-hairline px-5 py-3 text-[13px] font-semibold transition-colors hover:border-brand hover:text-brand"
                 v-html="$t('lhBtnRepo')"
             ></a>
         </div>

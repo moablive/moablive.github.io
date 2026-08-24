@@ -6,39 +6,40 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
 </script>
 
 <template>
-    <section id="login-hub-feature" class="mx-auto max-w-[1400px] px-4 py-16 sm:px-6">
-        <div class="hard lift bg-ink px-6 py-10 text-paper sm:px-10 sm:py-14">
-            <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+    <section id="login-hub-feature" class="mx-auto max-w-[1180px] px-5 py-20">
+        <div class="relative overflow-hidden rounded-[2rem] bg-linear-135 from-brand to-brand-2 px-6 py-12 text-white sm:px-12 sm:py-16">
+            <!-- Brilho decorativo, atrás do conteúdo. -->
+            <div
+                class="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-white/15 blur-3xl"
+                aria-hidden="true"
+            ></div>
+
+            <div class="relative grid gap-8 lg:grid-cols-12 lg:items-center">
                 <div class="lg:col-span-7">
-                    <p class="label-mono mb-5 text-sun">{{ $t("featureTitle") }}</p>
-                    <h2 class="font-display text-[clamp(1.75rem,5vw,3.25rem)] leading-none tracking-[-0.03em] uppercase">
+                    <p class="label-mono mb-4 text-white/75">{{ $t("featureTitle") }}</p>
+                    <h2 class="text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
                         AWLSRV LoginHub
                     </h2>
-                    <p class="mt-5 max-w-xl text-[15px] leading-relaxed text-paper/80">{{ $t("featureSubtitle") }}</p>
+                    <p class="mt-4 max-w-xl text-[15px] leading-relaxed text-white/85">{{ $t("featureSubtitle") }}</p>
+
+                    <p class="label-mono mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
+                        <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-white" aria-hidden="true"></span>
+                        {{ $t("envLabel") }} Cloudflare Tunnel
+                    </p>
                 </div>
 
                 <div class="flex flex-col gap-3 lg:col-span-5">
-                    <div class="hard-2 flex items-center justify-between gap-3 border-sun bg-ink px-4 py-3">
-                        <span class="label-mono text-paper/70">
-                            <i class="fab fa-docker mr-2" aria-hidden="true"></i>{{ $t("envLabel") }}
-                        </span>
-                        <span class="label-mono flex items-center gap-2 text-sun">
-                            <span class="h-2 w-2 animate-pulse bg-sun" aria-hidden="true"></span>Cloudflare Tunnel
-                        </span>
-                    </div>
-
                     <button
                         type="button"
-                        class="hard-2 border-paper bg-sun px-5 py-3.5 font-mono text-xs font-bold text-ink transition-transform hover:-translate-y-0.5"
+                        class="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5"
                         @click="abrir('modalLoginHub', $event)"
                         v-html="$t('featureBtnArch')"
                     ></button>
-
                     <a
                         :href="PRODUCAO"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="hard-2 border-paper bg-accent px-5 py-3.5 text-center font-mono text-xs font-bold text-white transition-transform hover:-translate-y-0.5"
+                        class="rounded-full border border-white/40 px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/12"
                         v-html="$t('featureBtnProd')"
                     ></a>
                 </div>

@@ -1,6 +1,8 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    themeToDark: "Ativar modo escuro",
+    themeToLight: "Ativar modo claro",
     heroKicker: "Engenheiro de Software Sênior — desde 2016",
     heroTitle: "Arquiteto de soluções",
     heroLead: ".NET, Node e Go. Clean Architecture, DDD e segurança de borda. Sistemas que aguentam o segundo ano de produção.",
@@ -10,7 +12,6 @@ export default {
     statProjects: "Projetos",
     statVisits: "Visitas",
     altPhoto: "Foto de Guilherme Bonato",
-    altTyping: "Software Engineer & Architect · Especialista em .NET, Node e Python · SOLID, DDD, TDD, Clean Code",
     altMainStack: "Stack principal: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker",
     altTopLangs: "Linguagens mais usadas no GitHub por moablive",
     altGithubStats: "Estatísticas do GitHub de moablive",

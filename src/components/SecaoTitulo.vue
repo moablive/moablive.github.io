@@ -1,15 +1,15 @@
 <script setup lang="ts">
-// Cabeçalho comum a todas as seções: número + título pesado + régua.
-defineProps<{ numero: string; titulo: string }>();
+defineProps<{ etiqueta: string; titulo: string }>();
 </script>
 
 <template>
-    <div class="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3">
-        <span class="hard-2 bg-ink px-3 py-1 font-mono text-xs font-bold text-sun">{{ numero }}</span>
-        <h2 class="font-display text-[clamp(1.75rem,4vw,2.5rem)] leading-none tracking-[-0.03em] uppercase">
-            {{ titulo }}
-        </h2>
-        <div class="h-[3px] flex-1 bg-ink"></div>
+    <div class="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+        <div>
+            <p class="label-mono mb-3 flex items-center gap-2 text-brand">
+                <span class="h-px w-6 bg-linear-100 from-brand to-brand-2" aria-hidden="true"></span>{{ etiqueta }}
+            </p>
+            <h2 class="text-3xl font-extrabold tracking-[-0.03em] text-balance sm:text-4xl">{{ titulo }}</h2>
+        </div>
         <slot name="acoes" />
     </div>
 </template>

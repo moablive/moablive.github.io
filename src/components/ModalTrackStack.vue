@@ -5,9 +5,9 @@ const itens = ["trackPg", "trackNode", "trackDocker", "trackCf"];
 </script>
 
 <template>
-    <BaseModal id="modalTechStack" titulo="portfolio-track-visit" icone="fa-github" tom="ink">
-        <h3 class="font-display text-lg tracking-[-0.02em]">{{ $t("trackTitle") }}</h3>
-        <p class="mt-3 text-[15px] leading-relaxed text-ink-soft">{{ $t("trackDesc") }}</p>
+    <BaseModal id="modalTechStack" titulo="portfolio-track-visit" icone="fa-chart-line">
+        <h3 class="text-lg font-bold tracking-[-0.02em]">{{ $t("trackTitle") }}</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-2">{{ $t("trackDesc") }}</p>
 
         <img
             src="https://skillicons.dev/icons?i=nodejs,ts,postgres,docker,cloudflare"
@@ -20,7 +20,7 @@ const itens = ["trackPg", "trackNode", "trackDocker", "trackCf"];
             <li
                 v-for="key in itens"
                 :key="key"
-                class="hard-2 bg-paper px-4 py-3 text-sm leading-relaxed"
+                class="rounded-2xl border border-hairline px-4 py-3 text-sm leading-relaxed text-ink-2"
                 v-html="$t(key)"
             ></li>
         </ul>
@@ -29,7 +29,7 @@ const itens = ["trackPg", "trackNode", "trackDocker", "trackCf"];
             href="https://github.com/moablive/portfolio-track-visit"
             target="_blank"
             rel="noopener noreferrer"
-            class="hard-2 mt-6 block bg-ink px-5 py-3 text-center font-mono text-xs font-bold text-paper transition-transform hover:-translate-y-0.5"
+            class="mt-6 block rounded-full bg-linear-100 from-brand to-brand-2 px-5 py-3 text-center text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
             v-html="$t('trackBtnRepo')"
         ></a>
     </BaseModal>

@@ -1,58 +1,103 @@
 @import "tailwindcss";
 
+/* Modo escuro por classe no <html>, não por media query: a preferência do
+   usuário precisa vencer a do sistema operacional. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* =========================================================
-   Sistema visual — direção "Neo-brutalista"
-   Bordas duras de 3px, sombras deslocadas sem blur, zero raio,
-   tipografia pesada. Sem Bootstrap: modais, menu e scrollspy
-   são componentes/composables próprios.
+   Sistema visual — vidro fosco + gradiente contido
+   Inspirado em github.com/itsvijaysingh/My-Portfolio, reescrito
+   para Vue + Tailwind com claro/escuro e blur mais comedido.
    ========================================================= */
 @theme {
-    --color-paper: #f0ede6;
-    --color-paper-2: #ffffff;
-    --color-ink: #101010;
-    --color-ink-soft: #3d3d3a;
-    --color-accent: #e8380d;
-    --color-sun: #ffd400;
+    /* Marca: índigo → ciano, com coral como terceiro acento pontual. */
+    --color-brand: #4b5ce8;
+    --color-brand-2: #12c2e9;
+    --color-brand-3: #e64157;
 
-    --font-display: "Archivo Black", system-ui, sans-serif;
-    --font-sans: "Archivo", system-ui, -apple-system, sans-serif;
-    --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+    /* Papel e tinta do tema claro (o escuro é redefinido em .dark). */
+    --color-canvas: #f6f7fb;
+    --color-surface: #ffffff;
+    --color-ink: #12141c;
+    --color-ink-2: #4a4f60;
+    --color-ink-3: #767c90;
+    --color-hairline: rgb(18 20 28 / 0.08);
 
-    /* A navbar é fixa; as âncoras precisam parar abaixo dela. */
-    --spacing-nav: 4.5rem;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+    --spacing-nav: 4.25rem;
+
+    /* Sombras em camadas: contato curto + difusão longa. */
+    --shadow-soft: 0 1px 2px rgb(18 20 28 / 0.04), 0 12px 32px -12px rgb(18 20 28 / 0.16);
+    --shadow-hover: 0 1px 2px rgb(18 20 28 / 0.05), 0 22px 48px -16px rgb(18 20 28 / 0.24);
+}
+
+.dark {
+    --color-canvas: #0a0b12;
+    --color-surface: #12141d;
+    --color-ink: #e8eaf2;
+    --color-ink-2: #a6acbe;
+    --color-ink-3: #767c90;
+    --color-hairline: rgb(255 255 255 / 0.10);
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -12px rgb(0 0 0 / 0.6);
+    --shadow-hover: 0 1px 2px rgb(0 0 0 / 0.35), 0 22px 48px -16px rgb(0 0 0 / 0.7);
 }
 
 /* ---------- utilitários do sistema ---------- */
 
-/* A borda dura é a assinatura da direção: 3px em blocos, 2px em chips. */
-@utility hard {
-    border: 3px solid var(--color-ink);
-}
-@utility hard-2 {
-    border: 2px solid var(--color-ink);
-}
-
-/* Sombra deslocada sem blur — nunca use shadow-lg do Tailwind aqui. */
-@utility lift {
-    box-shadow: 7px 7px 0 var(--color-ink);
-}
-@utility lift-sm {
-    box-shadow: 4px 4px 0 var(--color-ink);
+/* O painel de vidro é a peça base: translúcido, contorno de 1px e blur
+   moderado (o modelo original usava 26 camadas de blur pesado). */
+@utility glass {
+    background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--color-hairline);
+    box-shadow: var(--shadow-soft);
 }
 
-/* Rótulo monoespaçado em caixa alta, usado em todas as seções. */
+/* Variante opaca, para blocos com texto denso onde translucidez atrapalha. */
+@utility solid-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-hairline);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Realce de título: gradiente aplicado ao próprio texto. */
+@utility text-gradient {
+    background-image: linear-gradient(100deg, var(--color-brand), var(--color-brand-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Contorno gradiente sem hack de pseudo-elemento. */
+@utility ring-gradient {
+    border: 1px solid transparent;
+    background:
+        linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+        linear-gradient(120deg, var(--color-brand), var(--color-brand-2)) border-box;
+}
+
 @utility label-mono {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
-/* ---------- base ---------- */
-:root {
-    color-scheme: light;
+/* Sobe levemente no hover — o "peso" da interface vem daqui, não de borda. */
+@utility lift-hover {
+    transition:
+        transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.25s ease;
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
+    }
 }
 
+/* ---------- base ---------- */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--spacing-nav) + 1.5rem);
@@ -60,49 +105,54 @@ html {
 
 body {
     margin: 0;
-    background: var(--color-paper);
+    background: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
     padding-top: var(--spacing-nav);
     -webkit-font-smoothing: antialiased;
+    /* Auréolas de cor no fundo, fixas: dão profundidade sem pesar a rolagem. */
+    background-image:
+        radial-gradient(46rem 30rem at 12% -6%, color-mix(in oklab, var(--color-brand) 16%, transparent), transparent 70%),
+        radial-gradient(38rem 26rem at 92% 4%, color-mix(in oklab, var(--color-brand-2) 14%, transparent), transparent 70%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 a {
-    color: var(--color-accent);
+    color: var(--color-brand);
     text-decoration: none;
 }
 a:hover {
-    color: var(--color-ink);
+    color: var(--color-brand-2);
 }
 
 :focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 2px solid var(--color-brand);
     outline-offset: 3px;
 }
 
-/* Trava a rolagem do fundo enquanto um modal está aberto. */
 body.modal-aberto {
     overflow: hidden;
 }
 
 /* ---------- terminal "developer.ts" ---------- */
-/* Único bloco escuro do layout; mantém o realce de sintaxe do site antigo. */
+/* Único bloco sempre escuro; mantém o realce de sintaxe nos dois temas. */
 .tok-kw {
-    color: #ff8a5c;
+    color: #c792ea;
 }
 .tok-var {
-    color: #ffd400;
+    color: #82aaff;
 }
 .tok-prop {
-    color: #9ad4ff;
+    color: #7fdbca;
 }
 .tok-str {
-    color: #b8f28a;
+    color: #ecc48d;
 }
 
 .cursor-blink {
-    color: var(--color-sun);
-    animation: piscar 1s steps(1) infinite;
+    color: var(--color-brand-2);
+    animation: piscar 1.1s steps(1) infinite;
 }
 
 @keyframes piscar {
@@ -111,8 +161,6 @@ body.modal-aberto {
     }
 }
 
-/* ---------- movimento ---------- */
-/* O deslocamento no hover é o "clique" da direção brutalista. */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
