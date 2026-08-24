@@ -4,12 +4,15 @@ export default {
     lhMono: "apps/api e apps/ui compartilham schema, serviços e cliente HTTP.",
     lhSec: "Autenticação híbrida (JWT + master keys) e hash bcrypt.",
     lhPg: "Drizzle ORM sobre PostgreSQL, com transações manuais onde a integridade é crítica.",
-    lhDocker: "Orquestração de containers com proxy reverso e SSL.",
+    lhDocker:
+        "Containers na rede interna, com o proxy /api no dev server do Vite e SSL pelo túnel da Cloudflare.",
     lhStack: "Monorepo, do banco ao painel",
-    lhP2: "Gerencia autenticação multi-tenant, permissões e segurança via tokens JWT e master keys — a espinha dorsal do ecossistema de aplicações.",
+    lhP2:
+        "Gerencia autenticação multi-tenant, permissões e segurança via tokens JWT e master keys, com Magic Link de uso único no primeiro acesso e na redefinição de senha — a espinha dorsal do ecossistema de aplicações.",
     lhP1: "Um <strong>Identity Provider (IdP)</strong> centralizado, organizado como monorepo: a API em Express e o painel SPA em React convivem no mesmo repositório, compartilhando esquema, serviços e cliente HTTP por pacotes internos.",
     projMoneyApp: "PWA de controle financeiro pessoal. Dashboard em dark mode com transações, contas, assinaturas, investimentos e empréstimos — mais um bot de Telegram.",
-    projLoginHub: "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT e master keys.",
+    projLoginHub:
+        "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT, Magic Link e master keys.",
     projAstralWave:
         "Marketplace e selo de música eletrônica da minha empresa. Back-end poliglota (.NET Core, Node.js e Go) atrás da Cloudflare como gateway, com checkout em Pix, confirmação por webhook e entrega automatizada dos arquivos WAV.",
     projPortfolio:

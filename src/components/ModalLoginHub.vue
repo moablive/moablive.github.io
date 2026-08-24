@@ -2,7 +2,7 @@
 import BaseModal from "./BaseModal.vue";
 
 const pilares = [
-    { id: "docker", icone: "fab fa-docker", titulo: "Docker & Nginx", textoKey: "lhDocker" },
+    { id: "docker", icone: "fab fa-docker", titulo: "Docker & Vite", textoKey: "lhDocker" },
     { id: "mono", icone: "fas fa-cubes", titulo: "npm workspaces", textoKey: "lhMono" },
     { id: "pg", icone: "fas fa-database", titulo: "PostgreSQL (ACID)", textoKey: "lhPg" },
     { id: "sec", icone: "fas fa-shield-alt", tituloKey: "lhSecTitle", textoKey: "lhSec" },
@@ -10,15 +10,15 @@ const pilares = [
 </script>
 
 <template>
-    <BaseModal id="modalLoginHub" titulo="AWLSRV LoginHub (IdP)" icone="fa-fingerprint">
+    <BaseModal id="modalLoginHub" titulo="LoginHUB (IdP)" icone="fa-fingerprint">
         <h3 class="text-lg font-bold tracking-[-0.02em]">{{ $t("lhWhat") }}</h3>
         <p class="mt-3 text-[15px] leading-relaxed text-ink-2" v-html="$t('lhP1')"></p>
         <p class="mt-3 text-[15px] leading-relaxed text-ink-2">{{ $t("lhP2") }}</p>
 
         <h3 class="mt-8 text-sm font-bold tracking-[-0.01em]" v-html="$t('lhStack')"></h3>
         <img
-            src="https://skillicons.dev/icons?i=ts,react,express,postgres,docker,nginx,cloudflare"
-            alt="TypeScript, React, Express, PostgreSQL, Docker, Nginx, Cloudflare"
+            src="https://skillicons.dev/icons?i=ts,react,vite,tailwind,express,postgres,docker,cloudflare"
+            alt="TypeScript, React, Vite, Tailwind, Express, PostgreSQL, Docker, Cloudflare"
             class="mt-4 max-w-full"
             loading="lazy"
         />

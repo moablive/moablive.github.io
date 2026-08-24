@@ -18,7 +18,7 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
                 <div class="lg:col-span-7">
                     <p class="label-mono mb-4 text-white/75">{{ $t("featureTitle") }}</p>
                     <h2 class="text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
-                        AWLSRV LoginHub
+                        LoginHUB
                     </h2>
                     <p class="mt-4 max-w-xl text-[15px] leading-relaxed text-white/85">{{ $t("featureSubtitle") }}</p>
 
