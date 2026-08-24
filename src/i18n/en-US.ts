@@ -36,7 +36,6 @@ export default {
     roleCcsFull: "Tech Lead",
     roleSafewebFull: "Full Stack Engineer",
     roleSeniorFull: "Senior Software Engineer",
-    roleGotobizFull: "Tech Lead & Security Champion",
     titleHome: "Guilherme Bonato — Senior Software Engineer",
     descHome:
         "Portfolio of Guilherme Bonato, Senior Software Engineer and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture and DDD.",
@@ -116,7 +115,7 @@ export default {
     expBadgeGoto: "Feb 2026 – Aug 2026",
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 months",
-    expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>2025 – Present",
+    expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>Jan 2022 – Present",
     expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Ongoing — my own venture",
     roleAwl: "Co-founder & Solutions Architect",
     tagNetworks: "Networking",
@@ -222,14 +221,14 @@ export default {
     gotoDate:
         "<i class='fas fa-calendar-alt me-2' aria-hidden='true'></i><strong>Feb 2026 – Aug 2026 (Hybrid)</strong>",
     gotoDesc:
-        "Strategic role in leadership and security, assigned to a critical modernization and damage control project in the <strong>NSTECH</strong> infrastructure.",
-    gotoB1: "<i class='fas fa-shield-alt text-danger me-2' aria-hidden='true'></i><strong>Incident response:</strong> immediate technical leadership following a hacker attack, mitigating critical breaches (such as <em>SQL Injection</em>).",
+        "Strategic information security role, assigned to a critical modernization and damage control project in the <strong>NSTECH</strong> infrastructure.",
+    gotoB1: "<i class='fas fa-shield-alt text-danger me-2' aria-hidden='true'></i><strong>Incident response:</strong> immediate technical response following a hacker attack, mitigating critical breaches (such as <em>SQL Injection</em>).",
     gotoB2: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>DevSecOps culture:</strong> implementation of active code audits and introduction of the <em>Secure by Design</em> philosophy.",
     gotoB3: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Architectural modernization:</strong> transition of a highly coupled legacy system (monolith) to a distributed <strong>.NET microservices</strong> ecosystem.",
     gotoB4: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Data integrity:</strong> restructuring edge security of the application to ensure complete corporate shielding.",
 
     // Modal Astral Wave
-    awlDate: "2025 – Present",
+    awlDate: "Jan 2022 – Present",
     awlDesc:
         "I co-founded Astral Wave and lead the technical definition, strategic vision and architectural design of its entire digital product portfolio. It is my own venture, run in parallel with my other roles, focused on edge security and cloud scalability.",
     awlB1: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Security &amp; cloud:</strong> implementation of Cloudflare (WAF/CDN) alongside Docker containers.",
