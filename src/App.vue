@@ -4,7 +4,7 @@ import { todosCargos } from "@/data/trajetoria";
 import { useModal } from "@/composables/useModal";
 
 import AppNavbar from "@/components/AppNavbar.vue";
-import LangSwitch from "@/components/LangSwitch.vue";
+import ControlesFlutuantes from "@/components/ControlesFlutuantes.vue";
 import SectionSobre from "@/components/SectionSobre.vue";
 import SectionFormacao from "@/components/SectionFormacao.vue";
 import SectionCertificados from "@/components/SectionCertificados.vue";
@@ -59,5 +59,5 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
 
     <AppFooter />
 
-    <LangSwitch />
+    <ControlesFlutuantes />
 </template>
