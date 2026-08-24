@@ -6,9 +6,11 @@ export interface Projeto {
     /** Título literal, ou chave quando precisa ser traduzido. */
     titulo: Label;
     descKey: string;
-    /** Logo grande do card (simpleicons). */
+    /** Logo grande do card (simpleicons, ou arquivo próprio em /public). */
     logo: string;
     logoAlt: string;
+    /** Arte preta chapada: precisa inverter no tema escuro para não sumir. */
+    logoInverso?: boolean;
     /** Faixa de ícones de stack (skillicons). */
     stack: string;
     stackAlt: string;
