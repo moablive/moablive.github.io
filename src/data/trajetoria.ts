@@ -117,7 +117,7 @@ export const cargos: Cargo[] = [
     {
         id: "safeweb",
         modalId: "modalSafeweb",
-        periodo: "2022 – 2023",
+        periodo: { i18n: "expBadgeSw" },
         icone: "fa-shield-alt",
         cargo: "Full Stack Engineer",
         empresa: "Safeweb Segurança",
@@ -143,7 +143,7 @@ export const cargos: Cargo[] = [
     {
         id: "ccs",
         modalId: "modalCCS",
-        periodo: "2016 – 2021",
+        periodo: { i18n: "expBadgeCcs" },
         icone: "fa-network-wired",
         cargo: "Tech Lead",
         empresa: "CCS Certificadora Sul",
