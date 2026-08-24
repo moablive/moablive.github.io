@@ -1,6 +1,7 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    tagSideProject: "Projeto paralelo",
     visitsTitle: "Contador de visitas",
     visitSuffix: "vezes esta página foi visitada",
     visitLoading: "Consultando o contador...",
@@ -106,8 +107,8 @@ export default {
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 meses",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>2025 – Atual",
-    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Projetos digitais em andamento",
-    roleAwl: "Arquiteto de Soluções",
+    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Em andamento — projeto próprio",
+    roleAwl: "Cofundador & Arquiteto de Soluções",
     tagNetworks: "Redes",
     tagSecurity: "Segurança",
     tagInfra: "Redes e Infraestrutura",
@@ -227,7 +228,7 @@ export default {
     // Modal Astral Wave
     awlDate: "2025 – Atualmente",
     awlDesc:
-        "Liderança na definição técnica, visão estratégica e desenho arquitetural de todo o portfólio de produtos digitais da empresa. Foco em segurança de borda (edge security) e escalabilidade em nuvem.",
+        "Cofundei a Astral Wave e conduzo a definição técnica, a visão estratégica e o desenho arquitetural de todo o portfólio de produtos digitais. É uma empreitada própria, tocada em paralelo às demais posições, com foco em segurança de borda e escalabilidade em nuvem.",
     awlB1: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Segurança &amp; cloud:</strong> implementação de Cloudflare (WAF/CDN) aliado a containers Docker.",
     awlB2: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Ecossistema back-end poliglota:</strong> microsserviços interoperáveis escritos em .NET Core, Node.js e Golang.",
     awlB3: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Front-end moderno:</strong> construção de interfaces complexas com React e Vue.js focadas na experiência do usuário.",

@@ -1,6 +1,7 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    tagSideProject: "Side project",
     visitsTitle: "Visit counter",
     visitSuffix: "times this page has been visited",
     visitLoading: "Checking the counter...",
@@ -106,8 +107,8 @@ export default {
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 months",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>2025 – Present",
-    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Digital projects in progress",
-    roleAwl: "Solutions Architect",
+    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Ongoing — my own venture",
+    roleAwl: "Co-founder & Solutions Architect",
     tagNetworks: "Networking",
     tagSecurity: "Security",
     tagInfra: "Networking & Infrastructure",
@@ -227,7 +228,7 @@ export default {
     // Modal Astral Wave
     awlDate: "2025 – Present",
     awlDesc:
-        "Led the technical definition, strategic vision and architectural design of the company's entire digital product portfolio. Focus on edge security and cloud scalability.",
+        "I co-founded Astral Wave and lead the technical definition, strategic vision and architectural design of its entire digital product portfolio. It is my own venture, run in parallel with my other roles, focused on edge security and cloud scalability.",
     awlB1: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Security &amp; cloud:</strong> implementation of Cloudflare (WAF/CDN) alongside Docker containers.",
     awlB2: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Polyglot back-end ecosystem:</strong> interoperable microservices written in .NET Core, Node.js and Golang.",
     awlB3: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Modern front-end:</strong> building complex interfaces with React and Vue.js focused on user experience.",
