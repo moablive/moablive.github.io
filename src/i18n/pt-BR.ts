@@ -104,8 +104,10 @@ export default {
     // Trajetória
     expTitle: "Trajetória Profissional",
     expSubtitle: "Clique nos cards para ver os detalhes técnicos e desafios de cada cargo",
+    expBadgeCcs: "Out de 2016 – Jun de 2021",
     expDuration1:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>4 anos e 9 meses",
+    expBadgeSw: "Jan de 2022 – Nov de 2023",
     expDuration2:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 ano e 11 meses",
     expBadgeSka: "Dez de 2023 – Mai de 2025",

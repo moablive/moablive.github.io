@@ -104,8 +104,10 @@ export default {
     // Experience
     expTitle: "Professional Experience",
     expSubtitle: "Click the cards to see the technical details and challenges of each role",
+    expBadgeCcs: "Oct 2016 – Jun 2021",
     expDuration1:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>4 years and 9 months",
+    expBadgeSw: "Jan 2022 – Nov 2023",
     expDuration2:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 year and 11 months",
     expBadgeSka: "Dec 2023 – May 2025",
