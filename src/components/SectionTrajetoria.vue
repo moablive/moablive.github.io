@@ -18,7 +18,7 @@ const { abrir } = useModal();
             <li v-for="cargo in cargos" :key="cargo.id" class="relative pl-8 sm:pl-10">
                 <span
                     class="absolute top-7 left-0 h-4 w-4 rounded-full border-2 border-canvas"
-                    :class="cargo.atual ? 'bg-linear-100 from-brand to-brand-2' : 'bg-ink-3/40'"
+                    :class="cargo.atual ? 'bg-linear-100 from-fill to-fill-2' : 'bg-ink-3/40'"
                     aria-hidden="true"
                 ></span>
 
@@ -42,7 +42,7 @@ const { abrir } = useModal();
                             class="rounded-full px-2.5 py-1 font-mono text-[11px]"
                             :class="
                                 cargo.paralelo && i === 0
-                                    ? 'bg-linear-100 from-brand to-brand-2 text-white'
+                                    ? 'bg-linear-100 from-fill to-fill-2 text-white'
                                     : 'border border-hairline text-ink-2'
                             "
                             >{{ lab(tag) }}</span

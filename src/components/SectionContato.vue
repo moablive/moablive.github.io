@@ -33,7 +33,7 @@ const ICONES: Record<string, string> = {
                         rel="noopener noreferrer"
                         class="lift-hover flex flex-col items-center gap-3 rounded-2xl border border-hairline px-4 py-5 text-center transition-colors hover:border-brand"
                     >
-                        <span class="grid h-11 w-11 place-items-center rounded-full bg-linear-100 from-brand to-brand-2 text-white">
+                        <span class="grid h-11 w-11 place-items-center rounded-full bg-linear-100 from-fill to-fill-2 text-white">
                             <i :class="ICONES[contato.id]" aria-hidden="true"></i>
                         </span>
                         <span class="text-[13px] font-semibold">{{ $t(contato.altKey) }}</span>

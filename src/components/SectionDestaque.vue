@@ -7,7 +7,7 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
 
 <template>
     <section id="login-hub-feature" class="mx-auto max-w-[1180px] px-5 py-20">
-        <div class="relative overflow-hidden rounded-[2rem] bg-linear-135 from-brand to-brand-2 px-6 py-12 text-white sm:px-12 sm:py-16">
+        <div class="relative overflow-hidden rounded-[2rem] bg-linear-135 from-fill to-fill-2 px-6 py-12 text-white sm:px-12 sm:py-16">
             <!-- Brilho decorativo, atrás do conteúdo. -->
             <div
                 class="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-white/15 blur-3xl"
@@ -31,7 +31,7 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
                 <div class="flex flex-col gap-3 lg:col-span-5">
                     <button
                         type="button"
-                        class="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5"
+                        class="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-fill transition-transform hover:-translate-y-0.5"
                         @click="abrir('modalLoginHub', $event)"
                         v-html="$t('featureBtnArch')"
                     ></button>

@@ -48,7 +48,7 @@ const formatado = computed(() => (total.value === null ? "—" : total.value.toL
                         <p class="text-sm leading-relaxed text-ink-2">{{ $t("trackDesc") }}</p>
                         <button
                             type="button"
-                            class="mt-5 w-full rounded-full bg-linear-100 from-brand to-brand-2 px-5 py-3 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+                            class="mt-5 w-full rounded-full bg-linear-100 from-fill to-fill-2 px-5 py-3 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
                             @click="abrir('modalTechStack', $event)"
                             v-html="$t('visitStackBtn')"
                         ></button>

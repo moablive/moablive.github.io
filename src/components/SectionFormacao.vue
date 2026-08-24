@@ -11,7 +11,7 @@ import SecaoTitulo from "./SecaoTitulo.vue";
             <article v-for="item in formacoes" :key="item.id" class="glass lift-hover flex flex-col rounded-3xl p-6">
                 <div class="mb-5 flex items-start justify-between gap-4">
                     <span
-                        class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-linear-100 from-brand to-brand-2 text-xs font-extrabold text-white"
+                        class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-linear-100 from-fill to-fill-2 text-xs font-extrabold text-white"
                         >{{ item.sigla }}</span
                     >
                     <span
