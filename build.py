@@ -2,19 +2,67 @@
 """
 Gerador do site estático.
 
-O menu, o rodapé e o <head> vivem em src/partials/ e as seções em src/pages/.
-Este script monta as páginas finais na raiz do repositório — que é o que o
-GitHub Pages serve. Rode `python3 build.py` depois de editar qualquer fonte
-e faça commit tanto de src/ quanto dos arquivos gerados.
+O site é uma página de rolagem única, mas cada seção, cada modal e cada parte
+do "esqueleto" (head, menu, rodapé) mora em um arquivo próprio dentro de src/.
+Este script apenas costura essas partes e escreve o HTML final na raiz do
+repositório — que é o que o GitHub Pages serve.
+
+    python3 build.py
+
+Depois de editar qualquer coisa em src/, rode o build e faça commit tanto de
+src/ quanto dos arquivos gerados.
 """
 
 import pathlib
-import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src"
 BASE_URL = "https://moablive.github.io"
+
+# Ordem em que as seções aparecem na página. Reordenar aqui reordena o site.
+SECTIONS = [
+    "sobre",
+    "formacao",
+    "certificados",
+    "trajetoria",
+    "tecnologias",
+    "destaque",
+    "portfolio",
+    "github-stats",
+    "contato",
+    "visitas",
+]
+
+# Modais ficam no fim do <body>, fora do <main>.
+MODALS = [
+    "ccs",
+    "safeweb",
+    "ska",
+    "frigelar",
+    "gotobiz",
+    "astral-wave",
+    "loginhub",
+    "track-stack",
+]
+
+# Menu: (âncora, chave i18n, rótulo em PT). A âncora precisa bater com o id da seção.
+NAV = [
+    ("#sobre", "navAbout", "Sobre"),
+    ("#formacao", "navEducation", "Formação"),
+    ("#certificados", "navCertificates", "Certificados"),
+    ("#trajetoria", "navExperience", "Trajetória"),
+    ("#tecnologias", "navTech", "Tecnologias"),
+    ("#portfolio", "navPortfolio", "Portfólio"),
+    ("#github-stats", "navGithub", "GitHub Stats"),
+    ("#contato", "navContact", "Contato"),
+]
+
+# O Bootstrap marca sozinho o item do menu conforme a seção visível.
+SCROLLSPY = (
+    ' data-bs-spy="scroll" data-bs-target="#navbarNav"'
+    ' data-bs-root-margin="0px 0px -45%" data-bs-smooth-scroll="true" tabindex="-1"'
+)
 
 JSONLD = """
         <script type="application/ld+json">
@@ -43,135 +91,63 @@ JSONLD = """
             }
         </script>"""
 
-# Itens do menu: (href, chave i18n, rótulo PT, slug da página que marca como ativa)
-NAV = [
-    ("/", "navAbout", "Sobre", "home"),
-    ("/formacao/", "navEducation", "Formação", "formacao"),
-    ("/formacao/#certificados", "navCertificates", "Certificados", None),
-    ("/trajetoria/", "navExperience", "Trajetória", "trajetoria"),
-    ("/tecnologias/", "navTech", "Tecnologias", "tecnologias"),
-    ("/portfolio/", "navPortfolio", "Portfólio", "portfolio"),
-    ("/github-stats/", "navGithub", "GitHub Stats", "github-stats"),
-    ("/#contato", "navContact", "Contato", None),
-]
-
-# Páginas: slug -> configuração. `out` vazio = raiz do site.
-PAGES = {
-    "home": {
-        "out": "index.html",
-        "title_key": "titleHome",
-        "title_pt": "Guilherme Bonato — Engenheiro de Software Sênior",
-        "desc_key": "descHome",
-        "desc_pt": "Portfólio de Guilherme Bonato, Engenheiro de Software Sênior e Arquiteto de Soluções. Especialista em .NET, Node.js, Python, Clean Architecture e DDD.",
-        "blocks": ["_sec_sobre", "_sec_destaque", "_sec_contato", "_sec_visitas"],
-        "modals": ["_mod_loginhub", "_mod_trackstack"],
-    },
-    "formacao": {
-        "out": "formacao/index.html",
-        "title_key": "titleFormacao",
-        "title_pt": "Formação e Certificados — Guilherme Bonato",
-        "desc_key": "descFormacao",
-        "desc_pt": "Formação acadêmica e certificados de especialização de Guilherme Bonato: PUCRS, Universidade La Salle, XP Educação e UNIPDS.",
-        "blocks": ["_sec_formacao", "_sec_certificados"],
-        "modals": [],
-    },
-    "trajetoria": {
-        "out": "trajetoria/index.html",
-        "title_key": "titleTrajetoria",
-        "title_pt": "Trajetória Profissional — Guilherme Bonato",
-        "desc_key": "descTrajetoria",
-        "desc_pt": "Dez anos de trajetória: Tech Lead, Full Stack Engineer, Senior Software Engineer e Arquiteto de Soluções em CCS, Safeweb, SKA, Frigelar, GotoBiz e Astral Wave.",
-        "blocks": ["_sec_trajetoria"],
-        "modals": ["_mod_trajetoria"],
-    },
-    "tecnologias": {
-        "out": "tecnologias/index.html",
-        "title_key": "titleTecnologias",
-        "title_pt": "Stack Tecnológico — Guilherme Bonato",
-        "desc_key": "descTecnologias",
-        "desc_pt": "Stack completo: .NET, Node.js, Python, TypeScript, React, Vue, Angular, Docker, Nginx, Cloudflare, PostgreSQL, Kafka e Redis.",
-        "blocks": ["_sec_tecnologias"],
-        "modals": [],
-    },
-    "portfolio": {
-        "out": "portfolio/index.html",
-        "title_key": "titlePortfolio",
-        "title_pt": "Portfólio de Projetos — Guilherme Bonato",
-        "desc_key": "descPortfolio",
-        "desc_pt": "Projetos de Guilherme Bonato em .NET, Node.js, React, Vue e Python — de um Identity Provider multi-tenant a sistemas com Clean Architecture, DDD e CQRS.",
-        "blocks": ["_sec_portfolio"],
-        "modals": [],
-    },
-    "github-stats": {
-        "out": "github-stats/index.html",
-        "title_key": "titleStats",
-        "title_pt": "Estatísticas do GitHub — Guilherme Bonato",
-        "desc_key": "descStats",
-        "desc_pt": "Linguagens mais usadas e estatísticas de contribuição da conta GitHub de Guilherme Bonato (@moablive).",
-        "blocks": ["_sec_githubstats"],
-        "modals": [],
-    },
-}
+HOME_TITLE = "Guilherme Bonato — Engenheiro de Software Sênior"
+HOME_DESC = (
+    "Portfólio de Guilherme Bonato, Engenheiro de Software Sênior e Arquiteto de Soluções. "
+    "Especialista em .NET, Node.js, Python, Clean Architecture e DDD."
+)
 
 
-def read(path):
-    return (SRC / path).read_text(encoding="utf-8")
+def read(relative_path):
+    return (SRC / relative_path).read_text(encoding="utf-8")
 
 
-def build_nav(active_slug):
+def build_head(title_key, title, desc_key, desc, canonical, jsonld="", body_attrs=""):
+    return (
+        read("partials/head.html")
+        .replace("{{TITLE_KEY}}", title_key)
+        .replace("{{TITLE_TEXT}}", title)
+        .replace("{{DESC_KEY}}", desc_key)
+        .replace("{{DESC_TEXT}}", desc)
+        .replace("{{CANONICAL}}", canonical)
+        .replace("{{JSONLD}}", jsonld)
+        .replace("{{BODY_ATTRS}}", body_attrs)
+    )
+
+
+def build_nav():
     items = []
-    for href, key, label, slug in NAV:
-        current = ' aria-current="page"' if slug and slug == active_slug else ""
-        active = " active" if slug and slug == active_slug else ""
+    for href, key, label in NAV:
         items.append(
             f'                        <li class="nav-item">\n'
-            f'                            <a class="nav-link{active}" href="{href}"{current} data-i18n="{key}">{label}</a>\n'
+            f'                            <a class="nav-link" href="{href}" data-i18n="{key}">{label}</a>\n'
             f"                        </li>"
         )
     return read("partials/nav.html").replace("{{NAV_ITEMS}}", "\n".join(items))
 
 
-def build_page(slug, cfg):
-    canonical = BASE_URL + "/" + cfg["out"].replace("index.html", "")
-
-    head = (
-        read("partials/head.html")
-        .replace("{{TITLE_KEY}}", cfg["title_key"])
-        .replace("{{TITLE_TEXT}}", cfg["title_pt"])
-        .replace("{{DESC_KEY}}", cfg["desc_key"])
-        .replace("{{DESC_TEXT}}", cfg["desc_pt"])
-        .replace("{{CANONICAL}}", canonical)
-        .replace("{{JSONLD}}", JSONLD if slug == "home" else "")
-    )
-
-    parts = [head, build_nav(slug), '\n        <main id="conteudo">']
-    for name in cfg["blocks"]:
-        parts.append(read(f"pages/{name}.html").rstrip())
+def build_index():
+    parts = [
+        build_head("titleHome", HOME_TITLE, "descHome", HOME_DESC, BASE_URL + "/", JSONLD, SCROLLSPY),
+        build_nav(),
+        '\n        <main id="conteudo">',
+    ]
+    for name in SECTIONS:
+        parts.append(read(f"sections/{name}.html").rstrip())
     parts.append("        </main>\n")
-    for name in cfg["modals"]:
-        parts.append(read(f"pages/{name}.html").rstrip() + "\n")
+    for name in MODALS:
+        parts.append(read(f"modals/{name}.html").rstrip() + "\n")
     parts.append(read("partials/fab.html").rstrip() + "\n")
     parts.append(read("partials/footer.html").rstrip() + "\n")
     parts.append(read("partials/scripts.html").rstrip() + "\n")
 
-    out = ROOT / cfg["out"]
-    out.parent.mkdir(parents=True, exist_ok=True)
+    out = ROOT / "index.html"
     out.write_text("\n".join(parts), encoding="utf-8")
     return out
 
 
 def build_404():
-    """O Pages serve /404.html automaticamente para qualquer rota inexistente."""
-    head = (
-        read("partials/head.html")
-        .replace("{{TITLE_KEY}}", "title404")
-        .replace("{{TITLE_TEXT}}", "Página não encontrada — Guilherme Bonato")
-        .replace("{{DESC_KEY}}", "desc404")
-        .replace("{{DESC_TEXT}}", "A página que você procurou não existe.")
-        .replace("{{CANONICAL}}", BASE_URL + "/404.html")
-        .replace("{{JSONLD}}", "")
-        .replace('<html lang="pt-BR">', '<html lang="pt-BR">\n    <!-- gerado por build.py -->')
-    )
+    """O Pages serve /404.html automaticamente em qualquer rota inexistente."""
     body = """
         <main id="conteudo" class="d-flex align-items-center justify-content-center text-center error-page">
             <div class="container py-5">
@@ -186,50 +162,65 @@ def build_404():
             </div>
         </main>
 """
-    parts = [head, build_nav(None), body, read("partials/fab.html").rstrip() + "\n",
-             read("partials/footer.html").rstrip() + "\n", read("partials/scripts.html").rstrip() + "\n"]
-    (ROOT / "404.html").write_text("\n".join(parts), encoding="utf-8")
+    parts = [
+        build_head(
+            "title404",
+            "Página não encontrada — Guilherme Bonato",
+            "desc404",
+            "A página que você procurou não existe.",
+            BASE_URL + "/404.html",
+        ),
+        build_nav(),
+        body,
+        read("partials/fab.html").rstrip() + "\n",
+        read("partials/footer.html").rstrip() + "\n",
+        read("partials/scripts.html").rstrip() + "\n",
+    ]
+    out = ROOT / "404.html"
+    out.write_text("\n".join(parts), encoding="utf-8")
+    return out
 
 
 def build_sitemap():
-    urls = []
-    for cfg in PAGES.values():
-        loc = BASE_URL + "/" + cfg["out"].replace("index.html", "")
-        priority = "1.0" if cfg["out"] == "index.html" else "0.8"
-        urls.append(
-            f"    <url>\n"
-            f"        <loc>{loc}</loc>\n"
-            f"        <lastmod>2026-08-24</lastmod>\n"
-            f"        <changefreq>monthly</changefreq>\n"
-            f"        <priority>{priority}</priority>\n"
-            f"    </url>"
-        )
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "\n".join(urls)
-        + "\n</urlset>\n",
+        "    <url>\n"
+        f"        <loc>{BASE_URL}/</loc>\n"
+        "        <lastmod>2026-08-24</lastmod>\n"
+        "        <changefreq>monthly</changefreq>\n"
+        "        <priority>1.0</priority>\n"
+        "    </url>\n"
+        "</urlset>\n",
         encoding="utf-8",
     )
 
 
-def main():
-    # Limpa as pastas geradas para não deixar página órfã após renomear um slug
-    for cfg in PAGES.values():
-        directory = cfg["out"].split("/")[0]
-        if directory != "index.html" and (ROOT / directory).is_dir():
-            shutil.rmtree(ROOT / directory)
+def check_anchors(html):
+    """Todo item do menu precisa apontar para um id que existe na página."""
+    import re
 
-    built = [build_page(slug, cfg) for slug, cfg in PAGES.items()]
+    ids = set(re.findall(r'<section id="([^"]+)"', html))
+    missing = [href for href, _, _ in NAV if href.startswith("#") and href[1:] not in ids]
+    if missing:
+        print(f"AVISO: âncoras do menu sem seção correspondente: {missing}", file=sys.stderr)
+        return False
+    return True
+
+
+def main():
+    index = build_index()
     build_404()
     build_sitemap()
 
-    print(f"{len(built)} páginas geradas:")
-    for path in built:
-        rel = path.relative_to(ROOT)
-        print(f"  {str(rel):28} {path.stat().st_size / 1024:6.1f} KB")
-    print("  404.html, sitemap.xml")
-    return 0
+    html = index.read_text(encoding="utf-8")
+    ok = check_anchors(html)
+
+    print(f"index.html   {index.stat().st_size / 1024:6.1f} KB "
+          f"({len(SECTIONS)} seções, {len(MODALS)} modais, {len(html.splitlines())} linhas)")
+    print(f"404.html     {(ROOT / '404.html').stat().st_size / 1024:6.1f} KB")
+    print("sitemap.xml")
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
