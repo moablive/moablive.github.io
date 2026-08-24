@@ -1,18 +1,20 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    visitsTitle: "Contador de visitas",
+    visitSuffix: "vezes esta página foi visitada",
+    visitLoading: "Consultando o contador...",
     themeToDark: "Ativar modo escuro",
     themeToLight: "Ativar modo claro",
     heroKicker: "Engenheiro de Software Sênior — desde 2016",
     heroTitle: "Arquiteto de soluções",
-    heroLead: ".NET, Node e Go. Clean Architecture, DDD e segurança de borda. Sistemas que aguentam o segundo ano de produção.",
+    heroLead: ".NET, Node e Python. Clean Architecture, DDD e segurança de borda. Sistemas que aguentam o segundo ano de produção.",
     heroCta: "Ver projetos ↓",
     statYears: "Anos",
     statCompanies: "Empresas",
     statProjects: "Projetos",
-    statVisits: "Visitas",
     altPhoto: "Foto de Guilherme Bonato",
-    altMainStack: "Stack principal: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker",
+    altMainStack: "Stack principal: .NET, Node.js, TypeScript, Vue, Python, PostgreSQL, Docker",
     altTopLangs: "Linguagens mais usadas no GitHub por moablive",
     altGithubStats: "Estatísticas do GitHub de moablive",
     altLinkedin: "LinkedIn de Guilherme Bonato",

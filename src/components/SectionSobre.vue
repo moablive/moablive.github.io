@@ -1,16 +1,8 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { useVisitCounter } from "@/composables/useVisitCounter";
-
-const { total, erro } = useVisitCounter();
-const { locale } = useI18n();
-const visitas = computed(() => (total.value === null ? "—" : total.value.toLocaleString(locale.value as string)));
-
 const terminal = [
     { i: 0, html: '<span class="tok-kw">const</span> <span class="tok-var">moablive</span> = {' },
-    { i: 1, html: '<span class="tok-prop">stack</span>: [<span class="tok-str">".NET"</span>, <span class="tok-str">"Node.js"</span>, <span class="tok-str">"Go"</span>],' },
-    { i: 1, html: '<span class="tok-prop">frontend</span>: [<span class="tok-str">"React"</span>, <span class="tok-str">"Vue"</span>, <span class="tok-str">"Angular"</span>],' },
+    { i: 1, html: '<span class="tok-prop">stack</span>: [<span class="tok-str">".NET"</span>, <span class="tok-str">"Node.js"</span>],' },
+    { i: 1, html: '<span class="tok-prop">frontend</span>: [<span class="tok-str">"Vue.js"</span>, <span class="tok-str">"React"</span>, <span class="tok-str">"Angular"</span>],' },
     { i: 1, html: '<span class="tok-prop">focus</span>: [' },
     { i: 2, html: '<span class="tok-str">"Clean Architecture"</span>,' },
     { i: 2, html: '<span class="tok-str">"Microservices"</span>,' },
@@ -57,14 +49,10 @@ const numeros = [
                     >
                 </div>
 
-                <dl class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <dl class="mt-10 grid grid-cols-3 gap-3">
                     <div v-for="n in numeros" :key="n.id" class="glass rounded-2xl px-4 py-4">
                         <dt class="label-mono text-ink-3">{{ $t(n.labelKey) }}</dt>
                         <dd class="mt-1.5 text-3xl font-extrabold tracking-[-0.03em]">{{ n.valor }}</dd>
-                    </div>
-                    <div class="glass rounded-2xl px-4 py-4">
-                        <dt class="label-mono text-ink-3">{{ erro ? $t("visitOffline") : $t("statVisits") }}</dt>
-                        <dd class="mt-1.5 text-3xl font-extrabold tracking-[-0.03em] text-gradient">{{ visitas }}</dd>
                     </div>
                 </dl>
             </div>
@@ -96,7 +84,7 @@ const numeros = [
 
                     <div class="glass mt-4 flex items-center justify-center rounded-2xl px-4 py-4">
                         <img
-                            src="https://skillicons.dev/icons?i=dotnet,nodejs,py,go,postgres,kafka,docker"
+                            src="https://skillicons.dev/icons?i=dotnet,nodejs,ts,vue,py,postgres,docker"
                             :alt="$t('altMainStack')"
                             class="max-w-full"
                             loading="lazy"

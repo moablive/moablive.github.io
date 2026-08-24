@@ -13,6 +13,7 @@ import SectionDestaque from "@/components/SectionDestaque.vue";
 import SectionPortfolio from "@/components/SectionPortfolio.vue";
 import SectionGithubStats from "@/components/SectionGithubStats.vue";
 import SectionContato from "@/components/SectionContato.vue";
+import SectionVisitas from "@/components/SectionVisitas.vue";
 import CargoModal from "@/components/CargoModal.vue";
 import ModalLoginHub from "@/components/ModalLoginHub.vue";
 import ModalTrackStack from "@/components/ModalTrackStack.vue";
@@ -46,6 +47,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
         <SectionPortfolio />
         <SectionGithubStats />
         <SectionContato />
+        <SectionVisitas />
     </main>
 
     <CargoModal v-for="cargo in cargos" :key="cargo.id" :cargo="cargo" />
