@@ -689,3 +689,27 @@ body {
         bottom: 12px;
     }
 }
+
+/* ---------- 12. NAVEGAÇÃO ENTRE PÁGINAS ---------- */
+/* Marca a página atual no menu (aplicado pelo build.py) */
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.15rem;
+    height: 2px;
+    background: var(--brand);
+    border-radius: 2px;
+}
+
+/* Página 404 */
+.error-page {
+    min-height: calc(100vh - var(--nav-h) - 96px);
+}

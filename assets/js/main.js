@@ -143,9 +143,29 @@ async function initVisitsTracking() {
    --------------------------------------------------------- */
 const TRANSLATIONS = {
     "pt-BR": {
-        pageTitle: "Guilherme Bonato — Engenheiro de Software Sênior",
-        metaDescription:
-            "Portfólio de Guilherme Bonato, Engenheiro de Software Sênior e Arquiteto de Soluções. Especialista em .NET, Node.js, Python, Clean Architecture, DDD e infraestrutura em Docker/Cloudflare.",
+        titleHome: "Guilherme Bonato — Engenheiro de Software Sênior",
+        descHome:
+            "Portfólio de Guilherme Bonato, Engenheiro de Software Sênior e Arquiteto de Soluções. Especialista em .NET, Node.js, Python, Clean Architecture e DDD.",
+        titleFormacao: "Formação e Certificados — Guilherme Bonato",
+        descFormacao:
+            "Formação acadêmica e certificados de especialização de Guilherme Bonato: PUCRS, Universidade La Salle, XP Educação e UNIPDS.",
+        titleTrajetoria: "Trajetória Profissional — Guilherme Bonato",
+        descTrajetoria:
+            "Dez anos de trajetória: Tech Lead, Full Stack Engineer, Senior Software Engineer e Arquiteto de Soluções em CCS, Safeweb, SKA, Frigelar, GotoBiz e Astral Wave.",
+        titleTecnologias: "Stack Tecnológico — Guilherme Bonato",
+        descTecnologias:
+            "Stack completo: .NET, Node.js, Python, TypeScript, React, Vue, Angular, Docker, Nginx, Cloudflare, PostgreSQL, Kafka e Redis.",
+        titlePortfolio: "Portfólio de Projetos — Guilherme Bonato",
+        descPortfolio:
+            "Projetos de Guilherme Bonato em .NET, Node.js, React, Vue e Python — de um Identity Provider multi-tenant a sistemas com Clean Architecture, DDD e CQRS.",
+        titleStats: "Estatísticas do GitHub — Guilherme Bonato",
+        descStats:
+            "Linguagens mais usadas e estatísticas de contribuição da conta GitHub de Guilherme Bonato (@moablive).",
+        title404: "Página não encontrada — Guilherme Bonato",
+        desc404: "A página que você procurou não existe.",
+        err404Title: "Página não encontrada",
+        err404Text: "O endereço que você acessou não existe ou foi movido.",
+        err404Back: "<i class='fas fa-arrow-left me-2' aria-hidden='true'></i>Voltar para o início",
         skipLink: "Pular para o conteúdo",
 
         // Navbar
@@ -379,9 +399,29 @@ const TRANSLATIONS = {
     },
 
     "en-US": {
-        pageTitle: "Guilherme Bonato — Senior Software Engineer",
-        metaDescription:
-            "Portfolio of Guilherme Bonato, Senior Software Engineer and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture, DDD and Docker/Cloudflare infrastructure.",
+        titleHome: "Guilherme Bonato — Senior Software Engineer",
+        descHome:
+            "Portfolio of Guilherme Bonato, Senior Software Engineer and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture and DDD.",
+        titleFormacao: "Education and Certificates — Guilherme Bonato",
+        descFormacao:
+            "Academic background and specialization certificates of Guilherme Bonato: PUCRS, Universidade La Salle, XP Educação and UNIPDS.",
+        titleTrajetoria: "Professional Experience — Guilherme Bonato",
+        descTrajetoria:
+            "Ten years of experience: Tech Lead, Full Stack Engineer, Senior Software Engineer and Solutions Architect at CCS, Safeweb, SKA, Frigelar, GotoBiz and Astral Wave.",
+        titleTecnologias: "Tech Stack — Guilherme Bonato",
+        descTecnologias:
+            "Full stack: .NET, Node.js, Python, TypeScript, React, Vue, Angular, Docker, Nginx, Cloudflare, PostgreSQL, Kafka and Redis.",
+        titlePortfolio: "Project Portfolio — Guilherme Bonato",
+        descPortfolio:
+            "Projects by Guilherme Bonato in .NET, Node.js, React, Vue and Python — from a multi-tenant Identity Provider to systems with Clean Architecture, DDD and CQRS.",
+        titleStats: "GitHub Statistics — Guilherme Bonato",
+        descStats:
+            "Most used languages and contribution statistics for Guilherme Bonato's GitHub account (@moablive).",
+        title404: "Page not found — Guilherme Bonato",
+        desc404: "The page you were looking for does not exist.",
+        err404Title: "Page not found",
+        err404Text: "The address you accessed does not exist or has been moved.",
+        err404Back: "<i class='fas fa-arrow-left me-2' aria-hidden='true'></i>Back to home",
         skipLink: "Skip to content",
 
         // Navbar
@@ -642,8 +682,6 @@ function applyTranslations(lang) {
             if (value !== undefined) el.setAttribute(attribute, stripTags(value));
         });
     });
-
-    if (dict.pageTitle) document.title = dict.pageTitle;
 }
 
 /** Atributos como title/aria-label não renderizam HTML — remove as entidades e tags. */

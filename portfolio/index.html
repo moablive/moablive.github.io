@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title data-i18n="titlePortfolio">Portfólio de Projetos — Guilherme Bonato</title>
+        <meta name="description" data-i18n-content="descPortfolio" content="Projetos de Guilherme Bonato em .NET, Node.js, React, Vue e Python — de um Identity Provider multi-tenant a sistemas com Clean Architecture, DDD e CQRS." />
+        <meta name="author" content="Guilherme Bonato" />
+        <meta name="theme-color" content="#0d6efd" />
+        <link rel="canonical" href="https://moablive.github.io/portfolio/" />
+
+        <!-- Open Graph / Twitter -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Guilherme Bonato" />
+        <meta property="og:title" content="Portfólio de Projetos — Guilherme Bonato" />
+        <meta property="og:description" content="Projetos de Guilherme Bonato em .NET, Node.js, React, Vue e Python — de um Identity Provider multi-tenant a sistemas com Clean Architecture, DDD e CQRS." />
+        <meta property="og:url" content="https://moablive.github.io/portfolio/" />
+        <meta property="og:image" content="https://github.com/moablive.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Portfólio de Projetos — Guilherme Bonato" />
+        <meta name="twitter:description" content="Projetos de Guilherme Bonato em .NET, Node.js, React, Vue e Python — de um Identity Provider multi-tenant a sistemas com Clean Architecture, DDD e CQRS." />
+        <meta name="twitter:image" content="https://github.com/moablive.png" />
+
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%BB</text></svg>"
+            />
+
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+            />
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+    </head>
+    <body>
+        <a class="skip-link" href="#conteudo" data-i18n="skipLink">Pular para o conteúdo</a>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="/">Guilherme Bonato</a>
+
+                <a
+                    href="https://www.dropbox.com/scl/fi/ok2rqledpi9b2sdqqrboc/Curr-culo-2025.pdf?rlkey=4k4wybc0vq2ef35g7xbz475ut&st=403i9og5&dl=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm ms-auto me-2 order-lg-3"
+                    >
+                <i class="fas fa-file-pdf me-1" aria-hidden="true"></i>
+                <span class="d-none d-md-inline" data-i18n="downloadPDF">Baixar PDF</span>
+                </a>
+
+                <button
+                    class="navbar-toggler order-lg-4"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    data-i18n-aria-label="navToggle"
+                    aria-label="Abrir menu de navegação"
+                    >
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/" data-i18n="navAbout">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/formacao/" data-i18n="navEducation">Formação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/formacao/#certificados" data-i18n="navCertificates">Certificados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/trajetoria/" data-i18n="navExperience">Trajetória</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tecnologias/" data-i18n="navTech">Tecnologias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/portfolio/" aria-current="page" data-i18n="navPortfolio">Portfólio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/github-stats/" data-i18n="navGithub">GitHub Stats</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#contato" data-i18n="navContact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <main id="conteudo">
+            <section id="portfolio" class="py-5 bg-light-custom">
+                <div class="container">
+                    <h2 class="section-heading text-center mb-4" data-i18n="portfolioTitle">Portfólio</h2>
+
+                    <div
+                        class="portfolio-filters d-flex justify-content-center flex-wrap gap-2 mb-5"
+                        role="group"
+                        data-i18n-aria-label="portfolioFilterAria"
+                        aria-label="Filtrar projetos por categoria"
+                        >
+                        <button type="button" class="btn btn-filter active" data-filter="all" aria-pressed="true">
+                        <span data-i18n="filterAll">Todos</span>
+                        </button>
+                        <button type="button" class="btn btn-filter" data-filter="backend" aria-pressed="false">
+                        <span data-i18n="filterBackend">Back-End</span>
+                        </button>
+                        <button type="button" class="btn btn-filter" data-filter="frontend" aria-pressed="false">
+                        <span data-i18n="filterFrontend">Front-End &amp; Full-Stack</span>
+                        </button>
+                        <button type="button" class="btn btn-filter" data-filter="python" aria-pressed="false">
+                        <span data-i18n="filterPython">Python &amp; Tools</span>
+                        </button>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="portfolio-grid" aria-live="polite">
+                        <div class="col portfolio-item" data-cat="backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/nodedotjs/339933"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Node.js"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">AWLSRV LoginHub API</h3>
+                                    <p class="card-text" data-i18n="projLoginHubApi">
+                                        Backend IdP Enterprise. PostgreSQL (ACID), Docker, Nginx, segurança com JWT e
+                                        Master Key.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=nodejs,ts,postgres,docker,nginx"
+                                            alt="Node.js, TypeScript, PostgreSQL, Docker, Nginx"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/AWLSRV_LoginHub"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="frontend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/react/61DAFB"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="React"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">AWLSRV LoginHub UI</h3>
+                                    <p class="card-text" data-i18n="projLoginHubUi">
+                                        Painel administrativo do IdP. React 19, Vite, glassmorphism e gestão de
+                                        multi-tenants.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=react,vite,ts,tailwind"
+                                            alt="React, Vite, TypeScript, Tailwind"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/AWLSRV_LoginHub_UI"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/dotnet/512BD4"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt=".NET"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">AmbevDeveloperStore</h3>
+                                    <p class="card-text" data-i18n="projAmbev">
+                                        Sistema de vendas com .NET 8, Clean Architecture, DDD e CQRS. PostgreSQL
+                                        (write), MongoDB (read) e Kafka.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=dotnet,cs,postgres,mongodb,kafka,docker"
+                                            alt=".NET, C#, PostgreSQL, MongoDB, Kafka, Docker"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/AmbevDeveloperStore"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/nodedotjs/339933"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Node.js"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">API Portfolio Tracker</h3>
+                                    <p class="card-text" data-i18n="projTracker">
+                                        API de rastreamento de visitas com Node.js, Express, TypeScript e PostgreSQL.
+                                        Contador atômico e thread-safe.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=nodejs,express,ts,postgres,docker"
+                                            alt="Node.js, Express, TypeScript, PostgreSQL, Docker"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/portfolio-track-visit"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/dotnet/5C2D91"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt=".NET"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">ef6EssencialNetCore</h3>
+                                    <p class="card-text" data-i18n="projEf6">
+                                        Template base para APIs RESTful utilizando .NET Core.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=dotnet,cs,sql"
+                                            alt=".NET, C#, SQL"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/ef6EssencialNetCore/tree/master"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="frontend backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/angular/DD0031"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Angular"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">AngularNodeHub</h3>
+                                    <p class="card-text" data-i18n="projAngularHub">
+                                        Aplicação full-stack completa para gerenciamento de produtos e usuários.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=angular,nodejs,express,ts,mysql,bootstrap"
+                                            alt="Angular, Node.js, Express, TypeScript, MySQL, Bootstrap"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/AngularNodeHub"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="frontend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/vuedotjs/4FC08D"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Vue.js"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">vuejsCasadecarnes</h3>
+                                    <p class="card-text" data-i18n="projVueCasa">
+                                        Dashboard interativo desenvolvido com Vue.js, TypeScript e Vite.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=vue,vite,nodejs,ts,express,mysql"
+                                            alt="Vue, Vite, Node.js, TypeScript, Express, MySQL"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/Casadecarnes"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="frontend backend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/react/61DAFB"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="React"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5" data-i18n="projSulTitle">
+                                        Gestor de Preços — Sul Alimentos
+                                    </h3>
+                                    <p class="card-text" data-i18n="projSul">
+                                        Sistema corporativo de precificação e margens. Autenticação SSO, RBAC e métricas
+                                        via Prometheus.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=nodejs,react,ts,postgres,docker,prometheus"
+                                            alt="Node.js, React, TypeScript, PostgreSQL, Docker, Prometheus"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/casa-de-carnes-price-table"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="frontend">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/html5/007BFF"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="HTML5"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">Notion Icons</h3>
+                                    <p class="card-text" data-i18n="projNotion">
+                                        Integração e otimização do fluxo de trabalho com ícones no Notion.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=html,css,js,bootstrap"
+                                            alt="HTML, CSS, JavaScript, Bootstrap"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://codepen.io/moablive/full/VYvaQGg"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-success w-100"
+                                            data-i18n="btnViewProject"
+                                            >
+                                        <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i>Ver Projeto
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="python">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/python/FFC107"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Python"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">py_CRUD_PRODUTO</h3>
+                                    <p class="card-text" data-i18n="projPyCrud">
+                                        CRUD de produtos desenvolvido com Python e PyQt5.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=python,qt,mysql"
+                                            alt="Python, Qt, MySQL"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/py_CRUD_PRODUTO/tree/main"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col portfolio-item" data-cat="python">
+                            <div class="card h-100">
+                                <div class="portfolio-image-wrapper">
+                                    <img
+                                        src="https://cdn.simpleicons.org/python/FFC107"
+                                        class="card-img-top portfolio-logo-main"
+                                        alt="Python"
+                                        loading="lazy"
+                                        />
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5">py_ImagerConverter</h3>
+                                    <p class="card-text" data-i18n="projPyImg">
+                                        Conversor de imagens com upscale para 4K.
+                                    </p>
+                                    <div class="my-3">
+                                        <img
+                                            src="https://skillicons.dev/icons?i=python,tkinter"
+                                            alt="Python, Tkinter"
+                                            loading="lazy"
+                                            />
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a
+                                            href="https://github.com/moablive/py_ImagerConverter"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-primary w-100"
+                                            >
+                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-muted mt-4 mb-0 d-none" id="portfolio-empty" data-i18n="portfolioEmpty">
+                        Nenhum projeto nesta categoria.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Botão flutuante de idioma -->
+        <div class="i18n-fab">
+            <button
+                id="fabToggle"
+                class="fab-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="fabMenu"
+                data-i18n-aria-label="langToggle"
+                aria-label="Trocar idioma"
+                >
+            <span aria-hidden="true">🌐</span>
+            </button>
+            <div id="fabMenu" class="fab-menu" role="menu">
+                <button class="fab-item" data-lang="pt-BR" role="menuitem" aria-pressed="false" lang="pt-BR">PT</button>
+                <button class="fab-item" data-lang="en-US" role="menuitem" aria-pressed="false" lang="en">EN</button>
+            </div>
+        </div>
+
+        <footer class="footer text-center py-3 bg-dark text-white">
+            <div class="container">
+                <p class="mb-0">
+                    &copy; <span id="currentYear">2026</span> Guilherme Bonato.
+                    <span data-i18n="footerRights">Todos os direitos reservados.</span>
+                </p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+            defer
+            ></script>
+        <script src="/assets/js/main.js" defer></script>
+    </body>
+</html>

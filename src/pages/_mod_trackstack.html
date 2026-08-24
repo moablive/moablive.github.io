@@ -1,0 +1,76 @@
+        <!-- ============ MODAL: STACK DO RASTREADOR ============ -->
+        <div class="modal fade" id="modalTechStack" tabindex="-1" aria-labelledby="modalTechStackLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content border-0 shadow-lg">
+                    <div class="modal-header bg-dark text-white border-0">
+                        <h2 class="modal-title h5" id="modalTechStackLabel">
+                            <i class="fab fa-github me-2" aria-hidden="true"></i> portfolio-track-visit
+                        </h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" data-i18n-aria-label="close" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body text-center p-4">
+                        <h3 class="h6 fw-bold" data-i18n="trackTitle">Arquitetura de Rastreamento Atômico</h3>
+                        <p class="text-muted small" data-i18n="trackDesc">
+                            API performática desenvolvida para mapear visitas utilizando um contador atômico no banco de
+                            dados.
+                        </p>
+                        <div class="my-4">
+                            <img
+                                src="https://skillicons.dev/icons?i=nodejs,ts,postgres,docker,cloudflare"
+                                alt="Node.js, TypeScript, PostgreSQL, Docker, Cloudflare"
+                                class="img-fluid"
+                                loading="lazy"
+                                />
+                        </div>
+                        <ul class="list-group list-group-flush text-start small mb-4">
+                            <li class="list-group-item bg-transparent" data-i18n="trackPg">
+                                <i class="fas fa-database text-primary me-2" aria-hidden="true"></i>
+                                <strong>PostgreSQL:</strong> persistência de dados com integridade.
+                            </li>
+                            <li class="list-group-item bg-transparent" data-i18n="trackNode">
+                                <i class="fas fa-server text-success me-2" aria-hidden="true"></i>
+                                <strong>Node.js &amp; TS:</strong> backend robusto e tipado.
+                            </li>
+                            <li class="list-group-item bg-transparent" data-i18n="trackDocker">
+                                <i class="fas fa-box text-info me-2" aria-hidden="true"></i>
+                                <strong>Docker:</strong> orquestração e isolamento de serviços.
+                            </li>
+                            <li class="list-group-item bg-transparent" data-i18n="trackCf">
+                                <i class="fas fa-cloud text-warning me-2" aria-hidden="true"></i>
+                                <strong>Cloudflare:</strong> DNS, proxy e segurança de borda.
+                            </li>
+                        </ul>
+                        <a
+                            href="https://github.com/moablive/portfolio-track-visit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-dark w-100 rounded-pill"
+                            data-i18n="trackBtnRepo"
+                            >
+                        <i class="fab fa-github me-2" aria-hidden="true"></i> Explorar Repositório
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão flutuante de idioma -->
+        <div class="i18n-fab">
+            <button
+                id="fabToggle"
+                class="fab-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="fabMenu"
+                data-i18n-aria-label="langToggle"
+                aria-label="Trocar idioma"
+                >
+            <span aria-hidden="true">🌐</span>
+            </button>
+            <div id="fabMenu" class="fab-menu" role="menu">
+                <button class="fab-item" data-lang="pt-BR" role="menuitem" aria-pressed="false" lang="pt-BR">PT</button>
+                <button class="fab-item" data-lang="en-US" role="menuitem" aria-pressed="false" lang="en">EN</button>
+            </div>
+        </div>
+
+        <!-- footer -->

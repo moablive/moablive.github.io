@@ -1,0 +1,104 @@
+        <!-- ============ MODAL: LOGINHUB ============ -->
+        <div class="modal fade" id="modalLoginHub" tabindex="-1" aria-labelledby="modalLoginHubLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content border-0 shadow-lg glass-effect-modal">
+                    <div class="modal-header bg-gradient-dark text-white border-0">
+                        <h2 class="modal-title h5 fw-bold" id="modalLoginHubLabel">
+                            <i class="fas fa-fingerprint me-2" aria-hidden="true"></i> AWLSRV LoginHub (IdP)
+                        </h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" data-i18n-aria-label="close" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body p-4 p-md-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 text-center mb-4 mb-md-0">
+                                <i class="fas fa-server fa-6x text-secondary mb-3" aria-hidden="true"></i>
+                                <h3 class="h6 fw-bold mt-2">Enterprise Architecture</h3>
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="h5 fw-bold mb-3" data-i18n="lhWhat">O que é este projeto?</h3>
+                                <p class="text-muted" data-i18n="lhP1">
+                                    Um sistema de <strong>Identity Provider (IdP)</strong> centralizado. Gerencia
+                                    autenticação multi-tenant (múltiplas empresas), permissões de usuários e segurança
+                                    via tokens JWT e master keys.
+                                </p>
+                                <p class="text-muted" data-i18n="lhP2">
+                                    Projetado para ser a espinha dorsal de segurança de todo o ecossistema de aplicações
+                                    da empresa.
+                                </p>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h3 class="h6 fw-bold text-center mb-4" data-i18n="lhStack">
+                            Stack de Infraestrutura &amp; Backend
+                        </h3>
+                        <div class="d-flex justify-content-center mb-4">
+                            <img
+                                src="https://skillicons.dev/icons?i=docker,cloudflare,postgres,nginx,nodejs,ts,linux"
+                                alt="Docker, Cloudflare, PostgreSQL, Nginx, Node.js, TypeScript, Linux"
+                                class="img-fluid modal-stack-icons"
+                                loading="lazy"
+                                />
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 h-100 bg-light">
+                                    <i class="fab fa-docker text-primary me-2" aria-hidden="true"></i>
+                                    <strong>Docker &amp; Nginx</strong>
+                                    <p class="small text-muted mb-0" data-i18n="lhDocker">
+                                        Orquestração de containers com proxy reverso e SSL.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 h-100 bg-light">
+                                    <i class="fas fa-cloud text-warning me-2" aria-hidden="true"></i>
+                                    <strong>Cloudflare Tunnels</strong>
+                                    <p class="small text-muted mb-0" data-i18n="lhCf">
+                                        Exposição segura sem abrir portas no firewall (Zero Trust).
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 h-100 bg-light">
+                                    <i class="fas fa-database text-info me-2" aria-hidden="true"></i>
+                                    <strong>PostgreSQL (ACID)</strong>
+                                    <p class="small text-muted mb-0" data-i18n="lhPg">
+                                        Transações manuais (commit/rollback) para integridade crítica.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 h-100 bg-light">
+                                    <i class="fas fa-shield-alt text-success me-2" aria-hidden="true"></i>
+                                    <strong data-i18n="lhSecTitle">Segurança</strong>
+                                    <p class="small text-muted mb-0" data-i18n="lhSec">
+                                        Autenticação híbrida (JWT + master keys) e hash bcrypt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 bg-light justify-content-center">
+                        <a
+                            href="https://loginhub.astralwavelabel.com/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-success rounded-pill px-4 fw-bold"
+                            data-i18n="lhBtnAccess"
+                            >
+                        <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i> Acessar Sistema
+                        </a>
+                        <a
+                            href="https://github.com/moablive/AWLSRV_LoginHub"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-dark rounded-pill px-4"
+                            data-i18n="lhBtnRepo"
+                            >
+                        <i class="fab fa-github me-2" aria-hidden="true"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
