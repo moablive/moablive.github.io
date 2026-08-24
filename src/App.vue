@@ -16,7 +16,6 @@ import SectionContato from "@/components/SectionContato.vue";
 import CargoModal from "@/components/CargoModal.vue";
 import ModalLoginHub from "@/components/ModalLoginHub.vue";
 import ModalTrackStack from "@/components/ModalTrackStack.vue";
-import LangFab from "@/components/LangFab.vue";
 import AppFooter from "@/components/AppFooter.vue";
 
 // ESC fecha o modal aberto, de qualquer lugar da página.
@@ -30,7 +29,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
 
 <template>
     <a
-        class="hard sr-only bg-sun px-4 py-2 font-mono text-xs font-bold focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50"
+        class="glass sr-only rounded-full px-4 py-2 text-sm font-semibold focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50"
         href="#conteudo"
         >{{ $t("skipLink") }}</a
     >
@@ -53,6 +52,5 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
     <ModalLoginHub />
     <ModalTrackStack />
 
-    <LangFab />
     <AppFooter />
 </template>

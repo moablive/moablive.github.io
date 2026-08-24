@@ -10,7 +10,7 @@
             content="Portfólio de Guilherme Bonato, Engenheiro de Software Sênior e Arquiteto de Soluções. Especialista em .NET, Node.js, Python, Clean Architecture e DDD."
             />
         <meta name="author" content="Guilherme Bonato" />
-        <meta name="theme-color" content="#f0ede6" />
+        <meta name="theme-color" content="#f6f7fb" />
         <link rel="canonical" href="https://moablive.github.io/" />
 
         <meta property="og:type" content="website" />
@@ -43,7 +43,7 @@
             referrerpolicy="no-referrer"
             />
         <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
             rel="stylesheet"
             />
 
@@ -73,6 +73,20 @@
                     "Docker"
                 ]
             }
+        </script>
+        <script>
+            // Aplica o tema antes da primeira pintura — sem isto, quem prefere
+            // escuro vê um flash branco a cada carregamento.
+            (function () {
+                try {
+                    var salvo = localStorage.getItem("tema");
+                    var escuro = salvo ? salvo === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+                    if (escuro) {
+                        document.documentElement.classList.add("dark");
+                        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#0a0b12");
+                    }
+                } catch (e) {}
+            })();
         </script>
     </head>
     <!-- O scrollspy do Bootstrap funciona porque o conteúdo já vem prerenderizado no HTML. -->

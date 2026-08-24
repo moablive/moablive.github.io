@@ -9,10 +9,24 @@ Portfólio pessoal de **Guilherme Bonato** — Engenheiro de Software Sênior e 
 Vue 3 + TypeScript + Vite, prerenderizado com [vite-ssg](https://github.com/antfu/vite-ssg),
 estilizado com Tailwind CSS 4. Font Awesome 6 e Google Fonts via CDN.
 
-O visual segue a direção **neo-brutalista**: bordas duras de 3px, sombras deslocadas sem blur,
-zero arredondamento, Archivo Black no display e Space Mono nos rótulos. O sistema mora em
-`src/assets/style.css` — um bloco `@theme` com as cores e fontes, e quatro utilitários próprios
-(`hard`, `hard-2`, `lift`, `lift-sm`, `label-mono`) que compõem toda a interface.
+## Créditos de design
+
+A direção visual — vidro fosco, gradiente índigo→ciano, cantos arredondados e o alternador
+claro/escuro — é inspirada em **[itsvijaysingh/My-Portfolio](https://github.com/itsvijaysingh/My-Portfolio)**,
+de Vijay Singh ([itsvijay.com](https://itsvijay.com)), cujo README autoriza o uso pedindo crédito.
+
+Nenhum código foi copiado: aquele projeto é HTML + Bootstrap 5 + jQuery + Owl Carousel + AOS;
+aqui tudo foi reescrito em Vue 3 + Tailwind, com blur mais comedido, gradientes mais contidos e
+tipografia diferente (Plus Jakarta Sans no lugar de Rubik).
+
+O sistema visual mora em `src/assets/style.css`: um bloco `@theme` com cores, fontes e sombras,
+o bloco `.dark` que redefine as mesmas variáveis para o tema escuro, e seis utilitários próprios
+(`glass`, `solid-card`, `text-gradient`, `ring-gradient`, `label-mono`, `lift-hover`) que compõem
+toda a interface.
+
+**Modo claro/escuro** com persistência em `localStorage` e respeito ao `prefers-color-scheme` na
+primeira visita. Um script inline no `<head>` aplica a classe `.dark` **antes da primeira pintura** —
+sem ele, quem prefere escuro veria um lampejo branco a cada carregamento.
 
 **Sem Bootstrap.** Modais, menu colapsável e scrollspy são componentes e composables próprios
 (`BaseModal.vue`, `useModal.ts`, `useScrollSpy.ts`), o que tirou 232 KB de CSS e o bundle JS do
@@ -70,6 +84,7 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 | Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` (o build cobra os dois) |
 | Liberar um nome próprio no verificador | `scripts/i18n-allowlist.json` |
 | Mudar cores/fontes do sistema | bloco `@theme` em `src/assets/style.css` |
+| Ajustar só o tema escuro | bloco `.dark` em `src/assets/style.css` |
 | Criar um utilitário novo | `@utility` em `src/assets/style.css` |
 | Mudar `<title>`/meta iniciais | `index.html` (é o que o crawler lê primeiro) |
 
