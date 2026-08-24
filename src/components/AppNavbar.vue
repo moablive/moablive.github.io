@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useScrollSpy } from "@/composables/useScrollSpy";
-import ThemeToggle from "./ThemeToggle.vue";
 
 const links = [
     { href: "#sobre", key: "navAbout" },
@@ -48,8 +47,6 @@ const menuAberto = ref(false);
             </ul>
 
             <div class="ml-1 flex items-center gap-2">
-                <ThemeToggle />
-
                 <a
                     :href="CURRICULO"
                     target="_blank"

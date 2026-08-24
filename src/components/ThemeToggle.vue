@@ -7,7 +7,7 @@ const { tema, alternar } = useTheme();
 <template>
     <button
         type="button"
-        class="glass grid h-10 w-10 place-items-center rounded-full text-ink-2 transition-colors hover:text-brand"
+        class="glass grid h-10 w-10 place-items-center rounded-full text-ink-2 shadow-soft transition-colors hover:text-brand"
         :aria-label="$t(tema === 'dark' ? 'themeToLight' : 'themeToDark')"
         :aria-pressed="tema === 'dark'"
         @click="alternar"
