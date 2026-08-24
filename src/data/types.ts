@@ -70,8 +70,8 @@ export interface Cargo {
         techTituloKey: string;
         techs: Array<{ texto: Label; variante: string }>;
         destaque?: "primary" | "success";
-        /** Link extra no cabeçalho da data (só a Astral Wave usa). */
-        site?: { href: string; label: string };
+        /** Botões no rodapé do modal (só a Astral Wave usa). */
+        links?: Array<{ href: string; i18n: string; primario?: boolean }>;
     };
 }
 

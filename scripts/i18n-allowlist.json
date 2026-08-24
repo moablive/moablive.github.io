@@ -190,6 +190,10 @@
     "workspaces",
     "apps",
     "api",
-    "ui"
+    "ui",
+    "DNS",
+    "REST",
+    "APIs",
+    "Pix"
   ]
 }
