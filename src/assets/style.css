@@ -1,0 +1,725 @@
+/* =========================================================
+   Portfólio · Guilherme Bonato
+   1. Base e tokens          6. Portfólio + filtros
+   2. Acessibilidade         7. UI (botões, badges)
+   3. Sobre / terminal       8. Stats e visitas
+   4. Formação               9. FAB de idioma
+   5. Trajetória / modais   10. Footer e responsivo
+   ========================================================= */
+
+/* ---------- 1. BASE E TOKENS ---------- */
+:root {
+    --brand: #0d6efd;
+    --brand-dark: #0a58ca;
+    --accent-success: #198754;
+    --surface: #ffffff;
+    --surface-muted: #f8f9fa;
+    --ink: #212529;
+    --ink-muted: #6c757d;
+    --hairline: rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 14px 32px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(13, 110, 253, 0.15);
+    --radius: 16px;
+    --nav-h: 56px;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* impede que a navbar fixa cubra o alvo das âncoras */
+    scroll-padding-top: calc(var(--nav-h) + 1rem);
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding-top: var(--nav-h);
+    color: var(--ink);
+    background-color: var(--surface);
+}
+
+.section-heading {
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3rem !important;
+}
+
+.bg-light-custom {
+    background-color: var(--surface-muted);
+}
+
+/* Gradiente sutil da seção "Sobre" */
+.bg-gradient-custom {
+    background: linear-gradient(160deg, #ffffff 0%, #eef4ff 55%, #f8f9fa 100%);
+}
+
+/* ---------- 2. ACESSIBILIDADE ---------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10000;
+    padding: 0.75rem 1.25rem;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+}
+
+/* Respeita usuários que pedem menos animação */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ---------- 3. SOBRE: PERFIL E TERMINAL ---------- */
+.profile-wrapper {
+    line-height: 0;
+}
+
+.profile-img {
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.typing-svg-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Terminal "developer.ts" */
+.hacker-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    transition: all 0.4s ease;
+}
+
+.hacker-card-body {
+    background-color: #1e1e1e;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+    overflow-x: auto;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 3;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Scanline estilo CRT */
+.hacker-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hacker-card:hover {
+    box-shadow: 0 15px 30px rgba(79, 193, 255, 0.2), inset 0 0 10px rgba(79, 193, 255, 0.1) !important;
+    border-color: #4fc1ff !important;
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Tokens de sintaxe — antes eram style="" inline em cada span */
+.tok-kw {
+    color: #569cd6;
+}
+
+.tok-var {
+    color: #4fc1ff;
+}
+
+.tok-prop {
+    color: #9cdcfe;
+}
+
+.tok-str {
+    color: #ce9178;
+}
+
+.cursor-blink {
+    color: #4fc1ff;
+    font-weight: bold;
+    animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ---------- 4. FORMAÇÃO ---------- */
+.edu-card-pro {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--hairline) !important;
+    background: var(--surface);
+    border-radius: 18px;
+}
+
+.edu-card-pro:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md) !important;
+}
+
+.edu-border-warning {
+    border-left: 6px solid #ffc107 !important;
+}
+
+.edu-border-success {
+    border-left: 6px solid var(--accent-success) !important;
+}
+
+.edu-school-badge {
+    min-width: 72px;
+    height: 72px;
+    padding: 0 14px;
+    border-radius: 18px;
+    border: 1px solid var(--hairline);
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #343a40;
+    text-transform: uppercase;
+}
+
+.edu-school-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.edu-school-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.edu-school-link:hover .edu-school-name {
+    color: var(--brand);
+}
+
+.edu-course-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.edu-meta {
+    font-size: 0.96rem;
+    color: var(--ink-muted);
+    margin-bottom: 0;
+}
+
+.edu-meta i {
+    color: var(--brand);
+}
+
+.edu-action-btn {
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edu-content-wrap {
+    min-width: 0;
+}
+
+/* ---------- 5. TRAJETÓRIA E MODAIS ---------- */
+.timeline-wrapper {
+    padding-top: 1.5rem;
+}
+
+.date-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    position: relative;
+    top: 18px;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 2px solid #fff;
+    background: var(--surface-muted);
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+/* Os cards da trajetória são <button> — zera a aparência nativa */
+.timeline-card-pro {
+    display: block;
+    width: 100%;
+    appearance: none;
+    border: none;
+    border-top: 5px solid #dee2e6;
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    text-align: left;
+}
+
+.role-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.timeline-item-h:hover .date-badge,
+.timeline-item-h:focus-within .date-badge {
+    background: var(--brand);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.timeline-item-h:hover .timeline-card-pro,
+.timeline-item-h:focus-within .timeline-card-pro {
+    transform: translateY(-10px) scale(1.02);
+    border-top-color: var(--brand);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.timeline-item-h:hover .role-icon-box {
+    transform: rotateY(180deg) scale(1.1);
+}
+
+/* Cargo atual em destaque */
+.timeline-item-h.current-role .date-badge {
+    background: var(--accent-success);
+    color: #fff;
+}
+
+.card-atual-pro {
+    border-top-color: var(--accent-success);
+    background: linear-gradient(145deg, #ffffff, #f0fdf4);
+    animation: glowPulse 2.5s infinite;
+}
+
+.timeline-item-h.current-role:hover .card-atual-pro,
+.timeline-item-h.current-role:focus-within .card-atual-pro {
+    border-top-color: var(--accent-success);
+    box-shadow: 0 20px 40px rgba(25, 135, 84, 0.2) !important;
+    animation: none;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(25, 135, 84, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+    }
+}
+
+.badges-container .badge {
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+/* Modais */
+.modal-accent-primary {
+    border-top: 5px solid var(--brand) !important;
+}
+
+.modal-accent-success {
+    border-top: 5px solid var(--accent-success) !important;
+}
+
+.modal-impact-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.glass-effect-modal {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+}
+
+.modal-stack-icons {
+    height: 50px;
+}
+
+/* ---------- 6. CERTIFICADOS ---------- */
+.cert-card-pro {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.cert-card-pro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+}
+
+/* Ícone gigante de marca d'água ao fundo do card */
+.cert-watermark {
+    position: absolute;
+    right: -0.5rem;
+    bottom: -1rem;
+    font-size: 7rem;
+    color: var(--brand);
+    opacity: 0.06;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cert-card-pro:hover .cert-watermark {
+    transform: scale(1.1) rotate(-8deg);
+    opacity: 0.1;
+}
+
+.cert-content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- 7. PORTFÓLIO E FILTROS ---------- */
+.btn-filter {
+    border-radius: 999px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    color: var(--brand);
+    background: transparent;
+    border: 1px solid rgba(13, 110, 253, 0.35);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-filter:hover {
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--brand-dark);
+}
+
+.btn-filter.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+/* Sem JS todos os cards aparecem; o filtro só adiciona esta classe */
+.portfolio-item.is-hidden {
+    display: none;
+}
+
+.portfolio-item .card {
+    border: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.portfolio-item .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-logo-main {
+    height: 200px;
+    width: 100%;
+    padding: 2.5rem;
+    object-fit: contain;
+    background-color: var(--surface-muted);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item .card:hover .portfolio-logo-main {
+    transform: scale(1.1);
+}
+
+/* ---------- 8. UI: BOTÕES E BADGES ---------- */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease-in-out;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    color: #fff !important;
+}
+
+.tech-badge {
+    margin: 0.25rem;
+    vertical-align: middle;
+}
+
+.contact-badge img {
+    margin: 0 0.3rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.contact-badge img:hover {
+    transform: scale(1.1);
+}
+
+.env-card {
+    max-width: 500px;
+}
+
+/* ---------- 9. STATS E VISITAS ---------- */
+.stats-section {
+    background-color: var(--surface);
+}
+
+.contact-section {
+    background-color: var(--surface-muted);
+}
+
+#github-stats .img-fluid {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+    background-color: var(--surface);
+}
+
+#total-de-visitas .visits-card {
+    max-width: 450px;
+    border-left: 5px solid var(--brand) !important;
+}
+
+#contador-visitas-texto {
+    font-weight: 500;
+}
+
+.visit-count {
+    font-size: 1.2em;
+}
+
+.visit-footnote {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* ---------- 10. FAB DE IDIOMA ---------- */
+.i18n-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1040;
+}
+
+.fab-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    background: #111827;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.fab-toggle:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.fab-menu {
+    position: absolute;
+    right: 0;
+    bottom: 56px;
+    display: grid;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: 160ms ease;
+}
+
+.i18n-fab.open .fab-menu,
+.i18n-fab:focus-within .fab-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fab-item {
+    min-width: 56px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: #f3f4f6;
+    color: #111827;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.fab-item:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.fab-item[aria-pressed="true"] {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* ---------- 11. FOOTER E RESPONSIVO ---------- */
+.footer {
+    background-color: #212529;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+    .edu-course-title {
+        font-size: 1.35rem;
+    }
+
+    .edu-school-badge {
+        min-width: 64px;
+        height: 64px;
+        font-size: 0.85rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem !important;
+    }
+
+    .cert-watermark {
+        font-size: 5.5rem;
+    }
+
+    /* No mobile o FAB não pode cobrir o rodapé do card de visitas */
+    .i18n-fab {
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+/* ---------- 12. NAVEGAÇÃO ENTRE PÁGINAS ---------- */
+/* Marca a página atual no menu (aplicado pelo build.py) */
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.15rem;
+    height: 2px;
+    background: var(--brand);
+    border-radius: 2px;
+}
+
+/* Página 404 */
+.error-page {
+    min-height: calc(100vh - var(--nav-h) - 96px);
+}
+
+/* ---------- 13. TERMINAL "developer.ts" ---------- */
+/* A indentação era &nbsp; no HTML; virou classe ao componentizar. */
+.terminal-indent-1 {
+    padding-left: 1.25rem;
+}
+
+.terminal-indent-2 {
+    padding-left: 2.5rem;
+}
