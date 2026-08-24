@@ -18,8 +18,6 @@ export interface Projeto {
     ctaVariante?: "primary" | "success";
     /** Modal de arquitetura aberto pelo card, quando o projeto tem um. */
     modalId?: string;
-    /** Repositório fechado: mostra um selo em vez de um link que daria 404. */
-    privado?: boolean;
     /** Categorias do filtro. */
     cats: Array<"backend" | "frontend" | "python">;
 }
