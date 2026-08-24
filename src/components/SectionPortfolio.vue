@@ -18,7 +18,7 @@ const visiveis = computed(() =>
 
 <template>
     <section id="portfolio" class="mx-auto max-w-[1180px] px-5 py-20">
-        <SecaoTitulo etiqueta="05" :titulo="$t('portfolioTitle')">
+        <SecaoTitulo etiqueta="06" :titulo="$t('portfolioTitle')">
             <template #acoes>
                 <div class="glass flex flex-wrap gap-1 rounded-full p-1" role="group" :aria-label="$t('portfolioFilterAria')">
                     <button

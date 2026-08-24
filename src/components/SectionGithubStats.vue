@@ -27,7 +27,7 @@ const cartoes = computed(() => {
 
 <template>
     <section id="github-stats" class="mx-auto max-w-[1180px] px-5 py-20">
-        <SecaoTitulo etiqueta="06" :titulo="$t('statsTitle')" />
+        <SecaoTitulo etiqueta="07" :titulo="$t('statsTitle')" />
 
         <div class="grid gap-5 md:grid-cols-2">
             <div v-for="cartao in cartoes" :key="cartao.id" class="glass flex items-center justify-center rounded-3xl p-6">
