@@ -40,11 +40,10 @@ export const cargos: Cargo[] = [
         modalId: "modalGotoBiz",
         periodo: { i18n: "expBadgeGoto" },
         icone: "fa-user-shield",
-        cargo: "Tech Lead & Sec. Champion",
+        cargo: "Security Champion",
         empresa: "GotoBiz (NSTECH)",
         duracaoKey: "expDurationGoto",
         tags: [".NET", "Microservices", { i18n: "tagSecurity" }],
-        cargoCompleto: { i18n: "roleGotobizFull" },
         modal: {
             tituloIcone: "fa-user-shield",
             dataKey: "gotoDate",
