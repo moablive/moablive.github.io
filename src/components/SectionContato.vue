@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { contatos } from "@/data/tecnologias";
-import { useModal } from "@/composables/useModal";
 import SecaoTitulo from "./SecaoTitulo.vue";
 
-const { abrir } = useModal();
 const ICONES: Record<string, string> = {
     linkedin: "fab fa-linkedin-in",
     gmail: "fas fa-envelope",
@@ -42,16 +40,6 @@ const ICONES: Record<string, string> = {
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="mt-5 flex flex-wrap items-center justify-between gap-4">
-            <p class="label-mono text-ink-3" v-html="$t('visitFootnote')"></p>
-            <button
-                type="button"
-                class="rounded-full border border-hairline px-4 py-2.5 text-[13px] font-semibold transition-colors hover:border-brand hover:text-brand"
-                @click="abrir('modalTechStack', $event)"
-                v-html="$t('visitStackBtn')"
-            ></button>
         </div>
     </section>
 </template>
