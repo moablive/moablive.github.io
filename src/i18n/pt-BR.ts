@@ -53,6 +53,7 @@ export default {
     navEducation: "Formação",
     navCertificates: "Certificados",
     navExperience: "Trajetória",
+    navVentures: "Empreitadas",
     navTech: "Tecnologias",
     navPortfolio: "Portfólio",
     navGithub: "GitHub",
@@ -104,6 +105,8 @@ export default {
     // Trajetória
     expTitle: "Trajetória Profissional",
     expSubtitle: "Clique nos cards para ver os detalhes técnicos e desafios de cada cargo",
+    ventureTitle: "Empreitadas Próprias",
+    ventureSubtitle: "Projetos e empresas que toquei por conta própria, em paralelo às posições em empresas",
     expBadgeCcs: "Out de 2016 – Jun de 2021",
     expDuration1:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>4 anos e 9 meses",
@@ -121,7 +124,7 @@ export default {
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 meses",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>Jan 2022 – Atual",
     expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Em andamento — projeto próprio",
-    roleAwl: "Cofundador & Arquiteto de Soluções",
+    roleAwl: "CEO & Arquiteto de Soluções",
     tagNetworks: "Redes",
     tagSecurity: "Segurança",
     tagInfra: "Redes e Infraestrutura",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted } from "vue";
-import { cargos } from "@/data/trajetoria";
+import { todosCargos } from "@/data/trajetoria";
 import { useModal } from "@/composables/useModal";
 
 import AppNavbar from "@/components/AppNavbar.vue";
@@ -8,6 +8,7 @@ import SectionSobre from "@/components/SectionSobre.vue";
 import SectionFormacao from "@/components/SectionFormacao.vue";
 import SectionCertificados from "@/components/SectionCertificados.vue";
 import SectionTrajetoria from "@/components/SectionTrajetoria.vue";
+import SectionEmpreitadas from "@/components/SectionEmpreitadas.vue";
 import SectionTecnologias from "@/components/SectionTecnologias.vue";
 import SectionDestaque from "@/components/SectionDestaque.vue";
 import SectionPortfolio from "@/components/SectionPortfolio.vue";
@@ -42,6 +43,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
         <SectionFormacao />
         <SectionCertificados />
         <SectionTrajetoria />
+        <SectionEmpreitadas />
         <SectionTecnologias />
         <SectionDestaque />
         <SectionPortfolio />
@@ -50,7 +52,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
         <SectionVisitas />
     </main>
 
-    <CargoModal v-for="cargo in cargos" :key="cargo.id" :cargo="cargo" />
+    <CargoModal v-for="cargo in todosCargos" :key="cargo.id" :cargo="cargo" />
     <ModalLoginHub />
     <ModalTrackStack />
 

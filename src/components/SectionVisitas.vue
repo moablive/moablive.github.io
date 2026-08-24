@@ -14,7 +14,7 @@ const formatado = computed(() => (total.value === null ? "—" : total.value.toL
 
 <template>
     <section id="visitas" class="mx-auto max-w-[1180px] px-5 py-20">
-        <SecaoTitulo etiqueta="08" :titulo="$t('visitsTitle')" />
+        <SecaoTitulo etiqueta="09" :titulo="$t('visitsTitle')" />
 
         <div class="glass rounded-[2rem] p-6 sm:p-10">
             <div class="grid gap-8 lg:grid-cols-12 lg:items-center">

@@ -9,6 +9,7 @@ const links = [
     { href: "#formacao", key: "navEducation" },
     { href: "#certificados", key: "navCertificates" },
     { href: "#trajetoria", key: "navExperience" },
+    { href: "#empreitadas", key: "navVentures" },
     { href: "#tecnologias", key: "navTech" },
     { href: "#portfolio", key: "navPortfolio" },
     { href: "#github-stats", key: "navGithub" },

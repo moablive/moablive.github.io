@@ -3,38 +3,11 @@ import type { Cargo } from "./types";
 /**
  * Cada cargo carrega junto o conteúdo do seu modal — antes eram 6 arquivos HTML
  * quase idênticos em src/modals/.
+ *
+ * A lista é dividida em duas: `cargos` são as posições em empresas e
+ * `empreitadas`, os projetos próprios. Elas viram seções distintas na página.
  */
 export const cargos: Cargo[] = [
-    {
-        id: "astral-wave",
-        modalId: "modalAstralWave",
-        periodo: { i18n: "expCurrentBadge" },
-        icone: "fa-wave-square",
-        cargo: { i18n: "roleAwl" },
-        empresa: "Astral Wave Label",
-        duracaoKey: "expCurrent",
-        tags: [{ i18n: "tagSideProject" }, "Go/Node", "Docker"],
-        atual: true,
-        paralelo: true,
-        modal: {
-            tituloIcone: "fa-wave-square",
-            dataKey: "awlDate",
-            descKey: "awlDesc",
-            listaTituloKey: "modalSolutions",
-            itensKeys: ["awlB1", "awlB2", "awlB3", "awlB4"],
-            techTituloKey: "modalTech",
-            destaque: "success",
-            site: { href: "https://astralwavelabel.com", label: "astralwavelabel.com" },
-            techs: [
-                { texto: "Go", variante: "bg-dark" },
-                { texto: "Node.js", variante: "bg-dark" },
-                { texto: ".NET Core", variante: "bg-primary" },
-                { texto: "Docker", variante: "bg-primary" },
-                { texto: "Cloudflare", variante: "bg-secondary" },
-                { texto: "React / Vue", variante: "bg-secondary" },
-            ],
-        },
-    },
     {
         id: "gotobiz",
         modalId: "modalGotoBiz",
@@ -167,3 +140,40 @@ export const cargos: Cargo[] = [
         },
     },
 ];
+
+/** Empreitadas próprias, tocadas em paralelo aos empregos — não são CLT. */
+export const empreitadas: Cargo[] = [
+    {
+        id: "astral-wave",
+        modalId: "modalAstralWave",
+        periodo: { i18n: "expCurrentBadge" },
+        icone: "fa-wave-square",
+        cargo: { i18n: "roleAwl" },
+        empresa: "Astral Wave Label",
+        duracaoKey: "expCurrent",
+        tags: [{ i18n: "tagSideProject" }, "Go/Node", "Docker"],
+        atual: true,
+        paralelo: true,
+        modal: {
+            tituloIcone: "fa-wave-square",
+            dataKey: "awlDate",
+            descKey: "awlDesc",
+            listaTituloKey: "modalSolutions",
+            itensKeys: ["awlB1", "awlB2", "awlB3", "awlB4"],
+            techTituloKey: "modalTech",
+            destaque: "success",
+            site: { href: "https://astralwavelabel.com", label: "astralwavelabel.com" },
+            techs: [
+                { texto: "Go", variante: "bg-dark" },
+                { texto: "Node.js", variante: "bg-dark" },
+                { texto: ".NET Core", variante: "bg-primary" },
+                { texto: "Docker", variante: "bg-primary" },
+                { texto: "Cloudflare", variante: "bg-secondary" },
+                { texto: "React / Vue", variante: "bg-secondary" },
+            ],
+        },
+    },
+];
+
+/** As duas listas juntas, para montar os modais de uma vez só. */
+export const todosCargos: Cargo[] = [...empreitadas, ...cargos];

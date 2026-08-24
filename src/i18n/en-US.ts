@@ -53,6 +53,7 @@ export default {
     navEducation: "Education",
     navCertificates: "Certifications",
     navExperience: "Experience",
+    navVentures: "Ventures",
     navTech: "Technologies",
     navPortfolio: "Portfolio",
     navGithub: "GitHub",
@@ -104,6 +105,8 @@ export default {
     // Experience
     expTitle: "Professional Experience",
     expSubtitle: "Click the cards to see the technical details and challenges of each role",
+    ventureTitle: "Own Ventures",
+    ventureSubtitle: "Projects and companies I run on my own, in parallel with my roles at other companies",
     expBadgeCcs: "Oct 2016 – Jun 2021",
     expDuration1:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>4 years and 9 months",
@@ -121,7 +124,7 @@ export default {
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 months",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>Jan 2022 – Present",
     expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Ongoing — my own venture",
-    roleAwl: "Co-founder & Solutions Architect",
+    roleAwl: "CEO & Solutions Architect",
     tagNetworks: "Networking",
     tagSecurity: "Security",
     tagInfra: "Networking & Infrastructure",

@@ -11,7 +11,7 @@ const ICONES: Record<string, string> = {
 
 <template>
     <section id="contato" class="mx-auto max-w-[1180px] px-5 py-20">
-        <SecaoTitulo etiqueta="07" :titulo="$t('contactTitle')" />
+        <SecaoTitulo etiqueta="08" :titulo="$t('contactTitle')" />
 
         <div class="glass rounded-[2rem] p-6 sm:p-10">
             <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
