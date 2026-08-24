@@ -55,7 +55,7 @@ export default {
     navExperience: "Trajetória",
     navTech: "Tecnologias",
     navPortfolio: "Portfólio",
-    navGithub: "GitHub Stats",
+    navGithub: "GitHub",
     navContact: "Contato",
 
     // Sobre
