@@ -4,104 +4,94 @@ Portfólio pessoal de **Guilherme Bonato** — Engenheiro de Software Sênior e 
 
 🔗 **https://moablive.github.io**
 
-## Como o projeto é organizado
+## Stack
 
-O site é **uma página de rolagem única**, mas o código-fonte é fatiado: cada seção, cada modal e
-cada parte do esqueleto vive em um arquivo próprio dentro de `src/`. O `build.py` costura tudo e
-escreve o `index.html` na raiz, que é o que o GitHub Pages serve.
+Vue 3 + TypeScript + Vite, prerenderizado com [vite-ssg](https://github.com/antfu/vite-ssg).
+Bootstrap 5.3 e Font Awesome 6 via CDN.
 
-A vantagem: mexer na Trajetória significa abrir um arquivo de 200 linhas, não caçar a seção certa
-dentro de um HTML de 2 mil linhas. E o menu, o rodapé e o `<head>` existem em **um lugar só**.
+O prerender é o ponto central da escolha: `npm run build` gera um `index.html` **com todo o
+conteúdo dentro**, não um `<div id="app">` vazio. Buscadores, leitores de tela e o preview de link
+do LinkedIn/WhatsApp veem a página completa sem executar JavaScript; o Vue só hidrata por cima para
+dar interatividade. É a vantagem de componentes sem o custo de SEO de um SPA.
+
+Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub Pages resolver.
+
+## Estrutura
 
 ```
 .
-├── build.py                    # costura src/ -> index.html
+├── index.html                  # template do Vite (head, meta, JSON-LD, CDNs)
 ├── src/
-│   ├── partials/               # esqueleto compartilhado
-│   │   ├── head.html           #   <head> + abertura do <body>
-│   │   ├── nav.html            #   menu (os itens vêm da lista NAV do build.py)
-│   │   ├── fab.html            #   botão flutuante de idioma
-│   │   ├── footer.html
-│   │   └── scripts.html        #   Bootstrap + main.js + fechamento
-│   ├── sections/               # uma seção da página por arquivo
-│   │   ├── sobre.html
-│   │   ├── formacao.html
-│   │   ├── certificados.html
-│   │   ├── trajetoria.html
-│   │   ├── tecnologias.html
-│   │   ├── destaque.html       #   destaque de arquitetura (LoginHub)
-│   │   ├── portfolio.html
-│   │   ├── github-stats.html
-│   │   ├── contato.html
-│   │   └── visitas.html        #   contador de visitas
-│   └── modals/                 # um modal por arquivo
-│       ├── ccs.html  safeweb.html  ska.html  frigelar.html
-│       ├── gotobiz.html  astral-wave.html
-│       └── loginhub.html  track-stack.html
-├── index.html                  # ── GERADO — não edite ──
-├── 404.html                    # ── GERADO ──
-├── sitemap.xml                 # ── GERADO ──
-├── assets/
-│   ├── css/style.css
-│   └── js/main.js              # i18n, filtro do portfólio, contador de visitas
-├── robots.txt
-└── .nojekyll                   # desliga o processamento Jekyll do Pages
+│   ├── main.ts                 # ViteSSG em modo single-page
+│   ├── App.vue                 # monta as seções e os modais
+│   ├── data/                   # ── o conteúdo do site vive aqui ──
+│   │   ├── types.ts
+│   │   ├── projetos.ts         #   11 projetos + definição dos filtros
+│   │   ├── formacao.ts         #   4 formações
+│   │   ├── certificados.ts     #   7 certificados
+│   │   ├── trajetoria.ts       #   6 cargos, cada um com o conteúdo do seu modal
+│   │   └── tecnologias.ts      #   grupos de stack + links de contato
+│   ├── i18n/
+│   │   ├── index.ts            #   configuração do vue-i18n
+│   │   ├── pt-BR.ts            #   166 chaves
+│   │   └── en-US.ts            #   166 chaves
+│   ├── composables/
+│   │   ├── useLocale.ts        #   idioma + <html lang>, title e meta description
+│   │   ├── useVisitCounter.ts  #   contador com fallback e timeout
+│   │   └── useLabel.ts         #   resolve texto literal vs. chave de tradução
+│   ├── components/             # 16 componentes (.vue)
+│   └── assets/style.css        # estilos próprios
+├── public/                     # copiado para dist/ sem processamento
+│   ├── 404.html                #   página estática, não depende do bundle
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── .nojekyll
+└── .github/workflows/deploy.yml
 ```
 
-## Fluxo de trabalho
+## Onde mexer no quê
+
+| Quero… | Onde |
+| --- | --- |
+| Adicionar um projeto ao portfólio | um objeto em `src/data/projetos.ts` |
+| Adicionar certificado ou formação | `src/data/certificados.ts` / `formacao.ts` |
+| Adicionar um cargo (com modal) | `src/data/trajetoria.ts` — o modal sai do mesmo objeto |
+| Reordenar as seções | ordem das tags no `<template>` de `src/App.vue` |
+| Mexer no menu | array `links` em `src/components/AppNavbar.vue` |
+| Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` |
+| Mudar cores/espaçamentos | `src/assets/style.css` |
+| Mudar `<title>`/meta iniciais | `index.html` (é o que o crawler lê primeiro) |
+
+Nenhum card é escrito em HTML: os componentes iteram sobre os arrays de `src/data/`. Um projeto
+novo são ~10 linhas de objeto, não um bloco de markup copiado.
+
+## Desenvolvimento
 
 ```bash
-# 1. edite o arquivo da parte que você quer mudar, em src/
-# 2. regenere
-python3 build.py
-# 3. commit de src/ E dos arquivos gerados
-git add -A && git commit -m "..." && git push
+npm install
+npm run dev       # http://localhost:5173, com hot reload
+npm run build     # vue-tsc (checagem de tipos) + prerender -> dist/
+npm run preview   # serve o dist/ em http://localhost:8080
 ```
 
-⚠️ **Não edite `index.html`, `404.html` ou `sitemap.xml` diretamente** — eles são sobrescritos no
-próximo build.
-
-### Receitas comuns
-
-| Quero… | Onde mexer |
-| --- | --- |
-| Mudar o texto de uma seção | `src/sections/<nome>.html` |
-| Reordenar as seções | lista `SECTIONS` no `build.py` |
-| Adicionar/remover item do menu | lista `NAV` no `build.py` |
-| Adicionar uma seção nova | criar `src/sections/nova.html` + incluir em `SECTIONS` |
-| Adicionar um modal | criar `src/modals/novo.html` + incluir em `MODALS` |
-| Traduzir um texto novo | `TRANSLATIONS` em `assets/js/main.js` (as duas línguas) |
-| Mudar cores/espaçamentos | `assets/css/style.css` |
-
-O build avisa no terminal se algum item do menu apontar para uma seção que não existe.
+O `build` roda `vue-tsc --noEmit` antes de compilar: erro de tipo falha o build, e portanto o
+deploy, em vez de publicar página quebrada.
 
 ## Funcionalidades
 
-- **Bilíngue (PT-BR / EN-US)** — troca em tempo real pelo botão flutuante 🌐, incluindo `<title>`,
-  meta description e atributos `aria-label`. O idioma inicial vem do `localStorage`; na primeira
-  visita, do idioma do navegador.
-- **Menu com scrollspy** — o Bootstrap marca sozinho o item correspondente à seção visível.
-- **Filtro de portfólio** — um único grid com `data-cat`; os botões só alternam `.is-hidden`.
-  Sem JavaScript, todos os 11 projetos continuam visíveis.
+- **Bilíngue (PT-BR / EN-US)** — vue-i18n. Troca em tempo real pelo botão flutuante 🌐, incluindo
+  `<title>`, meta description e `aria-label`. O prerender sai sempre em pt-BR (é o que o buscador
+  indexa); o cliente aplica o idioma salvo ou o do navegador depois da hidratação, para não gerar
+  mismatch.
+- **Filtro do portfólio** — `computed` sobre o array de projetos.
+- **Menu com scrollspy** — Bootstrap, reinicializado no `onMounted` do `App.vue`.
 - **Contador de visitas** — integra a API [portfolio-track-visit](https://github.com/moablive/portfolio-track-visit).
   `POST /api/track-visit` registra e devolve o total; se falhar, cai para `GET /api/statistics`.
-  Timeout de 8s em ambas.
-
-## Stack
-
-HTML5 + CSS3 + JavaScript (ES2020), Bootstrap 5.3 e Font Awesome 6 via CDN. Sem framework, sem
-dependências em runtime, sem `node_modules`. O único "build" é um script Python de biblioteca padrão.
-
-## Desenvolvimento local
-
-```bash
-python3 build.py && python3 -m http.server 8080
-# abre http://localhost:8080
-```
-
-Use o servidor local, não `file://` — os caminhos dos assets são absolutos (`/assets/...`) e a
-chamada à API de visitas é bloqueada por CORS no protocolo de arquivo.
+  Timeout de 8s. Roda só no cliente — durante o prerender não há `fetch`.
 
 ## Deploy
 
-Automático: qualquer push na branch `main` publica o site (GitHub Pages, deploy pela branch, raiz `/`).
+Push na `main` dispara `.github/workflows/deploy.yml`, que compila e publica.
+Em **Settings → Pages**, a origem é **GitHub Actions** (não "deploy from a branch").
+
+A pasta `dist/` é gerada no CI e **não** é versionada.

@@ -7,10 +7,11 @@ Thumbs.db
 .idea/
 *.swp
 
-# Dependências / build (caso o projeto cresça)
+# Dependências e build
 node_modules/
 dist/
-.cache/
+.vite-ssg-temp/
+*.tsbuildinfo
 
 # Ambiente
 .env
