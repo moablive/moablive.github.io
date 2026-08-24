@@ -25,6 +25,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}dotnet,nodejs,go,react,docker,cloudflare,postgres`,
         stackAlt: ".NET, Node.js, Go, React, Docker, Cloudflare, PostgreSQL",
         href: "https://github.com/moablive/astralwavelabel",
+        modalId: "modalArqAwl",
+        arq: { descKey: "arqAwlDesc", itensKeys: ["arqAwlB1", "arqAwlB2", "arqAwlB3"] },
         cats: ["backend", "frontend"],
     },
     {
@@ -36,6 +38,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}vue,ts,tailwind,vite,github,githubactions`,
         stackAlt: "Vue, TypeScript, Tailwind, Vite, GitHub, GitHub Actions",
         href: "https://github.com/moablive/moablive.github.io",
+        modalId: "modalArqPortfolio",
+        arq: { descKey: "arqPortDesc", itensKeys: ["arqPortB1", "arqPortB2", "arqPortB3"] },
         cats: ["frontend"],
     },
     {
@@ -47,6 +51,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}vue,ts,tailwind,vite,express,postgres,docker`,
         stackAlt: "Vue, TypeScript, Tailwind, Vite, Express, PostgreSQL, Docker",
         href: "https://github.com/moablive/MoneyAPP",
+        modalId: "modalArqMoney",
+        arq: { descKey: "arqMoneyDesc", itensKeys: ["arqMoneyB1", "arqMoneyB2", "arqMoneyB3"] },
         cats: ["backend", "frontend"],
     },
     {
@@ -58,6 +64,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}dotnet,cs,postgres,mongodb,kafka,docker`,
         stackAlt: ".NET, C#, PostgreSQL, MongoDB, Kafka, Docker",
         href: "https://github.com/moablive/AmbevDeveloperStore",
+        modalId: "modalArqAmbev",
+        arq: { descKey: "arqAmbevDesc", itensKeys: ["arqAmbevB1", "arqAmbevB2", "arqAmbevB3"] },
         cats: ["backend"],
     },
     {
@@ -81,6 +89,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}dotnet,cs,sql`,
         stackAlt: ".NET, C#, SQL",
         href: "https://github.com/moablive/ef6EssencialNetCore/tree/master",
+        modalId: "modalArqEf6",
+        arq: { descKey: "arqEf6Desc", itensKeys: ["arqEf6B1", "arqEf6B2", "arqEf6B3"] },
         cats: ["backend"],
     },
     {
@@ -92,6 +102,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}angular,nodejs,express,ts,mysql,bootstrap`,
         stackAlt: "Angular, Node.js, Express, TypeScript, MySQL, Bootstrap",
         href: "https://github.com/moablive/AngularNodeHub",
+        modalId: "modalArqAnh",
+        arq: { descKey: "arqAnhDesc", itensKeys: ["arqAnhB1", "arqAnhB2", "arqAnhB3"] },
         cats: ["frontend", "backend"],
     },
     {
@@ -103,6 +115,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}vue,vite,nodejs,ts,express,mysql`,
         stackAlt: "Vue, Vite, Node.js, TypeScript, Express, MySQL",
         href: "https://github.com/moablive/Casadecarnes",
+        modalId: "modalArqCarnes",
+        arq: { descKey: "arqCarnesDesc", itensKeys: ["arqCarnesB1", "arqCarnesB2", "arqCarnesB3"] },
         cats: ["frontend"],
     },
     {
@@ -114,6 +128,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}html,css,js,bootstrap`,
         stackAlt: "HTML, CSS, JavaScript, Bootstrap",
         href: "https://codepen.io/moablive/full/VYvaQGg",
+        modalId: "modalArqNotion",
+        arq: { descKey: "arqNotionDesc", itensKeys: ["arqNotionB1", "arqNotionB2", "arqNotionB3"] },
         ctaKey: "btnViewProject",
         ctaVariante: "success",
         cats: ["frontend"],
@@ -127,6 +143,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}python,qt,mysql`,
         stackAlt: "Python, Qt, MySQL",
         href: "https://github.com/moablive/py_CRUD_PRODUTO/tree/main",
+        modalId: "modalArqPyCrud",
+        arq: { descKey: "arqPyCrudDesc", itensKeys: ["arqPyCrudB1", "arqPyCrudB2", "arqPyCrudB3"] },
         cats: ["python"],
     },
     {
@@ -138,6 +156,8 @@ export const projetos: Projeto[] = [
         stack: `${SK}python,tkinter`,
         stackAlt: "Python, Tkinter",
         href: "https://github.com/moablive/py_ImagerConverter",
+        modalId: "modalArqPyImg",
+        arq: { descKey: "arqPyImgDesc", itensKeys: ["arqPyImgB1", "arqPyImgB2", "arqPyImgB3"] },
         cats: ["python"],
     },
 ];

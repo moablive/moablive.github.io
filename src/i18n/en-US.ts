@@ -187,6 +187,59 @@ export default {
     modalChallenges: "Main Challenges &amp; Achievements:",
     modalSolutions: "Solutions &amp; Infrastructure Implemented:",
     modalTech: "Technologies Used:",
+    modalArchPoints: "How it was built:",
+
+    // Modais de arquitetura dos projetos
+    arqPortDesc:
+        "A static portfolio with no application server: Vite builds the bundle and vite-ssg prerenders the page, so the HTML reaches browsers and crawlers already finished.",
+    arqPortB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Prerender:</strong> vite-ssg runs the SPA at build time and writes the final HTML; modals stay in the DOM with <em>v-show</em> instead of <em>v-if</em>, so their content is indexed even while closed.",
+    arqPortB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Token-driven theming:</strong> Tailwind CSS 4 with colors as custom properties, redefined under the <em>.dark</em> class — switching themes reloads no stylesheet at all.",
+    arqPortB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>i18n checked at build:</strong> a script compares PT and EN, flags orphan keys and literal text left in components; a failure stops the deploy before it publishes.",
+    arqAwlDesc:
+        "The Astral Wave platform: marketplace and label, with Cloudflare in front of everything and a back-end split by workload profile.",
+    arqAwlB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Edge as gateway:</strong> DNS and traffic on Cloudflare, with WAF and CDN answering ahead of the origin — low global latency and DDoS mitigation outside the application.",
+    arqAwlB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Polyglot back-end:</strong> .NET Core for critical processing and domain rules, Node.js for lightweight I/O APIs, Go for high-concurrency services.",
+    arqAwlB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Payment and delivery:</strong> Pix checkout, with a webhook confirming the order and triggering automatic release of the WAV files.",
+    arqMoneyDesc:
+        "Personal finance PWA: a Vue SPA talking to an Express API, with a Telegram bot as a second way in.",
+    arqMoneyB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Installable front-end:</strong> a PWA in Vue and TypeScript, built with Vite and styled with Tailwind — a dashboard meant for daily use on the phone.",
+    arqMoneyB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>API and data:</strong> Express over PostgreSQL covering transactions, accounts, subscriptions, investments and loans.",
+    arqMoneyB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Telegram bot:</strong> quick entries by message, hitting the same API as the app; everything containerized with Docker.",
+    arqAmbevDesc:
+        "A .NET 8 sales system built on CQRS: writes and reads use different databases, kept in sync by Kafka events.",
+    arqAmbevB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Clean Architecture and DDD:</strong> the domain is isolated from infrastructure, with business rules free of framework or database dependencies.",
+    arqAmbevB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>CQRS with separate stores:</strong> PostgreSQL on the write side, MongoDB on the read side — each modeled for its own access pattern.",
+    arqAmbevB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Kafka:</strong> sales events propagate changes from the write side to the read side, holding eventual consistency.",
+    arqEf6Desc:
+        "A base template for RESTful APIs in .NET Core: the skeleton that repeats on every new project, already assembled.",
+    arqEf6B1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Layers in place:</strong> controllers, services and data access separated, so a new project starts with its folder structure settled.",
+    arqEf6B2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Entity Framework:</strong> mapping and migrations configured over SQL, with the context isolated from the business layer.",
+    arqEf6B3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Starting point:</strong> serves as a RESTful CRUD skeleton — clone, rename and swap the entities.",
+    arqAnhDesc:
+        "Full-stack product and user management: an Angular SPA consuming an Express API, with MySQL behind it.",
+    arqAnhB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Angular front-end:</strong> an SPA in TypeScript with Bootstrap, product and user screens organized by module.",
+    arqAnhB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Express API:</strong> REST routes in Node.js and TypeScript, with the MySQL access layer kept apart from the handlers.",
+    arqAnhB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Full CRUD:</strong> create, edit, list and delete on both entities, validated on both ends.",
+    arqCarnesDesc:
+        "An interactive dashboard for a butcher shop: a Vue front-end built with Vite, served by an Express API over MySQL.",
+    arqCarnesB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Vue and Vite front-end:</strong> a TypeScript SPA, with Vite's fast build and components split by dashboard area.",
+    arqCarnesB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Express API:</strong> Node.js and TypeScript exposing the data that feeds the panels.",
+    arqCarnesB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>MySQL:</strong> relational modeling of the products and movements the dashboard consolidates.",
+    arqNotionDesc:
+        "A Notion icon collection published as a static page: no build, no dependencies, just files being served.",
+    arqNotionB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Pure static:</strong> HTML, CSS and JavaScript with no framework and no build step — it opens straight in the browser.",
+    arqNotionB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Bootstrap:</strong> grid and components handling the gallery's responsive layout.",
+    arqNotionB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Use in Notion:</strong> every icon has its own URL, ready to paste into a page's icon field.",
+    arqPyCrudDesc:
+        "A desktop product CRUD: a PyQt5 interface talking straight to MySQL, with no web layer in between.",
+    arqPyCrudB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>PyQt5 interface:</strong> windows and forms built in Qt, with validation next to the widget.",
+    arqPyCrudB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>MySQL access:</strong> the four CRUD operations as parameterized queries, no ORM.",
+    arqPyCrudB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Local application:</strong> runs on the user's machine and reaches the database over the network — no application server.",
+    arqPyImgDesc:
+        "An image converter with 4K upscaling: a Tkinter desktop tool, designed for batches.",
+    arqPyImgB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Tkinter interface:</strong> a library from Python's own standard library, with no external GUI dependency.",
+    arqPyImgB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Conversion and upscaling:</strong> format switching and resizing up to 4K, preserving the original aspect ratio.",
+    arqPyImgB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Batch processing:</strong> the queue takes several files at once, with progress visible in the window.",
     modalTechConcepts: "Technologies &amp; Concepts:",
 
     // Modal CCS

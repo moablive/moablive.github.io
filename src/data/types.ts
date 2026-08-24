@@ -16,8 +16,11 @@ export interface Projeto {
     /** Chave do rótulo do botão; ausente = "GitHub". */
     ctaKey?: string;
     ctaVariante?: "primary" | "success";
-    /** Modal de arquitetura aberto pelo card, quando o projeto tem um. */
+    /** Modal de arquitetura aberto pelo card. LoginHUB e Tracker têm modais
+        próprios, escritos à mão; os demais usam `arq` no modal genérico. */
     modalId?: string;
+    /** Resumo de arquitetura do modal genérico: um parágrafo e os tópicos. */
+    arq?: { descKey: string; itensKeys: string[] };
     /** Categorias do filtro. */
     cats: Array<"backend" | "frontend" | "python">;
 }
