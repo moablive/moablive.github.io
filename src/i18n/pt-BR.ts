@@ -10,6 +10,10 @@ export default {
     lhP1: "Um <strong>Identity Provider (IdP)</strong> centralizado, organizado como monorepo: a API em Express e o painel SPA em React convivem no mesmo repositório, compartilhando esquema, serviços e cliente HTTP por pacotes internos.",
     projMoneyApp: "PWA de controle financeiro pessoal. Dashboard em dark mode com transações, contas, assinaturas, investimentos e empréstimos — mais um bot de Telegram.",
     projLoginHub: "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT e master keys.",
+    projAstralWave:
+        "Marketplace e selo de música eletrônica da minha empresa. Back-end poliglota (.NET Core, Node.js e Go) atrás da Cloudflare como gateway, com checkout em Pix, confirmação por webhook e entrega automatizada dos arquivos WAV.",
+    projPortfolio:
+        "Este portfólio. SPA em Vue 3 e TypeScript, prerenderizada com vite-ssg para o conteúdo chegar pronto aos buscadores. Tailwind CSS 4 com tema claro e escuro por tokens, i18n PT/EN validado por um verificador no build e deploy contínuo no GitHub Pages via GitHub Actions.",
     btnArch: "Arquitetura",
     tagOwnCompany: "Empresa própria",
     visitsTitle: "Contador de visitas",

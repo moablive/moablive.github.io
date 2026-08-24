@@ -8,11 +8,12 @@
    Sistema visual — vidro fosco + gradiente contido
    ========================================================= */
 @theme {
-    /* Preenchimentos de gradiente: FIXOS nos dois temas, porque o botão
-       carrega o próprio fundo e o texto por cima é sempre branco.
-       Branco sobre #6a35dc = 6.65:1, sobre #a82fc4 = 5.43:1. */
-    --color-fill: #6a35dc;
-    --color-fill-2: #a82fc4;
+    /* Preenchimentos de gradiente. Acompanham o tema (o escuro é redefinido
+       em .dark), mas o texto por cima é sempre branco, então os dois pares
+       precisam ficar acima de 4.5:1 com branco.
+       Claro: #7c3aed = 5.70:1, #c026d3 = 4.71:1. */
+    --color-fill: #7c3aed;
+    --color-fill-2: #c026d3;
 
     /* A mesma marca usada como TEXTO sobre o fundo da página precisa mudar
        com o tema — senão fica ilegível no escuro (a versão anterior batia
@@ -40,6 +41,12 @@
 }
 
 .dark {
+    /* Gradiente mais fundo no escuro: o vivo do tema claro brilha demais
+       contra o fundo quase preto. Branco sobre #6a35dc = 6.65:1, sobre
+       #a82fc4 = 5.43:1. */
+    --color-fill: #6a35dc;
+    --color-fill-2: #a82fc4;
+
     /* Tons claros da marca: sobre o fundo quase preto, escuro não se lê. */
     --color-brand: #b79bff;
     --color-brand-2: #e08bf0;
