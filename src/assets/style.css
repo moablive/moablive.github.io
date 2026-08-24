@@ -138,12 +138,17 @@ body {
     background-repeat: no-repeat;
 }
 
-a {
-    color: var(--color-brand);
-    text-decoration: none;
-}
-a:hover {
-    color: var(--color-brand-2);
+/* Precisa ficar em @layer base: CSS sem layer vence as utilities do Tailwind
+   (que moram em @layer utilities), então este `a` derrubava o text-white dos
+   botões — texto roxo da marca sobre o gradiente roxo, 1.35:1. */
+@layer base {
+    a {
+        color: var(--color-brand);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--color-brand-2);
+    }
 }
 
 :focus-visible {
