@@ -32,7 +32,9 @@ export const projetos: Projeto[] = [
     },
     {
         id: "portfolio",
-        titulo: "moablive.github.io",
+        // Chave própria, e não portfolioTitle: renomear a seção não deve
+        // renomear o card junto.
+        titulo: { i18n: "projPortfolioTitle" },
         descKey: "projPortfolio",
         logo: `${SI}/vuedotjs/4FC08D`,
         logoAlt: "Vue.js",

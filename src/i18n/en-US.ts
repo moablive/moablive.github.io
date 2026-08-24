@@ -17,6 +17,7 @@ export default {
         "Electronic music marketplace and label of my own company. Polyglot back-end (.NET Core, Node.js and Go) behind Cloudflare as the gateway, with Pix checkout, webhook confirmation and automated WAV delivery.",
     projPortfolio:
         "This portfolio. A Vue 3 and TypeScript SPA, prerendered with vite-ssg so search engines get the finished content. Tailwind CSS 4 with token-driven light and dark themes, PT/EN i18n guarded by a checker in the build, and continuous deployment to GitHub Pages via GitHub Actions.",
+    projPortfolioTitle: "Portfolio",
     btnArch: "Architecture",
     tagOwnCompany: "Own company",
     visitsTitle: "Visit counter",

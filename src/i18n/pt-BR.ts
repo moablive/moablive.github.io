@@ -17,6 +17,7 @@ export default {
         "Marketplace e selo de música eletrônica da minha empresa. Back-end poliglota (.NET Core, Node.js e Go) atrás da Cloudflare como gateway, com checkout em Pix, confirmação por webhook e entrega automatizada dos arquivos WAV.",
     projPortfolio:
         "Este portfólio. SPA em Vue 3 e TypeScript, prerenderizada com vite-ssg para o conteúdo chegar pronto aos buscadores. Tailwind CSS 4 com tema claro e escuro por tokens, i18n PT/EN validado por um verificador no build e deploy contínuo no GitHub Pages via GitHub Actions.",
+    projPortfolioTitle: "Portfólio",
     btnArch: "Arquitetura",
     tagOwnCompany: "Empresa própria",
     visitsTitle: "Contador de visitas",
