@@ -18,11 +18,11 @@ import { contatos } from "@/data/tecnologias";
                             rel="noopener noreferrer"
                             class="mx-1"
                         >
-                            <img :src="contato.badge" :alt="contato.alt" loading="lazy" />
+                            <img :src="contato.badge" :alt="$t(contato.altKey)" loading="lazy" />
                         </a>
                     </div>
                     <p class="text-muted">
-                        <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Porto Alegre, RS — Brasil
+                        <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>{{ $t("location") }}
                     </p>
                 </div>
             </div>

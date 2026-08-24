@@ -55,9 +55,10 @@ export interface Cargo {
     duracaoKey: string;
     tags: Label[];
     atual?: boolean;
+    /** Forma extensa do cargo, usada no título do modal ("Senior Software Eng." -> "...Engineer"). */
+    cargoCompleto?: Label;
     modal: {
         tituloIcone: string;
-        titulo: string;
         dataKey: string;
         descKey: string;
         listaTituloKey: string;

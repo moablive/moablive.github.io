@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import type { Cargo } from "@/data/types";
 import { useLabel } from "@/composables/useLabel";
 
-defineProps<{ cargo: Cargo }>();
+const props = defineProps<{ cargo: Cargo }>();
 const { lab } = useLabel();
+
+// O título do modal deriva do cargo traduzido — antes era literal e ficava
+// em português mesmo com a página em inglês.
+const tituloModal = computed(() => `${lab(props.cargo.cargoCompleto ?? props.cargo.cargo)} — ${props.cargo.empresa}`);
 </script>
 
 <template>
@@ -20,7 +25,7 @@ const { lab } = useLabel();
                         :class="cargo.modal.destaque === 'success' ? 'text-success' : 'text-primary'"
                         :id="`${cargo.modalId}Label`"
                     >
-                        <i class="fas me-2" :class="cargo.modal.tituloIcone" aria-hidden="true"></i>{{ cargo.modal.titulo }}
+                        <i class="fas me-2" :class="cargo.modal.tituloIcone" aria-hidden="true"></i>{{ tituloModal }}
                     </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="$t('close')"></button>
                 </div>

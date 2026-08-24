@@ -31,9 +31,25 @@ export function useLocale() {
     }
 
     function syncDocument(current: string) {
+        const titulo = t("titleHome");
+        const descricao = t("descHome");
+
         document.documentElement.setAttribute("lang", current);
-        document.title = t("titleHome");
-        document.querySelector('meta[name="description"]')?.setAttribute("content", t("descHome"));
+        document.title = titulo;
+
+        // Inclui og: e twitter: — sem isto o preview de link continuava em
+        // português mesmo com a página em inglês.
+        const metas: Array<[string, string]> = [
+            ['meta[name="description"]', descricao],
+            ['meta[property="og:title"]', titulo],
+            ['meta[property="og:description"]', descricao],
+            ['meta[property="og:locale"]', current.replace("-", "_")],
+            ['meta[name="twitter:title"]', titulo],
+            ['meta[name="twitter:description"]', descricao],
+        ];
+        for (const [seletor, valor] of metas) {
+            document.querySelector(seletor)?.setAttribute("content", valor);
+        }
     }
 
     onMounted(() => {

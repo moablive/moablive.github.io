@@ -35,7 +35,7 @@ const terminal = [
                     <div class="mb-4 d-inline-block position-relative profile-wrapper">
                         <img
                             src="https://github.com/moablive.png"
-                            alt="Foto de Guilherme Bonato"
+                            :alt="$t('altPhoto')"
                             class="rounded-circle shadow-lg border border-4 border-white profile-img"
                             width="180"
                             height="180"
@@ -48,7 +48,7 @@ const terminal = [
                     <div class="mb-3 typing-svg-wrapper">
                         <img
                             :src="TYPING_SVG"
-                            alt="Software Engineer &amp; Architect · Especialista em .NET, Node e Python · SOLID, DDD, TDD, Clean Code"
+                            :alt="$t('altTyping')"
                             class="img-fluid"
                             width="500"
                             height="40"
@@ -60,7 +60,7 @@ const terminal = [
                     <div class="mb-4 w-100 d-flex justify-content-center justify-content-lg-start">
                         <img
                             src="https://skillicons.dev/icons?i=dotnet,nodejs,py,postgres,redis,kafka,docker"
-                            alt="Stack principal: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker"
+                            :alt="$t('altMainStack')"
                             class="img-fluid"
                             loading="lazy"
                         />

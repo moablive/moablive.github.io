@@ -34,18 +34,18 @@ export const contatos = [
         id: "linkedin",
         href: "https://www.linkedin.com/in/guilhermebonato/",
         badge: "https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white",
-        alt: "LinkedIn de Guilherme Bonato",
+        altKey: "altLinkedin",
     },
     {
         id: "gmail",
         href: "mailto:guilhermeferrazbonato@gmail.com",
         badge: "https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white",
-        alt: "E-mail de Guilherme Bonato",
+        altKey: "altEmail",
     },
     {
         id: "github",
         href: "https://github.com/moablive",
         badge: "https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white",
-        alt: "GitHub de moablive",
+        altKey: "altGithub",
     },
 ];

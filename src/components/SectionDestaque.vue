@@ -28,7 +28,7 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
             <div class="mt-4 p-3 border rounded-4 bg-white shadow-sm mx-auto env-card">
                 <div class="d-flex align-items-center justify-content-between px-3 gap-2 flex-wrap">
                     <span class="fw-bold text-secondary"
-                        ><i class="fab fa-docker me-2" aria-hidden="true"></i>Environment:</span
+                        ><i class="fab fa-docker me-2" aria-hidden="true"></i>{{ $t("envLabel") }}</span
                     >
                     <span
                         class="badge bg-success bg-opacity-10 text-success border border-success px-3 py-2 rounded-pill"

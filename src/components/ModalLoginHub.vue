@@ -27,7 +27,7 @@ const pilares = [
                     <div class="row align-items-center">
                         <div class="col-md-5 text-center mb-4 mb-md-0">
                             <i class="fas fa-server fa-6x text-secondary mb-3" aria-hidden="true"></i>
-                            <h3 class="h6 fw-bold mt-2">Enterprise Architecture</h3>
+                            <h3 class="h6 fw-bold mt-2">{{ $t("lhEnterprise") }}</h3>
                         </div>
                         <div class="col-md-7">
                             <h3 class="h5 fw-bold mb-3">{{ $t("lhWhat") }}</h3>

@@ -58,7 +58,8 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 | Adicionar um cargo (com modal) | `src/data/trajetoria.ts` — o modal sai do mesmo objeto |
 | Reordenar as seções | ordem das tags no `<template>` de `src/App.vue` |
 | Mexer no menu | array `links` em `src/components/AppNavbar.vue` |
-| Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` |
+| Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` (o build cobra os dois) |
+| Liberar um nome próprio no verificador | `scripts/i18n-allowlist.json` |
 | Mudar cores/espaçamentos | `src/assets/style.css` |
 | Mudar `<title>`/meta iniciais | `index.html` (é o que o crawler lê primeiro) |
 
@@ -70,19 +71,27 @@ novo são ~10 linhas de objeto, não um bloco de markup copiado.
 ```bash
 npm install
 npm run dev       # http://localhost:5173, com hot reload
-npm run build     # vue-tsc (checagem de tipos) + prerender -> dist/
+npm run check:i18n # verifica a cobertura de tradução
+npm run build     # check:i18n + vue-tsc + prerender -> dist/
 npm run preview   # serve o dist/ em http://localhost:8080
 ```
 
-O `build` roda `vue-tsc --noEmit` antes de compilar: erro de tipo falha o build, e portanto o
-deploy, em vez de publicar página quebrada.
+O `build` roda `check:i18n` e `vue-tsc --noEmit` antes de compilar: falha de tradução ou erro de
+tipo derruba o build — e portanto o deploy — em vez de publicar página quebrada.
 
 ## Funcionalidades
 
-- **Bilíngue (PT-BR / EN-US)** — vue-i18n. Troca em tempo real pelo botão flutuante 🌐, incluindo
-  `<title>`, meta description e `aria-label`. O prerender sai sempre em pt-BR (é o que o buscador
-  indexa); o cliente aplica o idioma salvo ou o do navegador depois da hidratação, para não gerar
-  mismatch.
+- **Bilíngue (PT-BR / EN-US)** — vue-i18n, com **cobertura total**: além do texto visível, trocam
+  de idioma o `<title>`, a meta description, as tags `og:`/`twitter:` (o preview de link do
+  LinkedIn), os `alt` das imagens e os `aria-label`. O prerender sai sempre em pt-BR (é o que o
+  buscador indexa); o cliente aplica o idioma salvo ou o do navegador depois da hidratação, para
+  não gerar mismatch.
+
+  **Nada de texto solto no código.** `npm run check:i18n` (que o build roda automaticamente) falha se:
+  os dois idiomas divergirem em chaves; um componente usar chave inexistente; sobrar chave sem uso;
+  ou aparecer literal visível que não seja nome próprio. A lista de nomes próprios permitidos
+  (empresas, tecnologias, instituições) fica em `scripts/i18n-allowlist.json` — se o verificador
+  reclamar de um termo legítimo, declare-o lá; qualquer outra coisa vira chave em `src/i18n/`.
 - **Filtro do portfólio** — `computed` sobre o array de projetos.
 - **Menu com scrollspy** — Bootstrap, reinicializado no `onMounted` do `App.vue`.
 - **Contador de visitas** — integra a API [portfolio-track-visit](https://github.com/moablive/portfolio-track-visit).

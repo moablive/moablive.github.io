@@ -1,6 +1,21 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    altPhoto: "Photo of Guilherme Bonato",
+    altTyping: "Software Engineer & Architect · Specialist in .NET, Node and Python · SOLID, DDD, TDD, Clean Code",
+    altMainStack: "Main stack: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker",
+    altTopLangs: "Most used languages on GitHub by moablive",
+    altGithubStats: "GitHub statistics for moablive",
+    altLinkedin: "Guilherme Bonato on LinkedIn",
+    altEmail: "Guilherme Bonato's e-mail",
+    altGithub: "moablive on GitHub",
+    location: "Porto Alegre, RS — Brazil",
+    envLabel: "Environment:",
+    lhEnterprise: "Enterprise Architecture",
+    roleCcsFull: "Tech Lead",
+    roleSafewebFull: "Full Stack Engineer",
+    roleSeniorFull: "Senior Software Engineer",
+    roleGotobizFull: "Tech Lead & Security Champion",
     titleHome: "Guilherme Bonato — Senior Software Engineer",
     descHome:
         "Portfolio of Guilherme Bonato, Senior Software Engineer and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture and DDD.",

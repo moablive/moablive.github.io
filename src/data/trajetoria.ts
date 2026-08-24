@@ -14,9 +14,9 @@ export const cargos: Cargo[] = [
         empresa: "CCS Certificadora Sul",
         duracaoKey: "expDuration1",
         tags: ["HTML5", "SQL", { i18n: "tagNetworks" }],
+        cargoCompleto: { i18n: "roleCcsFull" },
         modal: {
             tituloIcone: "fa-network-wired",
-            titulo: "Tech Lead — CCS Certificadora Sul",
             dataKey: "ccsDate",
             descKey: "ccsDesc",
             listaTituloKey: "modalActivities",
@@ -40,9 +40,9 @@ export const cargos: Cargo[] = [
         empresa: "Safeweb Segurança",
         duracaoKey: "expDuration2",
         tags: ["C#", "AngularJS", ".NET"],
+        cargoCompleto: { i18n: "roleSafewebFull" },
         modal: {
             tituloIcone: "fa-shield-alt",
-            titulo: "Full Stack Engineer — Safeweb Segurança",
             dataKey: "swDate",
             descKey: "swDesc",
             listaTituloKey: "modalActivities",
@@ -66,9 +66,9 @@ export const cargos: Cargo[] = [
         empresa: "SKA Automação",
         duracaoKey: "expDuration3",
         tags: ["C#", "SQL", "Web APIs"],
+        cargoCompleto: { i18n: "roleSeniorFull" },
         modal: {
             tituloIcone: "fa-cogs",
-            titulo: "Senior Software Engineer — SKA Automação",
             dataKey: "skaDate",
             descKey: "skaDesc",
             listaTituloKey: "modalActivities",
@@ -93,9 +93,9 @@ export const cargos: Cargo[] = [
         empresa: "Frigelar",
         duracaoKey: "expDurationFri",
         tags: ["React/Vue", "Kafka"],
+        cargoCompleto: { i18n: "roleSeniorFull" },
         modal: {
             tituloIcone: "fa-snowflake",
-            titulo: "Senior Software Engineer — Frigelar",
             dataKey: "friDate",
             descKey: "friDesc",
             listaTituloKey: "modalActivities",
@@ -119,9 +119,9 @@ export const cargos: Cargo[] = [
         empresa: "GotoBiz (NSTECH)",
         duracaoKey: "expDurationGoto",
         tags: [".NET", "Microservices", { i18n: "tagSecurity" }],
+        cargoCompleto: { i18n: "roleGotobizFull" },
         modal: {
             tituloIcone: "fa-user-shield",
-            titulo: "Tech Lead & Security Champion — GotoBiz / NSTECH",
             dataKey: "gotoDate",
             descKey: "gotoDesc",
             listaTituloKey: "modalChallenges",
@@ -149,7 +149,6 @@ export const cargos: Cargo[] = [
         atual: true,
         modal: {
             tituloIcone: "fa-wave-square",
-            titulo: "Arquiteto de Soluções — Astral Wave",
             dataKey: "awlDate",
             descKey: "awlDesc",
             listaTituloKey: "modalSolutions",
