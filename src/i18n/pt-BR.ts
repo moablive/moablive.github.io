@@ -11,7 +11,7 @@ export default {
     projMoneyApp: "PWA de controle financeiro pessoal. Dashboard em dark mode com transações, contas, assinaturas, investimentos e empréstimos — mais um bot de Telegram.",
     projLoginHub: "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT e master keys.",
     btnArch: "Arquitetura",
-    tagSideProject: "Projeto paralelo",
+    tagOwnCompany: "Empresa própria",
     visitsTitle: "Contador de visitas",
     visitSuffix: "vezes esta página foi visitada",
     visitLoading: "Consultando o contador...",
@@ -123,7 +123,7 @@ export default {
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 meses",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>Jan 2022 – Atual",
-    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Em andamento — projeto próprio",
+    expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Em andamento — empresa própria",
     roleAwl: "CEO & Arquiteto de Soluções",
     tagNetworks: "Redes",
     tagSecurity: "Segurança",
@@ -237,11 +237,15 @@ export default {
     // Modal Astral Wave
     awlDate: "Jan 2022 – Atualmente",
     awlDesc:
-        "Cofundei a Astral Wave e conduzo a definição técnica, a visão estratégica e o desenho arquitetural de todo o portfólio de produtos digitais. É uma empreitada própria, tocada em paralelo às demais posições, com foco em segurança de borda e escalabilidade em nuvem.",
-    awlB1: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Segurança &amp; cloud:</strong> implementação de Cloudflare (WAF/CDN) aliado a containers Docker.",
-    awlB2: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Ecossistema back-end poliglota:</strong> microsserviços interoperáveis escritos em .NET Core, Node.js e Golang.",
-    awlB3: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Front-end moderno:</strong> construção de interfaces complexas com React e Vue.js focadas na experiência do usuário.",
-    awlB4: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Engenharia de software:</strong> aplicação contínua de Clean Architecture e design eficiente de banco de dados SQL.",
+        "Fundei e lidero a Astral Wave, marketplace e selo brasileiro de música eletrônica, respondendo pelo negócio e pela engenharia. Defino a estratégia de produto e desenho a arquitetura <em>edge-first</em> por trás dela: DJs compram WAV com qualidade de pista, pagam via Pix e baixam na hora, enquanto os artistas recebem repasse direto e transparente.",
+    awlB1: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Estratégia de borda e segurança (Cloudflare):</strong> gestão de tráfego e DNS com a Cloudflare como gateway principal, com WAF avançado e CDN para baixa latência global e mitigação de DDoS.",
+    awlB2: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Pagamentos e entrega digital:</strong> checkout nativo em Pix, com confirmação de pedido por webhook e entrega automatizada do WAV — sem cartão internacional nem conversão de moeda.",
+    awlB3: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Back-end e microsserviços:</strong> arquitetura poliglota desenhada por eficiência — .NET Core no processamento crítico e nas regras de domínio (DDD), Node.js em APIs leves de I/O e Go nos microsserviços de alta concorrência.",
+    awlB4: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Ecossistema front-end:</strong> SPAs em React para os painéis administrativos complexos e Vue.js nas interfaces progressivas, com foco estrito em Core Web Vitals.",
+    awlB5: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Infraestrutura e containerização:</strong> padronização de dev e produção com Docker, garantindo imutabilidade e consistência, e orquestração pensada para deploys rápidos e escala horizontal.",
+    awlB6: "<i class='fas fa-check-circle text-success me-2' aria-hidden='true'></i><strong>Engenharia de software e dados:</strong> modelagem relacional (SQL) voltada a performance e Clean Architecture aplicada com rigor, desacoplando domínio de infraestrutura.",
+    awlBtnSite: "<i class='fas fa-arrow-up-right-from-square me-2' aria-hidden='true'></i> Acessar o site",
+    awlBtnLinkedin: "<i class='fab fa-linkedin me-2' aria-hidden='true'></i> LinkedIn da empresa",
 
     // Modal LoginHub
     lhWhat: "O que é este projeto?",

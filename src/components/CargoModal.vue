@@ -12,11 +12,7 @@ const titulo = computed(() => `${lab(props.cargo.cargoCompleto ?? props.cargo.ca
 
 <template>
     <BaseModal :id="cargo.modalId" :titulo="titulo" :icone="cargo.modal.tituloIcone">
-        <p v-if="!cargo.modal.site" class="label-mono text-ink-3" v-html="$t(cargo.modal.dataKey)"></p>
-        <p v-else class="label-mono text-ink-3">
-            <i class="fas fa-calendar-alt mr-2" aria-hidden="true"></i>{{ $t(cargo.modal.dataKey) }} ·
-            <a :href="cargo.modal.site.href" target="_blank" rel="noopener noreferrer">{{ cargo.modal.site.label }}</a>
-        </p>
+        <p class="label-mono text-ink-3" v-html="$t(cargo.modal.dataKey)"></p>
 
         <p class="mt-5 text-[15px] leading-relaxed text-ink-2" v-html="$t(cargo.modal.descKey)"></p>
 
@@ -38,6 +34,23 @@ const titulo = computed(() => `${lab(props.cargo.cargoCompleto ?? props.cargo.ca
                 class="rounded-full border border-hairline px-3 py-1.5 font-mono text-[11px] text-ink-2"
                 >{{ lab(tech.texto) }}</span
             >
+        </div>
+
+        <div v-if="cargo.modal.links" class="mt-8 flex flex-wrap gap-3">
+            <a
+                v-for="link in cargo.modal.links"
+                :key="link.href"
+                :href="link.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full px-5 py-3 text-[13px] font-semibold transition-opacity"
+                :class="
+                    link.primario
+                        ? 'bg-linear-100 from-fill to-fill-2 text-white hover:opacity-90'
+                        : 'border border-hairline transition-colors hover:border-brand hover:text-brand'
+                "
+                v-html="$t(link.i18n)"
+            ></a>
         </div>
     </BaseModal>
 </template>

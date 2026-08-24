@@ -5,20 +5,28 @@ import SecaoTitulo from "./SecaoTitulo.vue";
 
 const { tema } = useTheme();
 
-// Os cartões são imagens geradas por serviço externo: o tema precisa ir na URL.
+const BASE = "https://github-readme-stats-git-master-rickstaa.vercel.app/api";
+
+/**
+ * Os cartões são imagens geradas por serviço externo, então o tema precisa ir
+ * na URL. O fundo vai transparente (00000000) de propósito: quem pinta o cartão
+ * é o .glass em volta — com fundo sólido sobrava um retângulo branco no claro.
+ */
 const cartoes = computed(() => {
     const escuro = tema.value === "dark";
-    const fundo = escuro ? "12141D" : "FFFFFF";
-    const texto = escuro ? "E8EAF2" : "12141C";
+    const texto = escuro ? "A6ACBE" : "4A4F60";
+    const marca = escuro ? "B79BFF" : "6A35DC";
+    const comum = `username=moablive&hide_border=true&bg_color=00000000&text_color=${texto}&title_color=${marca}&icon_color=${marca}&cache_seconds=86400`;
+
     return [
         {
             id: "langs",
-            src: `https://github-readme-stats-git-master-rickstaa.vercel.app/api/top-langs/?username=moablive&layout=compact&hide_border=true&hide_title=true&hide_progress=true&langs_count=8&bg_color=${fundo}&text_color=${texto}&cache_seconds=86400`,
+            src: `${BASE}/top-langs/?${comum}&layout=compact&hide_title=true&hide_progress=true&langs_count=8`,
             altKey: "altTopLangs",
         },
         {
             id: "stats",
-            src: `https://github-stats-alpha.vercel.app/api?username=moablive&show_icons=true&theme=${escuro ? "dark" : "light"}&include_all_commits=true&count_private=true&cache_seconds=86400`,
+            src: `${BASE}/?${comum}&show_icons=true&include_all_commits=true&count_private=true&hide_title=true&hide_rank=true`,
             altKey: "altGithubStats",
         },
     ];
