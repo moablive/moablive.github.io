@@ -1,6 +1,14 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    heroKicker: "Senior Software Engineer — since 2016",
+    heroTitle: "Solutions architect",
+    heroLead: ".NET, Node and Go. Clean Architecture, DDD and edge security. Systems that survive their second year in production.",
+    heroCta: "See projects ↓",
+    statYears: "Years",
+    statCompanies: "Companies",
+    statProjects: "Projects",
+    statVisits: "Visits",
     altPhoto: "Photo of Guilherme Bonato",
     altTyping: "Software Engineer & Architect · Specialist in .NET, Node and Python · SOLID, DDD, TDD, Clean Code",
     altMainStack: "Main stack: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker",
@@ -11,7 +19,6 @@ export default {
     altGithub: "moablive on GitHub",
     location: "Porto Alegre, RS — Brazil",
     envLabel: "Environment:",
-    lhEnterprise: "Enterprise Architecture",
     roleCcsFull: "Tech Lead",
     roleSafewebFull: "Full Stack Engineer",
     roleSeniorFull: "Senior Software Engineer",
@@ -39,7 +46,6 @@ export default {
     navContact: "Contact",
 
     // About
-    aboutGreeting: "Hello! I'm Guilherme Bonato",
     aboutExperience:
         "Senior Software Engineer with solid experience in <strong>development and architecture of scalable solutions</strong>. Specialist in building robust systems applying <strong>SOLID</strong>, <strong>DDD</strong> and <strong>TDD</strong> principles.",
 
@@ -118,8 +124,6 @@ export default {
     featureBtnArch:
         "<i class='fas fa-network-wired me-2' aria-hidden='true'></i> View Solution Architecture",
     featureBtnProd: "<i class='fas fa-rocket me-2' aria-hidden='true'></i> Open Production",
-    featureEnvOnline:
-        "<span class='spinner-grow spinner-grow-sm me-2' aria-hidden='true'></span>Online via Cloudflare Tunnel",
 
     // Portfolio
     portfolioTitle: "Portfolio",
@@ -156,8 +160,6 @@ export default {
 
     // Visits
     visitStackBtn: "<i class='fab fa-github me-2' aria-hidden='true'></i> View Tracker Stack",
-    visitLoading: "Processing visits...",
-    visitSuffix: "times this page has been visited.",
     visitFootnote: "Processed via Cloudflare &amp; PostgreSQL",
     visitOffline: "Statistics temporarily offline",
 
@@ -253,5 +255,4 @@ export default {
 
     // Footer / FAB
     footerRights: "All rights reserved.",
-    langToggle: "Change language",
     } as const;

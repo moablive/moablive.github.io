@@ -1,62 +1,45 @@
 <script setup lang="ts">
 import { cargos } from "@/data/trajetoria";
 import { useLabel } from "@/composables/useLabel";
+import { useModal } from "@/composables/useModal";
+import SecaoTitulo from "./SecaoTitulo.vue";
 
 const { lab } = useLabel();
+const { abrir } = useModal();
 </script>
 
 <template>
-    <section id="trajetoria" class="experience-section py-5 bg-light-custom">
-        <div class="container timeline-wrapper">
-            <h2 class="section-heading text-center mb-2">{{ $t("expTitle") }}</h2>
-            <p class="text-center text-muted mb-5">{{ $t("expSubtitle") }}</p>
+    <section id="trajetoria" class="mx-auto max-w-[1400px] px-4 py-16 sm:px-6">
+        <SecaoTitulo numero="03" :titulo="$t('expTitle')" />
+        <p class="label-mono -mt-3 mb-8 text-ink-soft">{{ $t("expSubtitle") }}</p>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 justify-content-center">
-                <div class="col" v-for="cargo in cargos" :key="cargo.id">
-                    <div
-                        class="timeline-item-h d-flex flex-column h-100 align-items-center"
-                        :class="{ 'current-role': cargo.atual }"
+        <div class="flex flex-col gap-4">
+            <button
+                v-for="cargo in cargos"
+                :key="cargo.id"
+                type="button"
+                class="hard grid w-full grid-cols-1 items-center gap-5 p-6 text-left transition-transform hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[7px_7px_0_var(--color-ink)] md:grid-cols-[9rem_1fr_auto]"
+                :class="cargo.atual ? 'bg-sun' : 'bg-paper-2'"
+                @click="abrir(cargo.modalId, $event)"
+            >
+                <span class="font-display text-2xl leading-none tracking-[-0.03em]" v-html="lab(cargo.periodo)"></span>
+
+                <span>
+                    <span class="block text-lg font-bold tracking-tight">{{ lab(cargo.cargo) }}</span>
+                    <span class="label-mono mt-1.5 block text-ink-soft">{{ cargo.empresa }}</span>
+                    <span class="label-mono mt-1 block text-ink-soft/70" v-html="$t(cargo.duracaoKey)"></span>
+                </span>
+
+                <span class="flex flex-wrap gap-2 md:justify-end">
+                    <span
+                        v-for="(tag, i) in cargo.tags"
+                        :key="i"
+                        class="hard-2 px-2.5 py-1 font-mono text-[11px] font-bold"
+                        :class="cargo.atual ? 'bg-ink text-sun' : 'bg-paper'"
+                        >{{ lab(tag) }}</span
                     >
-                        <span class="date-badge" v-html="lab(cargo.periodo)"></span>
-
-                        <button
-                            type="button"
-                            class="card timeline-card-pro w-100 h-100 text-start"
-                            :class="{ 'card-atual-pro': cargo.atual }"
-                            data-bs-toggle="modal"
-                            :data-bs-target="`#${cargo.modalId}`"
-                        >
-                            <div class="card-body p-4 d-flex flex-column pt-5">
-                                <div
-                                    class="role-icon-box bg-opacity-10"
-                                    :class="cargo.atual ? 'bg-success text-success' : 'bg-primary text-primary'"
-                                >
-                                    <i class="fas" :class="cargo.icone" aria-hidden="true"></i>
-                                </div>
-                                <h3 class="card-title h5 fw-bold mb-1" :class="cargo.atual ? 'text-success' : 'text-primary'">
-                                    {{ lab(cargo.cargo) }}
-                                </h3>
-                                <h4 class="card-subtitle h6 text-dark fw-bold mb-3">{{ cargo.empresa }}</h4>
-                                <p
-                                    class="card-text mb-auto pb-4"
-                                    :class="cargo.atual ? 'text-success fw-bold' : 'text-muted'"
-                                >
-                                    <small v-html="$t(cargo.duracaoKey)"></small>
-                                </p>
-                                <div class="badges-container mt-auto">
-                                    <span
-                                        class="badge"
-                                        :class="cargo.atual ? 'bg-dark' : 'bg-primary'"
-                                        v-for="(tag, i) in cargo.tags"
-                                        :key="i"
-                                        >{{ lab(tag) }}</span
-                                    >
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                </span>
+            </button>
         </div>
     </section>
 </template>

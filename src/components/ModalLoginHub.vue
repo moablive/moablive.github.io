@@ -1,80 +1,59 @@
 <script setup lang="ts">
+import BaseModal from "./BaseModal.vue";
+
 const pilares = [
-    { id: "docker", icone: "fab fa-docker text-primary", titulo: "Docker & Nginx", textoKey: "lhDocker" },
-    { id: "cf", icone: "fas fa-cloud text-warning", titulo: "Cloudflare Tunnels", textoKey: "lhCf" },
-    { id: "pg", icone: "fas fa-database text-info", titulo: "PostgreSQL (ACID)", textoKey: "lhPg" },
-    { id: "sec", icone: "fas fa-shield-alt text-success", tituloKey: "lhSecTitle", textoKey: "lhSec" },
+    { id: "docker", icone: "fab fa-docker", titulo: "Docker & Nginx", textoKey: "lhDocker" },
+    { id: "cf", icone: "fas fa-cloud", titulo: "Cloudflare Tunnels", textoKey: "lhCf" },
+    { id: "pg", icone: "fas fa-database", titulo: "PostgreSQL (ACID)", textoKey: "lhPg" },
+    { id: "sec", icone: "fas fa-shield-alt", tituloKey: "lhSecTitle", textoKey: "lhSec" },
 ];
 </script>
 
 <template>
-    <div class="modal fade" id="modalLoginHub" tabindex="-1" aria-labelledby="modalLoginHubLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-            <div class="modal-content border-0 shadow-lg glass-effect-modal">
-                <div class="modal-header bg-gradient-dark text-white border-0">
-                    <h2 class="modal-title h5 fw-bold" id="modalLoginHubLabel">
-                        <i class="fas fa-fingerprint me-2" aria-hidden="true"></i> AWLSRV LoginHub (IdP)
-                    </h2>
-                    <button
-                        type="button"
-                        class="btn-close btn-close-white"
-                        data-bs-dismiss="modal"
-                        :aria-label="$t('close')"
-                    ></button>
-                </div>
-
-                <div class="modal-body p-4 p-md-5">
-                    <div class="row align-items-center">
-                        <div class="col-md-5 text-center mb-4 mb-md-0">
-                            <i class="fas fa-server fa-6x text-secondary mb-3" aria-hidden="true"></i>
-                            <h3 class="h6 fw-bold mt-2">{{ $t("lhEnterprise") }}</h3>
-                        </div>
-                        <div class="col-md-7">
-                            <h3 class="h5 fw-bold mb-3">{{ $t("lhWhat") }}</h3>
-                            <p class="text-muted" v-html="$t('lhP1')"></p>
-                            <p class="text-muted">{{ $t("lhP2") }}</p>
-                        </div>
-                    </div>
-
-                    <hr class="my-4" />
-                    <h3 class="h6 fw-bold text-center mb-4" v-html="$t('lhStack')"></h3>
-                    <div class="d-flex justify-content-center mb-4">
-                        <img
-                            src="https://skillicons.dev/icons?i=docker,cloudflare,postgres,nginx,nodejs,ts,linux"
-                            alt="Docker, Cloudflare, PostgreSQL, Nginx, Node.js, TypeScript, Linux"
-                            class="img-fluid modal-stack-icons"
-                            loading="lazy"
-                        />
-                    </div>
-
-                    <div class="row g-3">
-                        <div class="col-sm-6" v-for="pilar in pilares" :key="pilar.id">
-                            <div class="p-3 border rounded-3 h-100 bg-light">
-                                <i :class="pilar.icone" class="me-2" aria-hidden="true"></i>
-                                <strong>{{ pilar.tituloKey ? $t(pilar.tituloKey) : pilar.titulo }}</strong>
-                                <p class="small text-muted mb-0">{{ $t(pilar.textoKey) }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer border-0 bg-light justify-content-center">
-                    <a
-                        href="https://loginhub.astralwavelabel.com/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-success rounded-pill px-4 fw-bold"
-                        v-html="$t('lhBtnAccess')"
-                    ></a>
-                    <a
-                        href="https://github.com/moablive/AWLSRV_LoginHub"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-dark rounded-pill px-4"
-                        v-html="$t('lhBtnRepo')"
-                    ></a>
-                </div>
+    <BaseModal id="modalLoginHub" titulo="AWLSRV LoginHub (IdP)" icone="fa-fingerprint" tom="accent">
+        <div class="grid gap-6 sm:grid-cols-12 sm:items-center">
+            <div class="hard-2 flex items-center justify-center bg-ink py-8 sm:col-span-4">
+                <i class="fas fa-server text-6xl text-sun" aria-hidden="true"></i>
+            </div>
+            <div class="sm:col-span-8">
+                <h3 class="font-display text-lg tracking-[-0.02em]">{{ $t("lhWhat") }}</h3>
+                <p class="mt-3 text-[15px] leading-relaxed" v-html="$t('lhP1')"></p>
+                <p class="mt-3 text-[15px] leading-relaxed text-ink-soft">{{ $t("lhP2") }}</p>
             </div>
         </div>
-    </div>
+
+        <h3 class="mt-8 font-display text-sm tracking-[-0.01em] uppercase" v-html="$t('lhStack')"></h3>
+        <img
+            src="https://skillicons.dev/icons?i=docker,cloudflare,postgres,nginx,nodejs,ts,linux"
+            alt="Docker, Cloudflare, PostgreSQL, Nginx, Node.js, TypeScript, Linux"
+            class="mt-4 max-w-full"
+            loading="lazy"
+        />
+
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <div v-for="pilar in pilares" :key="pilar.id" class="hard-2 bg-paper p-4">
+                <p class="flex items-center gap-2 font-mono text-xs font-bold">
+                    <i :class="pilar.icone" aria-hidden="true"></i>{{ pilar.tituloKey ? $t(pilar.tituloKey) : pilar.titulo }}
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">{{ $t(pilar.textoKey) }}</p>
+            </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+            <a
+                href="https://loginhub.astralwavelabel.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hard-2 bg-sun px-5 py-3 font-mono text-xs font-bold text-ink transition-transform hover:-translate-y-0.5"
+                v-html="$t('lhBtnAccess')"
+            ></a>
+            <a
+                href="https://github.com/moablive/AWLSRV_LoginHub"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hard-2 bg-ink px-5 py-3 font-mono text-xs font-bold text-paper transition-transform hover:-translate-y-0.5"
+                v-html="$t('lhBtnRepo')"
+            ></a>
+        </div>
+    </BaseModal>
 </template>

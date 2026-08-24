@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { projetos, filtros } from "@/data/projetos";
 import { useLabel } from "@/composables/useLabel";
+import SecaoTitulo from "./SecaoTitulo.vue";
 
 const { lab } = useLabel();
 const filtroAtivo = ref<string>("all");
@@ -14,64 +15,65 @@ const visiveis = computed(() =>
 </script>
 
 <template>
-    <section id="portfolio" class="py-5 bg-light-custom">
-        <div class="container">
-            <h2 class="section-heading text-center mb-4">{{ $t("portfolioTitle") }}</h2>
+    <section id="portfolio" class="mx-auto max-w-[1400px] px-4 py-16 sm:px-6">
+        <SecaoTitulo numero="05" :titulo="$t('portfolioTitle')">
+            <template #acoes>
+                <div class="flex flex-wrap gap-2" role="group" :aria-label="$t('portfolioFilterAria')">
+                    <button
+                        v-for="filtro in filtros"
+                        :key="filtro.id"
+                        type="button"
+                        class="hard-2 px-3 py-2 font-mono text-[11px] font-bold tracking-wider uppercase transition-transform hover:-translate-y-0.5"
+                        :class="filtroAtivo === filtro.id ? 'bg-ink text-sun' : 'bg-paper-2'"
+                        :aria-pressed="filtroAtivo === filtro.id"
+                        @click="filtroAtivo = filtro.id"
+                        v-html="$t(filtro.labelKey)"
+                    ></button>
+                </div>
+            </template>
+        </SecaoTitulo>
 
-            <div
-                class="portfolio-filters d-flex justify-content-center flex-wrap gap-2 mb-5"
-                role="group"
-                :aria-label="$t('portfolioFilterAria')"
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+            <article
+                v-for="(projeto, i) in visiveis"
+                :key="projeto.id"
+                class="hard flex flex-col transition-transform hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[7px_7px_0_var(--color-ink)]"
+                :class="i === 0 ? 'bg-ink text-paper' : 'bg-paper-2'"
             >
-                <button
-                    v-for="filtro in filtros"
-                    :key="filtro.id"
-                    type="button"
-                    class="btn btn-filter"
-                    :class="{ active: filtroAtivo === filtro.id }"
-                    :aria-pressed="filtroAtivo === filtro.id"
-                    @click="filtroAtivo = filtro.id"
-                    v-html="$t(filtro.labelKey)"
-                ></button>
-            </div>
+                <div
+                    class="flex items-center justify-between border-b-[3px] border-ink px-5 py-4"
+                    :class="i === 0 ? 'border-sun bg-ink' : 'bg-paper'"
+                >
+                    <img :src="projeto.logo" :alt="projeto.logoAlt" class="h-8 w-8" loading="lazy" />
+                    <span class="label-mono" :class="i === 0 ? 'text-sun' : 'text-ink-soft'">
+                        {{ String(i + 1).padStart(2, "0") }}
+                    </span>
+                </div>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="portfolio-grid" aria-live="polite">
-                <div class="col portfolio-item" v-for="projeto in visiveis" :key="projeto.id">
-                    <div class="card h-100">
-                        <div class="portfolio-image-wrapper">
-                            <img
-                                :src="projeto.logo"
-                                class="card-img-top portfolio-logo-main"
-                                :alt="projeto.logoAlt"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5">{{ lab(projeto.titulo) }}</h3>
-                            <p class="card-text">{{ $t(projeto.descKey) }}</p>
-                            <div class="my-3">
-                                <img :src="projeto.stack" :alt="projeto.stackAlt" loading="lazy" />
-                            </div>
-                            <div class="mt-auto">
-                                <a
-                                    :href="projeto.href"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn w-100"
-                                    :class="`btn-${projeto.ctaVariante ?? 'primary'}`"
-                                >
-                                    <template v-if="projeto.ctaKey"><span v-html="$t(projeto.ctaKey)"></span></template>
-                                    <template v-else>
-                                        <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
-                                    </template>
-                                </a>
-                            </div>
-                        </div>
+                <div class="flex flex-1 flex-col p-5">
+                    <h3 class="font-display text-lg leading-tight tracking-[-0.02em]">{{ lab(projeto.titulo) }}</h3>
+                    <p class="mt-3 text-sm leading-relaxed" :class="i === 0 ? 'text-paper/80' : 'text-ink-soft'">
+                        {{ $t(projeto.descKey) }}
+                    </p>
+
+                    <img :src="projeto.stack" :alt="projeto.stackAlt" class="mt-5 max-w-full" loading="lazy" />
+
+                    <div class="mt-auto pt-5">
+                        <a
+                            :href="projeto.href"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hard-2 block px-4 py-2.5 text-center font-mono text-xs font-bold transition-transform hover:-translate-y-0.5"
+                            :class="i === 0 ? 'border-sun bg-sun text-ink' : 'bg-paper'"
+                        >
+                            <span v-if="projeto.ctaKey" v-html="$t(projeto.ctaKey)"></span>
+                            <span v-else><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</span>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <p class="text-center text-muted mt-4 mb-0" v-if="!visiveis.length">{{ $t("portfolioEmpty") }}</p>
+            </article>
         </div>
+
+        <p v-if="!visiveis.length" class="label-mono mt-8 text-center text-ink-soft">{{ $t("portfolioEmpty") }}</p>
     </section>
 </template>
