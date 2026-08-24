@@ -2,9 +2,11 @@
 import { computed, ref } from "vue";
 import { projetos, filtros } from "@/data/projetos";
 import { useLabel } from "@/composables/useLabel";
+import { useModal } from "@/composables/useModal";
 import SecaoTitulo from "./SecaoTitulo.vue";
 
 const { lab } = useLabel();
+const { abrir } = useModal();
 const filtroAtivo = ref<string>("all");
 
 const visiveis = computed(() =>
@@ -52,12 +54,22 @@ const visiveis = computed(() =>
                     <p class="text-sm leading-relaxed text-ink-2">{{ $t(projeto.descKey) }}</p>
                     <img :src="projeto.stack" :alt="projeto.stackAlt" class="mt-5 max-w-full" loading="lazy" />
 
-                    <div class="mt-auto pt-5">
+                    <div class="mt-auto flex flex-wrap gap-2 pt-5">
+                        <!-- Projetos com arquitetura documentada abrem o mesmo modal
+                             usado nas seções de destaque e do rastreador. -->
+                        <button
+                            v-if="projeto.modalId"
+                            type="button"
+                            class="flex-1 rounded-full bg-linear-100 from-brand to-brand-2 px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+                            @click="abrir(projeto.modalId, $event)"
+                        >
+                            <i class="fas fa-diagram-project mr-2" aria-hidden="true"></i>{{ $t("btnArch") }}
+                        </button>
                         <a
                             :href="projeto.href"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="block rounded-full border border-hairline px-4 py-2.5 text-center text-[13px] font-semibold transition-colors hover:border-brand hover:text-brand"
+                            class="flex-1 rounded-full border border-hairline px-4 py-2.5 text-center text-[13px] font-semibold transition-colors hover:border-brand hover:text-brand"
                         >
                             <span v-if="projeto.ctaKey" v-html="$t(projeto.ctaKey)"></span>
                             <span v-else><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</span>

@@ -16,6 +16,8 @@ export interface Projeto {
     /** Chave do rótulo do botão; ausente = "GitHub". */
     ctaKey?: string;
     ctaVariante?: "primary" | "success";
+    /** Modal de arquitetura aberto pelo card, quando o projeto tem um. */
+    modalId?: string;
     /** Categorias do filtro. */
     cats: Array<"backend" | "frontend" | "python">;
 }

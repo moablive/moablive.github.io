@@ -1,6 +1,7 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    btnArch: "Architecture",
     tagSideProject: "Side project",
     visitsTitle: "Visit counter",
     visitSuffix: "times this page has been visited",
