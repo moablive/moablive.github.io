@@ -29,7 +29,7 @@ const itens = ["trackPg", "trackNode", "trackDocker", "trackCf"];
             href="https://github.com/moablive/portfolio-track-visit"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-6 block rounded-full bg-linear-100 from-brand to-brand-2 px-5 py-3 text-center text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+            class="mt-6 block rounded-full bg-linear-100 from-fill to-fill-2 px-5 py-3 text-center text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
             v-html="$t('trackBtnRepo')"
         ></a>
     </BaseModal>

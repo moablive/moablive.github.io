@@ -9,16 +9,6 @@ Portfólio pessoal de **Guilherme Bonato** — Engenheiro de Software Sênior e 
 Vue 3 + TypeScript + Vite, prerenderizado com [vite-ssg](https://github.com/antfu/vite-ssg),
 estilizado com Tailwind CSS 4. Font Awesome 6 e Google Fonts via CDN.
 
-## Créditos de design
-
-A direção visual — vidro fosco, gradiente índigo→ciano, cantos arredondados e o alternador
-claro/escuro — é inspirada em **[itsvijaysingh/My-Portfolio](https://github.com/itsvijaysingh/My-Portfolio)**,
-de Vijay Singh ([itsvijay.com](https://itsvijay.com)), cujo README autoriza o uso pedindo crédito.
-
-Nenhum código foi copiado: aquele projeto é HTML + Bootstrap 5 + jQuery + Owl Carousel + AOS;
-aqui tudo foi reescrito em Vue 3 + Tailwind, com blur mais comedido, gradientes mais contidos e
-tipografia diferente (Plus Jakarta Sans no lugar de Rubik).
-
 O sistema visual mora em `src/assets/style.css`: um bloco `@theme` com cores, fontes e sombras,
 o bloco `.dark` que redefine as mesmas variáveis para o tema escuro, e seis utilitários próprios
 (`glass`, `solid-card`, `text-gradient`, `ring-gradient`, `label-mono`, `lift-hover`) que compõem

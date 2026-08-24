@@ -28,7 +28,7 @@ const visiveis = computed(() =>
                         class="rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors"
                         :class="
                             filtroAtivo === filtro.id
-                                ? 'bg-linear-100 from-brand to-brand-2 text-white'
+                                ? 'bg-linear-100 from-fill to-fill-2 text-white'
                                 : 'text-ink-2 hover:text-ink'
                         "
                         :aria-pressed="filtroAtivo === filtro.id"
@@ -60,7 +60,7 @@ const visiveis = computed(() =>
                         <button
                             v-if="projeto.modalId"
                             type="button"
-                            class="flex-1 rounded-full bg-linear-100 from-brand to-brand-2 px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+                            class="flex-1 rounded-full bg-linear-100 from-fill to-fill-2 px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
                             @click="abrir(projeto.modalId, $event)"
                         >
                             <i class="fas fa-diagram-project mr-2" aria-hidden="true"></i>{{ $t("btnArch") }}

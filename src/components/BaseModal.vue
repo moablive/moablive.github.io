@@ -39,7 +39,7 @@ watch(
                 <h2 :id="`${id}-titulo`" class="flex items-center gap-3 text-base leading-snug font-bold tracking-[-0.02em] sm:text-lg">
                     <span
                         v-if="icone"
-                        class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-linear-100 from-brand to-brand-2 text-sm text-white"
+                        class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-linear-100 from-fill to-fill-2 text-sm text-white"
                     >
                         <i class="fas" :class="icone" aria-hidden="true"></i>
                     </span>

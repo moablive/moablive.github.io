@@ -39,7 +39,7 @@ const numeros = [
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a
                         href="#portfolio"
-                        class="rounded-full bg-linear-100 from-brand to-brand-2 px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                        class="rounded-full bg-linear-100 from-fill to-fill-2 px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                         >{{ $t("heroCta") }}</a
                     >
                     <a

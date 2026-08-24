@@ -55,7 +55,7 @@ const menuAberto = ref(false);
                     :href="CURRICULO"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hidden items-center gap-2 rounded-full bg-linear-100 from-brand to-brand-2 px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
+                    class="hidden items-center gap-2 rounded-full bg-linear-100 from-fill to-fill-2 px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
                 >
                     <i class="fas fa-file-pdf" aria-hidden="true"></i>{{ $t("downloadPDF") }}
                 </a>
@@ -90,7 +90,7 @@ const menuAberto = ref(false);
                 :href="CURRICULO"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mt-1 block rounded-2xl bg-linear-100 from-brand to-brand-2 px-4 py-3 text-center text-sm font-semibold text-white sm:hidden"
+                class="mt-1 block rounded-2xl bg-linear-100 from-fill to-fill-2 px-4 py-3 text-center text-sm font-semibold text-white sm:hidden"
                 >{{ $t("downloadPDF") }}</a
             >
         </div>

@@ -6,14 +6,20 @@
 
 /* =========================================================
    Sistema visual — vidro fosco + gradiente contido
-   Inspirado em github.com/itsvijaysingh/My-Portfolio, reescrito
-   para Vue + Tailwind com claro/escuro e blur mais comedido.
    ========================================================= */
 @theme {
-    /* Marca: índigo → ciano, com coral como terceiro acento pontual. */
-    --color-brand: #4b5ce8;
-    --color-brand-2: #12c2e9;
-    --color-brand-3: #e64157;
+    /* Preenchimentos de gradiente: FIXOS nos dois temas, porque o botão
+       carrega o próprio fundo e o texto por cima é sempre branco.
+       Branco sobre #6a35dc = 6.65:1, sobre #a82fc4 = 5.43:1. */
+    --color-fill: #6a35dc;
+    --color-fill-2: #a82fc4;
+
+    /* A mesma marca usada como TEXTO sobre o fundo da página precisa mudar
+       com o tema — senão fica ilegível no escuro (a versão anterior batia
+       3.74:1, abaixo do mínimo de 4.5). Aqui: 6.22:1 no claro, 8.55:1 no escuro. */
+    --color-brand: #6a35dc;
+    --color-brand-2: #a82fc4;
+    --color-brand-3: #b45309;
 
     /* Papel e tinta do tema claro (o escuro é redefinido em .dark). */
     --color-canvas: #f6f7fb;
@@ -34,6 +40,11 @@
 }
 
 .dark {
+    /* Tons claros da marca: sobre o fundo quase preto, escuro não se lê. */
+    --color-brand: #b79bff;
+    --color-brand-2: #e08bf0;
+    --color-brand-3: #f0a742;
+
     --color-canvas: #0a0b12;
     --color-surface: #12141d;
     --color-ink: #e8eaf2;
@@ -76,7 +87,7 @@
     border: 1px solid transparent;
     background:
         linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
-        linear-gradient(120deg, var(--color-brand), var(--color-brand-2)) border-box;
+        linear-gradient(120deg, var(--color-fill), var(--color-fill-2)) border-box;
 }
 
 @utility label-mono {
@@ -112,8 +123,8 @@ body {
     -webkit-font-smoothing: antialiased;
     /* Auréolas de cor no fundo, fixas: dão profundidade sem pesar a rolagem. */
     background-image:
-        radial-gradient(46rem 30rem at 12% -6%, color-mix(in oklab, var(--color-brand) 16%, transparent), transparent 70%),
-        radial-gradient(38rem 26rem at 92% 4%, color-mix(in oklab, var(--color-brand-2) 14%, transparent), transparent 70%);
+        radial-gradient(46rem 30rem at 12% -6%, color-mix(in oklab, var(--color-fill) 16%, transparent), transparent 70%),
+        radial-gradient(38rem 26rem at 92% 4%, color-mix(in oklab, var(--color-fill-2) 14%, transparent), transparent 70%);
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
