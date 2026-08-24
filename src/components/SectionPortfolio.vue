@@ -46,7 +46,13 @@ const visiveis = computed(() =>
                 class="glass lift-hover flex flex-col overflow-hidden rounded-3xl"
             >
                 <div class="flex items-center gap-3 border-b border-hairline px-5 py-4">
-                    <img :src="projeto.logo" :alt="projeto.logoAlt" class="h-8 w-8" loading="lazy" />
+                    <img
+                        :src="projeto.logo"
+                        :alt="projeto.logoAlt"
+                        class="h-8 w-8 object-contain"
+                        :class="projeto.logoInverso && 'dark:invert'"
+                        loading="lazy"
+                    />
                     <h3 class="text-[15px] leading-snug font-bold tracking-[-0.02em]">{{ lab(projeto.titulo) }}</h3>
                 </div>
 
