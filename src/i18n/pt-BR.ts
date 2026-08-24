@@ -1,6 +1,14 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
+    heroKicker: "Engenheiro de Software Sênior — desde 2016",
+    heroTitle: "Arquiteto de soluções",
+    heroLead: ".NET, Node e Go. Clean Architecture, DDD e segurança de borda. Sistemas que aguentam o segundo ano de produção.",
+    heroCta: "Ver projetos ↓",
+    statYears: "Anos",
+    statCompanies: "Empresas",
+    statProjects: "Projetos",
+    statVisits: "Visitas",
     altPhoto: "Foto de Guilherme Bonato",
     altTyping: "Software Engineer & Architect · Especialista em .NET, Node e Python · SOLID, DDD, TDD, Clean Code",
     altMainStack: "Stack principal: .NET, Node.js, Python, PostgreSQL, Redis, Kafka, Docker",
@@ -11,7 +19,6 @@ export default {
     altGithub: "GitHub de moablive",
     location: "Porto Alegre, RS — Brasil",
     envLabel: "Ambiente:",
-    lhEnterprise: "Arquitetura Enterprise",
     roleCcsFull: "Tech Lead",
     roleSafewebFull: "Full Stack Engineer",
     roleSeniorFull: "Senior Software Engineer",
@@ -39,7 +46,6 @@ export default {
     navContact: "Contato",
 
     // Sobre
-    aboutGreeting: "Olá! Eu sou Guilherme Bonato",
     aboutExperience:
         "Engenheiro de Software Sênior com sólida experiência em <strong>desenvolvimento e arquitetura de soluções escaláveis</strong>. Especialista em criar sistemas robustos aplicando princípios de <strong>SOLID</strong>, <strong>DDD</strong> e <strong>TDD</strong>.",
 
@@ -118,8 +124,6 @@ export default {
     featureBtnArch:
         "<i class='fas fa-network-wired me-2' aria-hidden='true'></i> Ver Arquitetura da Solução",
     featureBtnProd: "<i class='fas fa-rocket me-2' aria-hidden='true'></i> Acessar Produção",
-    featureEnvOnline:
-        "<span class='spinner-grow spinner-grow-sm me-2' aria-hidden='true'></span>Online via Cloudflare Tunnel",
 
     // Portfólio
     portfolioTitle: "Portfólio",
@@ -156,8 +160,6 @@ export default {
 
     // Visitas
     visitStackBtn: "<i class='fab fa-github me-2' aria-hidden='true'></i> Ver Stack do Rastreador",
-    visitLoading: "A processar visitas...",
-    visitSuffix: "vezes esta página foi visitada.",
     visitFootnote: "Processado via Cloudflare &amp; PostgreSQL",
     visitOffline: "Estatísticas temporariamente offline",
 
@@ -253,5 +255,4 @@ export default {
 
     // Rodapé / FAB
     footerRights: "Todos os direitos reservados.",
-    langToggle: "Trocar idioma",
     } as const;

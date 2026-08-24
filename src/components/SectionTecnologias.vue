@@ -1,21 +1,26 @@
 <script setup lang="ts">
 import { gruposTech } from "@/data/tecnologias";
+import SecaoTitulo from "./SecaoTitulo.vue";
 </script>
 
 <template>
-    <section id="tecnologias" class="py-5 bg-white">
-        <div class="container text-center">
-            <h2 class="section-heading mb-5 fw-bold">{{ $t("techTitle") }}</h2>
+    <section id="tecnologias" class="mx-auto max-w-[1400px] px-4 py-16 sm:px-6">
+        <SecaoTitulo numero="04" :titulo="$t('techTitle')" />
 
-            <template v-for="(grupo, i) in gruposTech" :key="grupo.id">
-                <hr v-if="i > 0" class="w-50 mx-auto my-4 text-muted opacity-25" />
-                <div :class="i === gruposTech.length - 1 ? 'mb-3' : 'mb-4'">
-                    <h3 class="h5 fw-bold text-muted mb-3" v-html="$t(grupo.tituloKey)"></h3>
-                    <div class="d-flex justify-content-center flex-wrap gap-2">
-                        <img :src="grupo.icones" :alt="grupo.alt" class="tech-badge img-fluid" loading="lazy" />
-                    </div>
-                </div>
-            </template>
+        <div class="grid gap-5 md:grid-cols-2">
+            <article
+                v-for="(grupo, i) in gruposTech"
+                :key="grupo.id"
+                class="hard p-6"
+                :class="i % 3 === 0 ? 'bg-ink text-paper' : 'bg-paper-2'"
+            >
+                <h3
+                    class="label-mono mb-5"
+                    :class="i % 3 === 0 ? 'text-sun' : 'text-ink-soft'"
+                    v-html="$t(grupo.tituloKey)"
+                ></h3>
+                <img :src="grupo.icones" :alt="grupo.alt" class="max-w-full" loading="lazy" />
+            </article>
         </div>
     </section>
 </template>

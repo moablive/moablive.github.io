@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 import { cargos } from "@/data/trajetoria";
+import { useModal } from "@/composables/useModal";
 
 import AppNavbar from "@/components/AppNavbar.vue";
 import SectionSobre from "@/components/SectionSobre.vue";
@@ -12,31 +13,27 @@ import SectionDestaque from "@/components/SectionDestaque.vue";
 import SectionPortfolio from "@/components/SectionPortfolio.vue";
 import SectionGithubStats from "@/components/SectionGithubStats.vue";
 import SectionContato from "@/components/SectionContato.vue";
-import SectionVisitas from "@/components/SectionVisitas.vue";
 import CargoModal from "@/components/CargoModal.vue";
 import ModalLoginHub from "@/components/ModalLoginHub.vue";
 import ModalTrackStack from "@/components/ModalTrackStack.vue";
 import LangFab from "@/components/LangFab.vue";
 import AppFooter from "@/components/AppFooter.vue";
 
-onMounted(() => {
-    // O scrollspy do Bootstrap é criado no DOMContentLoaded a partir do
-    // data-bs-spy do <body>. Como o Vue hidrata antes disso, os alvos já
-    // existem — mas se a hidratação trocar nós, o índice fica velho. Refazer
-    // aqui é barato e garante que o menu acompanhe a rolagem.
-    const bootstrap = (window as any).bootstrap;
-    if (!bootstrap?.ScrollSpy) return;
-    bootstrap.ScrollSpy.getInstance(document.body)?.dispose();
-    new bootstrap.ScrollSpy(document.body, {
-        target: "#navbarNav",
-        rootMargin: "0px 0px -45%",
-        smoothScroll: true,
-    });
-});
+// ESC fecha o modal aberto, de qualquer lugar da página.
+const { modalAtivo, fechar } = useModal();
+function aoTeclar(event: KeyboardEvent) {
+    if (event.key === "Escape" && modalAtivo.value) fechar();
+}
+onMounted(() => document.addEventListener("keydown", aoTeclar));
+onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
 </script>
 
 <template>
-    <a class="skip-link" href="#conteudo">{{ $t("skipLink") }}</a>
+    <a
+        class="hard sr-only bg-sun px-4 py-2 font-mono text-xs font-bold focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50"
+        href="#conteudo"
+        >{{ $t("skipLink") }}</a
+    >
 
     <AppNavbar />
 
@@ -50,7 +47,6 @@ onMounted(() => {
         <SectionPortfolio />
         <SectionGithubStats />
         <SectionContato />
-        <SectionVisitas />
     </main>
 
     <CargoModal v-for="cargo in cargos" :key="cargo.id" :cargo="cargo" />

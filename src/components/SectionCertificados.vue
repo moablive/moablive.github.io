@@ -1,40 +1,41 @@
 <script setup lang="ts">
 import { certificados } from "@/data/certificados";
+import SecaoTitulo from "./SecaoTitulo.vue";
 </script>
 
 <template>
-    <section id="certificados" class="py-5">
-        <div class="container">
-            <h2 class="section-heading text-center mb-5">{{ $t("certTitle") }}</h2>
+    <section id="certificados" class="mx-auto max-w-[1400px] px-4 py-16 sm:px-6">
+        <SecaoTitulo numero="02" :titulo="$t('certTitle')" />
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col" v-for="cert in certificados" :key="cert.id">
-                    <div class="card h-100 cert-card-pro">
-                        <i class="fas cert-watermark" :class="cert.marcaDagua" aria-hidden="true"></i>
-                        <div class="card-body p-4 d-flex flex-column cert-content-wrapper">
-                            <h3 class="card-title h5 text-dark fw-bold mb-3">{{ $t(cert.tituloKey) }}</h3>
-                            <h4 class="card-subtitle h6 mb-3 text-primary fw-bold">
-                                <i class="fas me-2" :class="cert.instituicaoIcone" aria-hidden="true"></i
-                                >{{ cert.instituicao }}
-                            </h4>
-                            <div class="card-text text-muted mb-4 mt-auto">
-                                <small class="d-block mb-1" v-html="$t(cert.dataKey)"></small>
-                                <small class="d-block" v-if="cert.credencial">
-                                    <i class="fas fa-fingerprint text-secondary me-2" aria-hidden="true"></i>ID:
-                                    {{ cert.credencial }}
-                                </small>
-                            </div>
-                            <a
-                                :href="cert.href"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-primary w-100 rounded-pill fw-bold"
-                                v-html="$t(cert.ctaKey)"
-                            ></a>
-                        </div>
-                    </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article
+                v-for="cert in certificados"
+                :key="cert.id"
+                class="hard lift-sm relative flex flex-col overflow-hidden bg-paper-2 p-6 transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
+            >
+                <i
+                    class="fas pointer-events-none absolute -right-4 -bottom-6 text-[7rem] text-ink/[0.06]"
+                    :class="cert.marcaDagua"
+                    aria-hidden="true"
+                ></i>
+
+                <div class="relative">
+                    <h3 class="font-display text-lg leading-tight tracking-[-0.02em]">{{ $t(cert.tituloKey) }}</h3>
+                    <p class="mt-3 flex items-center gap-2 font-mono text-[13px] font-bold text-accent">
+                        <i class="fas" :class="cert.instituicaoIcone" aria-hidden="true"></i>{{ cert.instituicao }}
+                    </p>
+                    <p class="label-mono mt-5 text-ink-soft" v-html="$t(cert.dataKey)"></p>
+                    <p v-if="cert.credencial" class="label-mono mt-1.5 text-ink-soft/70">ID: {{ cert.credencial }}</p>
                 </div>
-            </div>
+
+                <a
+                    :href="cert.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hard-2 relative mt-6 block bg-sun px-4 py-2.5 text-center font-mono text-xs font-bold transition-transform hover:-translate-y-0.5"
+                    v-html="$t(cert.ctaKey)"
+                ></a>
+            </article>
         </div>
     </section>
 </template>

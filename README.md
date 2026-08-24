@@ -6,8 +6,17 @@ Portfólio pessoal de **Guilherme Bonato** — Engenheiro de Software Sênior e 
 
 ## Stack
 
-Vue 3 + TypeScript + Vite, prerenderizado com [vite-ssg](https://github.com/antfu/vite-ssg).
-Bootstrap 5.3 e Font Awesome 6 via CDN.
+Vue 3 + TypeScript + Vite, prerenderizado com [vite-ssg](https://github.com/antfu/vite-ssg),
+estilizado com Tailwind CSS 4. Font Awesome 6 e Google Fonts via CDN.
+
+O visual segue a direção **neo-brutalista**: bordas duras de 3px, sombras deslocadas sem blur,
+zero arredondamento, Archivo Black no display e Space Mono nos rótulos. O sistema mora em
+`src/assets/style.css` — um bloco `@theme` com as cores e fontes, e quatro utilitários próprios
+(`hard`, `hard-2`, `lift`, `lift-sm`, `label-mono`) que compõem toda a interface.
+
+**Sem Bootstrap.** Modais, menu colapsável e scrollspy são componentes e composables próprios
+(`BaseModal.vue`, `useModal.ts`, `useScrollSpy.ts`), o que tirou 232 KB de CSS e o bundle JS do
+Bootstrap do carregamento — o CSS do Tailwind gerado tem 24 KB.
 
 O prerender é o ponto central da escolha: `npm run build` gera um `index.html` **com todo o
 conteúdo dentro**, não um `<div id="app">` vazio. Buscadores, leitores de tela e o preview de link
@@ -60,7 +69,8 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 | Mexer no menu | array `links` em `src/components/AppNavbar.vue` |
 | Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` (o build cobra os dois) |
 | Liberar um nome próprio no verificador | `scripts/i18n-allowlist.json` |
-| Mudar cores/espaçamentos | `src/assets/style.css` |
+| Mudar cores/fontes do sistema | bloco `@theme` em `src/assets/style.css` |
+| Criar um utilitário novo | `@utility` em `src/assets/style.css` |
 | Mudar `<title>`/meta iniciais | `index.html` (é o que o crawler lê primeiro) |
 
 Nenhum card é escrito em HTML: os componentes iteram sobre os arrays de `src/data/`. Um projeto
