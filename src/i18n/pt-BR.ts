@@ -108,6 +108,7 @@ export default {
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>4 anos e 9 meses",
     expDuration2:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 ano e 11 meses",
+    expBadgeSka: "Dez de 2023 – Mai de 2025",
     expDuration3:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 ano e 5 meses",
     expBadgeFri: "Jun de 2025 – Jul de 2025",

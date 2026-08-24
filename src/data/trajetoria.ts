@@ -90,7 +90,7 @@ export const cargos: Cargo[] = [
     {
         id: "ska",
         modalId: "modalSKA",
-        periodo: "2023 – 2025",
+        periodo: { i18n: "expBadgeSka" },
         icone: "fa-cogs",
         cargo: "Senior Software Eng.",
         empresa: "SKA Automação",
