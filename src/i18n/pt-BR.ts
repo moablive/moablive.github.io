@@ -187,6 +187,59 @@ export default {
     modalChallenges: "Principais Desafios &amp; Conquistas:",
     modalSolutions: "Soluções e Infraestrutura Implementadas:",
     modalTech: "Tecnologias Utilizadas:",
+    modalArchPoints: "Como foi construído:",
+
+    // Modais de arquitetura dos projetos
+    arqPortDesc:
+        "Portfólio estático, sem servidor de aplicação: o Vite gera o bundle e o vite-ssg prerenderiza a página, então o HTML já chega pronto ao navegador e aos buscadores.",
+    arqPortB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Prerender:</strong> vite-ssg roda a SPA no build e grava o HTML final; os modais ficam no DOM com <em>v-show</em> em vez de <em>v-if</em>, para o conteúdo ser indexado mesmo fechado.",
+    arqPortB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Tema por tokens:</strong> Tailwind CSS 4 com as cores em custom properties, redefinidas na classe <em>.dark</em> — trocar de tema não recarrega folha de estilo nenhuma.",
+    arqPortB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>i18n verificado no build:</strong> um script compara PT e EN, acusa chave órfã e texto literal esquecido no componente; erro derruba o deploy antes de publicar.",
+    arqAwlDesc:
+        "Plataforma da Astral Wave: marketplace e selo, com a Cloudflare na frente de tudo e um back-end dividido por afinidade de carga.",
+    arqAwlB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Borda como gateway:</strong> DNS e tráfego na Cloudflare, com WAF e CDN respondendo antes da origem — baixa latência global e mitigação de DDoS fora da aplicação.",
+    arqAwlB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Back-end poliglota:</strong> .NET Core no processamento crítico e nas regras de domínio, Node.js nas APIs leves de I/O e Go nos serviços de alta concorrência.",
+    arqAwlB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Pagamento e entrega:</strong> checkout em Pix, com webhook confirmando o pedido e disparando a liberação automática dos arquivos WAV.",
+    arqMoneyDesc:
+        "PWA de finanças pessoais: SPA em Vue conversando com uma API Express, com um bot de Telegram como segunda porta de entrada.",
+    arqMoneyB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Front instalável:</strong> PWA em Vue e TypeScript, com Vite no build e Tailwind na interface — dashboard pensado para uso diário no celular.",
+    arqMoneyB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>API e dados:</strong> Express sobre PostgreSQL cobrindo transações, contas, assinaturas, investimentos e empréstimos.",
+    arqMoneyB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Bot de Telegram:</strong> lançamentos rápidos por mensagem, batendo na mesma API do app; tudo containerizado com Docker.",
+    arqAmbevDesc:
+        "Sistema de vendas em .NET 8 com CQRS: a escrita e a leitura usam bancos diferentes, sincronizados por eventos no Kafka.",
+    arqAmbevB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Clean Architecture e DDD:</strong> domínio isolado de infraestrutura, com as regras de negócio livres de dependência de framework ou banco.",
+    arqAmbevB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>CQRS com bancos separados:</strong> PostgreSQL no lado de escrita, MongoDB no de leitura — cada um modelado para o seu acesso.",
+    arqAmbevB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Kafka:</strong> os eventos de venda propagam a mudança do lado de escrita para o de leitura, mantendo a consistência eventual.",
+    arqEf6Desc:
+        "Template base para APIs RESTful em .NET Core: o esqueleto que se repete a cada projeto novo, já montado.",
+    arqEf6B1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Camadas prontas:</strong> separação entre controllers, serviços e acesso a dados, para o projeto novo começar com a estrutura de pastas resolvida.",
+    arqEf6B2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Entity Framework:</strong> mapeamento e migrações configurados sobre SQL, com o contexto isolado da camada de negócio.",
+    arqEf6B3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Ponto de partida:</strong> serve como esqueleto de CRUD RESTful — clonar, renomear e trocar as entidades.",
+    arqAnhDesc:
+        "Full-stack de gerenciamento de produtos e usuários: SPA Angular consumindo uma API Express, com MySQL atrás.",
+    arqAnhB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Front em Angular:</strong> SPA com TypeScript e Bootstrap, com as telas de produto e usuário organizadas por módulo.",
+    arqAnhB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>API em Express:</strong> rotas REST em Node.js e TypeScript, com a camada de acesso ao MySQL separada dos handlers.",
+    arqAnhB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>CRUD completo:</strong> cadastro, edição, listagem e remoção nas duas entidades, com validação nas duas pontas.",
+    arqCarnesDesc:
+        "Dashboard interativo para uma casa de carnes: front em Vue com Vite, servido por uma API Express sobre MySQL.",
+    arqCarnesB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Front em Vue e Vite:</strong> SPA em TypeScript, com o build rápido do Vite e componentes por área do dashboard.",
+    arqCarnesB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>API em Express:</strong> Node.js e TypeScript expondo os dados que alimentam os painéis.",
+    arqCarnesB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>MySQL:</strong> modelagem relacional dos produtos e movimentos que o dashboard consolida.",
+    arqNotionDesc:
+        "Coleção de ícones para o Notion publicada como página estática: sem build, sem dependência, só arquivos servidos.",
+    arqNotionB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Estático puro:</strong> HTML, CSS e JavaScript sem framework nem etapa de build — abre direto no navegador.",
+    arqNotionB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Bootstrap:</strong> grid e componentes cuidando do layout responsivo da galeria.",
+    arqNotionB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Uso no Notion:</strong> cada ícone tem URL própria, para colar direto no campo de ícone da página.",
+    arqPyCrudDesc:
+        "CRUD de produtos em desktop: interface PyQt5 falando direto com o MySQL, sem camada web no meio.",
+    arqPyCrudB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Interface PyQt5:</strong> janelas e formulários montados em Qt, com a validação junto do widget.",
+    arqPyCrudB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Acesso ao MySQL:</strong> as quatro operações do CRUD em consultas parametrizadas, sem ORM.",
+    arqPyCrudB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Aplicação local:</strong> roda na máquina do usuário e conecta ao banco pela rede — sem servidor de aplicação.",
+    arqPyImgDesc:
+        "Conversor de imagens com upscale para 4K: ferramenta de desktop em Tkinter, pensada para lote.",
+    arqPyImgB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Interface Tkinter:</strong> biblioteca da própria biblioteca padrão do Python, sem dependência gráfica externa.",
+    arqPyImgB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Conversão e upscale:</strong> troca de formato e redimensionamento até 4K, preservando a proporção original.",
+    arqPyImgB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Processamento em lote:</strong> a fila aceita vários arquivos de uma vez, com o progresso visível na janela.",
     modalTechConcepts: "Tecnologias e Conceitos:",
 
     // Modal CCS

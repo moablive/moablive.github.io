@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted } from "vue";
 import { todosCargos } from "@/data/trajetoria";
+import { projetos } from "@/data/projetos";
 import { useModal } from "@/composables/useModal";
 
 import AppNavbar from "@/components/AppNavbar.vue";
@@ -17,6 +18,7 @@ import SectionGithubStats from "@/components/SectionGithubStats.vue";
 import SectionContato from "@/components/SectionContato.vue";
 import SectionVisitas from "@/components/SectionVisitas.vue";
 import CargoModal from "@/components/CargoModal.vue";
+import ProjetoArqModal from "@/components/ProjetoArqModal.vue";
 import ModalLoginHub from "@/components/ModalLoginHub.vue";
 import ModalTrackStack from "@/components/ModalTrackStack.vue";
 import AppFooter from "@/components/AppFooter.vue";
@@ -54,6 +56,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
     </main>
 
     <CargoModal v-for="cargo in todosCargos" :key="cargo.id" :cargo="cargo" />
+    <ProjetoArqModal v-for="projeto in projetos" :key="projeto.id" :projeto="projeto" />
     <ModalLoginHub />
     <ModalTrackStack />
 
