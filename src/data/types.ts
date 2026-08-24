@@ -55,6 +55,8 @@ export interface Cargo {
     duracaoKey: string;
     tags: Label[];
     atual?: boolean;
+    /** Empreitada própria tocada em paralelo aos empregos, não um cargo CLT. */
+    paralelo?: boolean;
     /** Forma extensa do cargo, usada no título do modal ("Senior Software Eng." -> "...Engineer"). */
     cargoCompleto?: Label;
     modal: {

@@ -39,7 +39,12 @@ const { abrir } = useModal();
                         <span
                             v-for="(tag, i) in cargo.tags"
                             :key="i"
-                            class="rounded-full border border-hairline px-2.5 py-1 font-mono text-[11px] text-ink-2"
+                            class="rounded-full px-2.5 py-1 font-mono text-[11px]"
+                            :class="
+                                cargo.paralelo && i === 0
+                                    ? 'bg-linear-100 from-brand to-brand-2 text-white'
+                                    : 'border border-hairline text-ink-2'
+                            "
                             >{{ lab(tag) }}</span
                         >
                     </span>
