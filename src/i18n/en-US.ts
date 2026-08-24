@@ -49,6 +49,7 @@ export default {
     // Navbar
     downloadPDF: "Download Resume",
     navToggle: "Open navigation menu",
+    langLabel: "Language",
     navAbout: "About",
     navEducation: "Education",
     navCertificates: "Certifications",

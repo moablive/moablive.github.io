@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import { useScrollSpy } from "@/composables/useScrollSpy";
 import ThemeToggle from "./ThemeToggle.vue";
-import LangSwitch from "./LangSwitch.vue";
 
 const links = [
     { href: "#sobre", key: "navAbout" },
@@ -27,7 +26,7 @@ const menuAberto = ref(false);
     <header class="fixed inset-x-0 top-0 z-40">
         <nav class="glass mx-auto mt-3 flex h-[3.25rem] max-w-[1180px] items-center gap-2 rounded-full px-3 sm:px-4">
             <a href="#sobre" class="shrink-0 px-2 text-[15px] font-extrabold tracking-tight text-ink">
-                <span class="text-gradient">GB</span><span class="ml-1.5 hidden sm:inline">Guilherme Bonato</span>
+                Guilherme Bonato
             </a>
 
             <div class="flex-1"></div>
@@ -49,7 +48,6 @@ const menuAberto = ref(false);
             </ul>
 
             <div class="ml-1 flex items-center gap-2">
-                <LangSwitch />
                 <ThemeToggle />
 
                 <a

@@ -49,6 +49,7 @@ export default {
     // Navbar
     downloadPDF: "Baixar PDF",
     navToggle: "Abrir menu de navegação",
+    langLabel: "Idioma",
     navAbout: "Sobre",
     navEducation: "Formação",
     navCertificates: "Certificados",
