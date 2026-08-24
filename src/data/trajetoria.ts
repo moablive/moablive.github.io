@@ -64,7 +64,7 @@ export const cargos: Cargo[] = [
     {
         id: "frigelar",
         modalId: "modalFrigelar",
-        periodo: "2025",
+        periodo: { i18n: "expBadgeFri" },
         icone: "fa-snowflake",
         cargo: "Senior Software Eng.",
         empresa: "Frigelar",

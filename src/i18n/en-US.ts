@@ -110,8 +110,9 @@ export default {
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 year and 11 months",
     expDuration3:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>1 year and 5 months",
+    expBadgeFri: "Jun 2025 – Jul 2025",
     expDurationFri:
-        "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>Jun – Jul (Layoff)",
+        "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>2 months (Layoff)",
     expBadgeGoto: "Feb 2026 – Aug 2026",
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 months",
