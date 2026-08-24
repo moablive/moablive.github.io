@@ -1,7 +1,6 @@
 // Gerado a partir do dicionário da versão anterior do site.
 // Strings com marcação HTML são renderizadas com v-html nos componentes.
 export default {
-    repoPrivate: "Repositório privado",
     lhMono: "apps/api e apps/ui compartilham schema, serviços e cliente HTTP.",
     lhSec: "Autenticação híbrida (JWT + master keys) e hash bcrypt.",
     lhPg: "Drizzle ORM sobre PostgreSQL, com transações manuais onde a integridade é crítica.",
@@ -155,9 +154,6 @@ export default {
     projEf6: "Template base para APIs RESTful utilizando .NET Core.",
     projAngularHub: "Aplicação full-stack completa para gerenciamento de produtos e usuários.",
     projVueCasa: "Dashboard interativo desenvolvido com Vue.js, TypeScript e Vite.",
-    projSulTitle: "Gestor de Preços — Sul Alimentos",
-    projSul:
-        "Sistema corporativo de precificação e margens. Autenticação SSO, RBAC e métricas via Prometheus.",
     projNotion: "Integração e otimização do fluxo de trabalho com ícones no Notion.",
     projPyCrud: "CRUD de produtos desenvolvido com Python e PyQt5.",
     projPyImg: "Conversor de imagens com upscale para 4K.",

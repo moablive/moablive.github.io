@@ -65,15 +65,7 @@ const visiveis = computed(() =>
                         >
                             <i class="fas fa-diagram-project mr-2" aria-hidden="true"></i>{{ $t("btnArch") }}
                         </button>
-                        <!-- Repositório fechado não vira link: daria 404 para o visitante. -->
-                        <span
-                            v-if="projeto.privado"
-                            class="flex-1 rounded-full border border-dashed border-hairline px-4 py-2.5 text-center text-[13px] font-semibold text-ink-3"
-                        >
-                            <i class="fas fa-lock mr-2" aria-hidden="true"></i>{{ $t("repoPrivate") }}
-                        </span>
                         <a
-                            v-else
                             :href="projeto.href"
                             target="_blank"
                             rel="noopener noreferrer"

@@ -84,18 +84,6 @@ export const projetos: Projeto[] = [
         cats: ["frontend"],
     },
     {
-        id: "sul-alimentos",
-        titulo: { i18n: "projSulTitle" },
-        descKey: "projSul",
-        logo: `${SI}/react/61DAFB`,
-        logoAlt: "React",
-        stack: `${SK}nodejs,react,ts,postgres,docker,prometheus`,
-        stackAlt: "Node.js, React, TypeScript, PostgreSQL, Docker, Prometheus",
-        href: "https://github.com/moablive/sul-alimentos",
-        privado: true,
-        cats: ["frontend", "backend"],
-    },
-    {
         id: "notion-icons",
         titulo: "Notion Icons",
         descKey: "projNotion",
