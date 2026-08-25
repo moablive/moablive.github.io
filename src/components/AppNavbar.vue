@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import { useScrollSpy } from "@/composables/useScrollSpy";
 
 const links = [
@@ -14,8 +15,16 @@ const links = [
     { href: "#contato", key: "navContact" },
 ];
 
-const CURRICULO =
-    "https://www.dropbox.com/scl/fi/ok2rqledpi9b2sdqqrboc/Curr-culo-2025.pdf?rlkey=4k4wybc0vq2ef35g7xbz475ut&st=403i9og5&dl=0";
+// Cada idioma tem a sua versão do currículo; o botão segue o idioma da página.
+const CURRICULOS: Record<string, string> = {
+    "pt-BR":
+        "https://www.dropbox.com/scl/fi/vqsq6yw4iqkkdsrmponlk/Guilherme_Bonato_CV_2026-BR.pdf?rlkey=hbldal318ptpbweaj2mvzd9r2&st=gu8gwvo9&dl=1",
+    "en-US":
+        "https://www.dropbox.com/scl/fi/ikxzgo3w2goa1w4n43c8z/Guilherme_Bonato_CV_2026-US.pdf?rlkey=dowaqcd0xo2evgyovi1ixp0vg&st=c66d18l0&dl=1",
+};
+
+const { locale } = useI18n({ useScope: "global" });
+const curriculo = computed(() => CURRICULOS[locale.value as string] ?? CURRICULOS["pt-BR"]);
 
 const { ativo } = useScrollSpy(links.map((l) => l.href.slice(1)));
 const menuAberto = ref(false);
@@ -48,7 +57,7 @@ const menuAberto = ref(false);
 
             <div class="ml-1 flex items-center gap-2">
                 <a
-                    :href="CURRICULO"
+                    :href="curriculo"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="hidden items-center gap-2 rounded-full bg-linear-100 from-fill to-fill-2 px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
@@ -83,7 +92,7 @@ const menuAberto = ref(false);
                 >{{ $t(link.key) }}</a
             >
             <a
-                :href="CURRICULO"
+                :href="curriculo"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="mt-1 block rounded-2xl bg-linear-100 from-fill to-fill-2 px-4 py-3 text-center text-sm font-semibold text-white sm:hidden"
