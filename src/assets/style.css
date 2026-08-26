@@ -67,11 +67,18 @@
 /* ---------- utilitários do sistema ---------- */
 
 /* O painel de vidro é a peça base: translúcido, contorno de 1px e blur
-   moderado (o modelo original usava 26 camadas de blur pesado). */
+   moderado (o modelo original usava 26 camadas de blur pesado).
+
+   Só a propriedade sem prefixo, de propósito: quando as duas versões eram
+   escritas aqui, o minificador do build (Lightning CSS) juntava as duas e
+   publicava apenas `-webkit-backdrop-filter` — que Chrome, Edge e Firefox
+   não conhecem. O blur morria em todo navegador que não fosse WebKit e o
+   painel virava só um retângulo 72% transparente: no celular, o menu e os
+   modais ficavam por cima do texto da página, ilegíveis. Declarando apenas
+   `backdrop-filter`, o próprio Lightning CSS gera o par completo. */
 @utility glass {
     background: color-mix(in oklab, var(--color-surface) 72%, transparent);
     backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid var(--color-hairline);
     box-shadow: var(--shadow-soft);
 }
