@@ -141,7 +141,7 @@ export default {
     tagMicroservices: "Microservices",
 
     // Technologies
-    techTitle: "Tech Stack &amp; Infrastructure",
+    techTitle: "Tech Stack & Infrastructure",
     techCore: "<i class='fas fa-code me-2' aria-hidden='true'></i>Core &amp; Back-End",
     techFront: "<i class='fas fa-laptop-code me-2' aria-hidden='true'></i>Front-End &amp; UI",
     techDevops: "<i class='fas fa-network-wired me-2' aria-hidden='true'></i>DevOps, Infra &amp; Cloud",
@@ -187,9 +187,9 @@ export default {
 
     // Modals - generic
     close: "Close",
-    modalActivities: "Main Activities &amp; Impacts:",
-    modalChallenges: "Main Challenges &amp; Achievements:",
-    modalSolutions: "Solutions &amp; Infrastructure Implemented:",
+    modalActivities: "Main Activities & Impacts:",
+    modalChallenges: "Main Challenges & Achievements:",
+    modalSolutions: "Solutions & Infrastructure Implemented:",
     modalTech: "Technologies Used:",
     modalArchPoints: "How it was built:",
 
@@ -244,7 +244,7 @@ export default {
     arqPyImgB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Tkinter interface:</strong> a library from Python's own standard library, with no external GUI dependency.",
     arqPyImgB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Conversion and upscaling:</strong> format switching and resizing up to 4K, preserving the original aspect ratio.",
     arqPyImgB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Batch processing:</strong> the queue takes several files at once, with progress visible in the window.",
-    modalTechConcepts: "Technologies &amp; Concepts:",
+    modalTechConcepts: "Technologies & Concepts:",
 
     // Modal CCS
     ccsDate:

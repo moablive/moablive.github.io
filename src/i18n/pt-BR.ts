@@ -141,7 +141,7 @@ export default {
     tagMicroservices: "Microsserviços",
 
     // Tecnologias
-    techTitle: "Stack Tecnológico &amp; Infraestrutura",
+    techTitle: "Stack Tecnológico & Infraestrutura",
     techCore: "<i class='fas fa-code me-2' aria-hidden='true'></i>Core &amp; Back-End",
     techFront: "<i class='fas fa-laptop-code me-2' aria-hidden='true'></i>Front-End &amp; UI",
     techDevops: "<i class='fas fa-network-wired me-2' aria-hidden='true'></i>DevOps, Infra &amp; Cloud",
@@ -187,8 +187,8 @@ export default {
 
     // Modais - genéricos
     close: "Fechar",
-    modalActivities: "Principais Atividades &amp; Impactos:",
-    modalChallenges: "Principais Desafios &amp; Conquistas:",
+    modalActivities: "Principais Atividades & Impactos:",
+    modalChallenges: "Principais Desafios & Conquistas:",
     modalSolutions: "Soluções e Infraestrutura Implementadas:",
     modalTech: "Tecnologias Utilizadas:",
     modalArchPoints: "Como foi construído:",
