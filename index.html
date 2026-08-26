@@ -89,7 +89,8 @@
             })();
         </script>
     </head>
-    <!-- O scrollspy do Bootstrap funciona porque o conteúdo já vem prerenderizado no HTML. -->
+    <!-- O #app não fica vazio no arquivo publicado: o vite-ssg injeta a página inteira aqui
+         no build, e o Vue só hidrata por cima. -->
     <body>
         <div id="app"></div>
         <script type="module" src="/src/main.ts"></script>
