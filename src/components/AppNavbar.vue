@@ -18,9 +18,9 @@ const links = [
 // Cada idioma tem a sua versão do currículo; o botão segue o idioma da página.
 const CURRICULOS: Record<string, string> = {
     "pt-BR":
-        "https://www.dropbox.com/scl/fi/vqsq6yw4iqkkdsrmponlk/Guilherme_Bonato_CV_2026-BR.pdf?rlkey=hbldal318ptpbweaj2mvzd9r2&st=gu8gwvo9&dl=1",
+        "https://www.dropbox.com/scl/fi/cl6oukvlk5pg3e1bslk2v/Guilherme_Bonato_CV_2026-BR.pdf?rlkey=8l3826ofyd5eo6htkcixohjnb&st=5eg8ilh1&dl=1",
     "en-US":
-        "https://www.dropbox.com/scl/fi/ikxzgo3w2goa1w4n43c8z/Guilherme_Bonato_CV_2026-US.pdf?rlkey=dowaqcd0xo2evgyovi1ixp0vg&st=c66d18l0&dl=1",
+        "https://www.dropbox.com/scl/fi/ugjb6vk8jdh8gnzgo1zbb/Guilherme_Bonato_CV_2026-US.pdf?rlkey=hpk6ivlgou4yjm0szdkocu5f9&st=63dpm260&dl=1",
 };
 
 const { locale } = useI18n({ useScope: "global" });
