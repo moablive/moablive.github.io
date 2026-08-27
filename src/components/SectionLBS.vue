@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
+const GITHUB_MONEY = "https://github.com/moablive/MoneyAPP";
+const GITHUB_TODO = "https://github.com/moablive/TodoAPP";
+const GITHUB_NOTES = "https://github.com/moablive/NotesAPP";
+const GITHUB_TTS = "https://github.com/moablive/LBSTTSAPP";
+
 const PROD_MONEY = "https://money.astralwavelabel.com";
 const PROD_TODO = "https://todo.astralwavelabel.com";
 const PROD_NOTES = "https://notes.astralwavelabel.com";
@@ -42,19 +47,39 @@ const PROD_TTS = "https://lbstts.astralwavelabel.com";
                     >
                         {{ $t('lbsBtnGithub') }}
                     </a>
-                    <div class="grid grid-cols-2 gap-3 mt-2">
-                        <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> MoneyAPP
-                        </a>
-                        <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> TodoAPP
-                        </a>
-                        <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> NotesAPP
-                        </a>
-                        <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> LBSTTSAPP
-                        </a>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                        <div class="flex items-center gap-2">
+                            <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> MoneyAPP
+                            </a>
+                            <a :href="GITHUB_MONEY" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center shrink-0 h-[40px] w-[40px] rounded-full border border-white/40 text-white transition-colors hover:bg-white/12" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> TodoAPP
+                            </a>
+                            <a :href="GITHUB_TODO" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center shrink-0 h-[40px] w-[40px] rounded-full border border-white/40 text-white transition-colors hover:bg-white/12" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> NotesAPP
+                            </a>
+                            <a :href="GITHUB_NOTES" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center shrink-0 h-[40px] w-[40px] rounded-full border border-white/40 text-white transition-colors hover:bg-white/12" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> LBSTTSAPP
+                            </a>
+                            <a :href="GITHUB_TTS" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center shrink-0 h-[40px] w-[40px] rounded-full border border-white/40 text-white transition-colors hover:bg-white/12" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
