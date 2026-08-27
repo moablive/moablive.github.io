@@ -1,0 +1,10 @@
+--- en-US.ts
++++ en-US.ts
+@@ -10,2 +10,7 @@
+     projPortfolioTitle: "Portfolio",
++    lbsFeatureTitle: "Node.js Highlight",
++    lbsTitle: "LifeBusinessSuit (LBS)",
++    lbsSubtitle: "My main suite of applications, fully developed with Node.js and TypeScript. This integrated ecosystem includes the main LifeBusinessSuit repository and satellite microservices/apps like TodoAPP, NotesAPP, LBSTTSAPP, and MoneyAPP, forming a complete productivity and finance solution.",
++    lbsEnvLabel: "Node.js Ecosystem",
++    lbsBtnGithub: "View LifeBusinessSuit on GitHub",
+ 

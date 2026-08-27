@@ -1,10 +1,10 @@
 {
   "_comentario": [
-    "Vocabulário de nomes próprios que podem aparecer literalmente na interface:",
-    "empresas, instituições, tecnologias, produtos e siglas. Qualquer literal",
-    "visível composto SÓ por estes termos passa na verificação; qualquer palavra",
-    "fora desta lista é tratada como texto que precisa de tradução.",
-    "Ao adicionar um termo aqui, confirme que ele é mesmo igual nos dois idiomas."
+    "Vocabul\u00e1rio de nomes pr\u00f3prios que podem aparecer literalmente na interface:",
+    "empresas, institui\u00e7\u00f5es, tecnologias, produtos e siglas. Qualquer literal",
+    "vis\u00edvel composto S\u00d3 por estes termos passa na verifica\u00e7\u00e3o; qualquer palavra",
+    "fora desta lista \u00e9 tratada como texto que precisa de tradu\u00e7\u00e3o.",
+    "Ao adicionar um termo aqui, confirme que ele \u00e9 mesmo igual nos dois idiomas."
   ],
   "nomesProprios": [
     "Guilherme",
@@ -36,9 +36,9 @@
     "Certificadora",
     "Sul",
     "Safeweb",
-    "Segurança",
+    "Seguran\u00e7a",
     "SKA",
-    "Automação",
+    "Automa\u00e7\u00e3o",
     "Frigelar",
     "Alimentos",
     "Casa",
@@ -47,14 +47,14 @@
     "UNIPDS",
     "XPE",
     "XP",
-    "Educação",
+    "Educa\u00e7\u00e3o",
     "PUC",
     "PDS",
     "La",
     "Salle",
     "Universidade",
-    "Pontifícia",
-    "Católica",
+    "Pontif\u00edcia",
+    "Cat\u00f3lica",
     "Rio",
     "Grande",
     "Sul",
@@ -197,6 +197,11 @@
     "Pix",
     "github",
     "io",
-    "Actions"
+    "Actions",
+    "TodoAPP",
+    "NotesAPP",
+    "LBSTTSAPP",
+    "LifeBusinessSuit",
+    "LBS"
   ]
 }
