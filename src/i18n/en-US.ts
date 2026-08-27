@@ -168,11 +168,8 @@ export default {
         "Visit tracking API with Node.js, Express, TypeScript and PostgreSQL. Atomic, thread-safe counter.",
     projEf6: "Base template for RESTful APIs using .NET Core.",
     projAngularHub: "Complete full-stack application for product and user management.",
-    projVueCasa: "Interactive dashboard built with Vue.js, TypeScript and Vite.",
-    projNotion: "Workflow integration and optimization with icons in Notion.",
     projPyCrud: "Product CRUD built with Python and PyQt5.",
     projPyImg: "Image converter with 4K upscaling.",
-    btnViewProject: "<i class='fas fa-external-link-alt me-2' aria-hidden='true'></i>View Project",
 
     // Stats / contact
     statsTitle: "GitHub Statistics",
@@ -224,16 +221,6 @@ export default {
     arqAnhB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Angular front-end:</strong> an SPA in TypeScript with Bootstrap, product and user screens organized by module.",
     arqAnhB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Express API:</strong> REST routes in Node.js and TypeScript, with the MySQL access layer kept apart from the handlers.",
     arqAnhB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Full CRUD:</strong> create, edit, list and delete on both entities, validated on both ends.",
-    arqCarnesDesc:
-        "An interactive dashboard for a butcher shop: a Vue front-end built with Vite, served by an Express API over MySQL.",
-    arqCarnesB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Vue and Vite front-end:</strong> a TypeScript SPA, with Vite's fast build and components split by dashboard area.",
-    arqCarnesB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Express API:</strong> Node.js and TypeScript exposing the data that feeds the panels.",
-    arqCarnesB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>MySQL:</strong> relational modeling of the products and movements the dashboard consolidates.",
-    arqNotionDesc:
-        "A Notion icon collection published as a static page: no build, no dependencies, just files being served.",
-    arqNotionB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Pure static:</strong> HTML, CSS and JavaScript with no framework and no build step — it opens straight in the browser.",
-    arqNotionB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Bootstrap:</strong> grid and components handling the gallery's responsive layout.",
-    arqNotionB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Use in Notion:</strong> every icon has its own URL, ready to paste into a page's icon field.",
     arqPyCrudDesc:
         "A desktop product CRUD: a PyQt5 interface talking straight to MySQL, with no web layer in between.",
     arqPyCrudB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>PyQt5 interface:</strong> windows and forms built in Qt, with validation next to the widget.",
