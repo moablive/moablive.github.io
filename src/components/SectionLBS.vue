@@ -34,7 +34,7 @@ const PROD_TTS = "https://lbstts.astralwavelabel.com";
                     </p>
                     
                     <div class="mt-6 flex items-center gap-4">
-                        <img src="https://skillicons.dev/icons?i=vue,ts,cloudflare,docker&theme=dark" alt="Vue, TypeScript, Cloudflare, Docker" class="h-10" loading="lazy" />
+                        <img src="https://skillicons.dev/icons?i=vue,nodejs,ts,cloudflare,docker&theme=dark" alt="Vue, Node.js, TypeScript, Cloudflare, Docker" class="h-10" loading="lazy" />
                     </div>
                 </div>
 
