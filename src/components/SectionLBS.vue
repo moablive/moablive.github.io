@@ -52,36 +52,36 @@ const PROD_TTS = "https://lbstts.astralwavelabel.com";
                         {{ $t('lbsBtnGithub') }}
                     </a>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                        <div class="flex items-center gap-2">
-                            <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
+                            <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> MoneyAPP
                             </a>
-                            <a :href="GITHUB_MONEY" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center shrink-0 h-[40px] px-3 rounded-full border border-white/40 text-white transition-colors hover:bg-white/12">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }} 
+                            <a :href="GITHUB_MONEY" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
+                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
                             </a>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
+                            <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> TodoAPP
                             </a>
-                            <a :href="GITHUB_TODO" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center shrink-0 h-[40px] px-3 rounded-full border border-white/40 text-white transition-colors hover:bg-white/12">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }} 
+                            <a :href="GITHUB_TODO" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
+                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
                             </a>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
+                            <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> NotesAPP
                             </a>
-                            <a :href="GITHUB_NOTES" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center shrink-0 h-[40px] px-3 rounded-full border border-white/40 text-white transition-colors hover:bg-white/12">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }} 
+                            <a :href="GITHUB_NOTES" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
+                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
                             </a>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
+                            <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> LBSTTSAPP
                             </a>
-                            <a :href="GITHUB_TTS" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center shrink-0 h-[40px] px-3 rounded-full border border-white/40 text-white transition-colors hover:bg-white/12">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }} 
+                            <a :href="GITHUB_TTS" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
+                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
                             </a>
                         </div>
                     </div>
