@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
-const GITHUB_MONEY = "https://github.com/moablive/MoneyAPP";
-const GITHUB_TODO = "https://github.com/moablive/TodoAPP";
-const GITHUB_NOTES = "https://github.com/moablive/NotesAPP";
-const GITHUB_TTS = "https://github.com/moablive/LBSTTSAPP";
+const PROD_MONEY = "https://money.astralwavelabel.com";
+const PROD_TODO = "https://todo.astralwavelabel.com";
+const PROD_NOTES = "https://notes.astralwavelabel.com";
+const PROD_TTS = "https://lbstts.astralwavelabel.com";
 </script>
 
 <template>
@@ -23,10 +23,14 @@ const GITHUB_TTS = "https://github.com/moablive/LBSTTSAPP";
                     </h2>
                     <p class="mt-4 max-w-xl text-[15px] leading-relaxed text-white/85">{{ $t("lbsSubtitle") }}</p>
 
-                    <p class="label-mono mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
+                    <p class="label-mono mt-6 inline-flex flex-wrap items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
                         <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-[#68a063]" aria-hidden="true"></span>
                         {{ $t("lbsEnvLabel") }}
                     </p>
+                    
+                    <div class="mt-6 flex items-center gap-4">
+                        <img src="https://skillicons.dev/icons?i=vue,ts,cloudflare,docker&theme=dark" alt="Vue, TypeScript, Cloudflare, Docker" class="h-10" loading="lazy" />
+                    </div>
                 </div>
 
                 <div class="flex flex-col gap-3 lg:col-span-5">
@@ -38,11 +42,19 @@ const GITHUB_TTS = "https://github.com/moablive/LBSTTSAPP";
                     >
                         {{ $t('lbsBtnGithub') }}
                     </a>
-                    <div class="flex flex-wrap gap-2 justify-center mt-2">
-                        <a :href="GITHUB_MONEY" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/12">MoneyAPP</a>
-                        <a :href="GITHUB_TODO" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/12">TodoAPP</a>
-                        <a :href="GITHUB_NOTES" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/12">NotesAPP</a>
-                        <a :href="GITHUB_TTS" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/12">LBSTTSAPP</a>
+                    <div class="grid grid-cols-2 gap-3 mt-2">
+                        <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> MoneyAPP
+                        </a>
+                        <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> TodoAPP
+                        </a>
+                        <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> NotesAPP
+                        </a>
+                        <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> LBSTTSAPP
+                        </a>
                     </div>
                 </div>
             </div>
