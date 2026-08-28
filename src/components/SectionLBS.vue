@@ -54,26 +54,27 @@ const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
                     >
                         {{ $t('lbsBtnGithub') }}
                     </a>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                    <!-- Um app por linha: em duas colunas o nome `LBS_*APP` nao
+                         cabe ao lado do botao de repositorio e era truncado. -->
+                    <div class="mt-2 flex flex-col gap-3">
                         <div
                             v-for="app in APPS"
                             :key="app.id"
                             class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60"
-                            :class="{ 'sm:col-span-2': !app.prod }"
                         >
                             <a
                                 v-if="app.prod"
                                 :href="app.prod"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20 whitespace-nowrap"
                             >
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> {{ app.nome }}
                             </a>
                             <!-- Sem frontend público: o nome vira rótulo, e só o repositório é link. -->
                             <span
                                 v-else
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white/80 border-r border-white/20"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white/80 border-r border-white/20 whitespace-nowrap"
                             >
                                 <i class="fas fa-server" aria-hidden="true"></i> {{ app.nome }}
                             </span>
