@@ -316,7 +316,7 @@ export default {
     footerRights: "Todos os direitos reservados.",
         lbsFeatureTitle: "Destaque em Node.js",
     lbsTitle: "LifeBusinessSuit (LBS)",
-    lbsSubtitle: "Minha suíte de aplicativos principais, totalmente desenvolvida com Node.js e TypeScript. Este ecossistema integrado inclui o repositório principal do LifeBusinessSuit e microsserviços/apps satélites como TodoAPP, NotesAPP, LBSTTSAPP e MoneyAPP, formando uma solução completa de produtividade e finanças.",
+    lbsSubtitle: "Minha suíte de aplicativos principais, totalmente desenvolvida com Node.js e TypeScript. Este ecossistema integrado inclui o repositório principal do LifeBusinessSuit e microsserviços/apps satélites como LBS_TodoAPP, LBS_NotesAPP, LBS_TTSAPP, LBS_MoneyAPP e LBS_NotifyAPP, formando uma solução completa de produtividade e finanças.",
     lbsEnvLabel: "Ecossistema Node.js",
     lbsBtnGithub: "Ver LifeBusinessSuit no GitHub",
     lbsBtnGithubShort: "Repo",

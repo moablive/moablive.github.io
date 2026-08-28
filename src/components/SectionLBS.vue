@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
-const GITHUB_MONEY = "https://github.com/moablive/MoneyAPP";
-const GITHUB_TODO = "https://github.com/moablive/TodoAPP";
-const GITHUB_NOTES = "https://github.com/moablive/NotesAPP";
-const GITHUB_TTS = "https://github.com/moablive/LBSTTSAPP";
 
-const PROD_MONEY = "https://money.astralwavelabel.com";
-const PROD_TODO = "https://todo.astralwavelabel.com";
-const PROD_NOTES = "https://notes.astralwavelabel.com";
-const PROD_TTS = "https://lbstts.astralwavelabel.com";
+/** Os apps da suíte, com o nome padronizado do repositório (`LBS_*`).
+    `prod` ausente = serviço sem frontend público, só o repositório. */
+const APPS: Array<{ id: string; nome: string; prod?: string }> = [
+    { id: "money", nome: "LBS_MoneyAPP", prod: "https://money.astralwavelabel.com" },
+    { id: "todo", nome: "LBS_TodoAPP", prod: "https://todo.astralwavelabel.com" },
+    { id: "notes", nome: "LBS_NotesAPP", prod: "https://notes.astralwavelabel.com" },
+    { id: "tts", nome: "LBS_TTSAPP", prod: "https://lbstts.astralwavelabel.com" },
+    { id: "notify", nome: "LBS_NotifyAPP" },
+];
+
+const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
 </script>
 
 <template>
@@ -52,35 +55,35 @@ const PROD_TTS = "https://lbstts.astralwavelabel.com";
                         {{ $t('lbsBtnGithub') }}
                     </a>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
-                            <a :href="PROD_MONEY" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> MoneyAPP
+                        <div
+                            v-for="app in APPS"
+                            :key="app.id"
+                            class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60"
+                            :class="{ 'sm:col-span-2': !app.prod }"
+                        >
+                            <a
+                                v-if="app.prod"
+                                :href="app.prod"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20"
+                            >
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> {{ app.nome }}
                             </a>
-                            <a :href="GITHUB_MONEY" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
-                            </a>
-                        </div>
-                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
-                            <a :href="PROD_TODO" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> TodoAPP
-                            </a>
-                            <a :href="GITHUB_TODO" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
-                            </a>
-                        </div>
-                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
-                            <a :href="PROD_NOTES" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> NotesAPP
-                            </a>
-                            <a :href="GITHUB_NOTES" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
-                                <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
-                            </a>
-                        </div>
-                        <div class="flex items-center rounded-full border border-white/40 overflow-hidden transition-colors hover:border-white/60">
-                            <a :href="PROD_TTS" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> LBSTTSAPP
-                            </a>
-                            <a :href="GITHUB_TTS" target="_blank" rel="noopener noreferrer" :title="$t('lbsBtnGithubTitle')" class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0">
+                            <!-- Sem frontend público: o nome vira rótulo, e só o repositório é link. -->
+                            <span
+                                v-else
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white/80 border-r border-white/20"
+                            >
+                                <i class="fas fa-server" aria-hidden="true"></i> {{ app.nome }}
+                            </span>
+                            <a
+                                :href="repoDe(app.nome)"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                :title="$t('lbsBtnGithubTitle')"
+                                class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 shrink-0"
+                            >
                                 <i class="fab fa-github me-1.5" aria-hidden="true"></i> {{ $t('lbsBtnGithubShort') }}
                             </a>
                         </div>
