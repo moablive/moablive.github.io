@@ -2,13 +2,16 @@
 const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
 
 /** Os apps da suíte, com o nome padronizado do repositório (`LBS_*`).
-    `prod` ausente = serviço sem frontend público, só o repositório. */
+    `prod` ausente = serviço sem frontend público, só o repositório.
+
+    O LBS_NotifyAPP saiu em 19/09/2026: a central de notificação foi
+    descontinuada e o repositório, apagado. Cada app da suíte passou a entregar
+    Web Push por conta própria, então o link aqui viraria um 404. */
 const APPS: Array<{ id: string; nome: string; prod?: string }> = [
     { id: "money", nome: "LBS_MoneyAPP", prod: "https://money.astralwavelabel.com" },
     { id: "todo", nome: "LBS_TodoAPP", prod: "https://todo.astralwavelabel.com" },
     { id: "notes", nome: "LBS_NotesAPP", prod: "https://notes.astralwavelabel.com" },
     { id: "tts", nome: "LBS_TTSAPP", prod: "https://lbstts.astralwavelabel.com" },
-    { id: "notify", nome: "LBS_NotifyAPP" },
 ];
 
 const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
