@@ -11,7 +11,6 @@ const APPS: Array<{ id: string; nome: string; prod?: string }> = [
     { id: "money", nome: "LBS_MoneyAPP", prod: "https://money.astralwavelabel.com" },
     { id: "todo", nome: "LBS_TodoAPP", prod: "https://todo.astralwavelabel.com" },
     { id: "notes", nome: "LBS_NotesAPP", prod: "https://notes.astralwavelabel.com" },
-    { id: "tts", nome: "LBS_TTSAPP", prod: "https://lbstts.astralwavelabel.com" },
 ];
 
 const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
