@@ -25,8 +25,8 @@ export default {
     visitLoading: "Checking the counter...",
     themeToDark: "Switch to dark mode",
     themeToLight: "Switch to light mode",
-    heroKicker: "Senior Software Engineer — since 2016",
-    heroTitle: "Solutions architect",
+    heroKicker: "CTO at Sul Alimentos — building software since 2016",
+    heroTitle: "CTO & Solutions architect",
     heroLead: ".NET, Node and Python. Clean Architecture, DDD and edge security. Systems that survive their second year in production.",
     heroCta: "See projects ↓",
     statYears: "Years",
@@ -44,9 +44,9 @@ export default {
     roleCcsFull: "Tech Lead",
     roleSafewebFull: "Full Stack Engineer",
     roleSeniorFull: "Senior Software Engineer",
-    titleHome: "Guilherme Bonato — Senior Software Engineer",
+    titleHome: "Guilherme Bonato — CTO & Solutions Architect",
     descHome:
-        "Portfolio of Guilherme Bonato, Senior Software Engineer and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture and DDD.",
+        "Portfolio of Guilherme Bonato, CTO and Solutions Architect. Specialist in .NET, Node.js, Python, Clean Architecture and DDD.",
     title404: "Page not found — Guilherme Bonato",
     desc404: "The page you were looking for does not exist.",
     err404Title: "Page not found",
@@ -70,7 +70,7 @@ export default {
 
     // About
     aboutExperience:
-        "Senior Software Engineer with solid experience in <strong>development and architecture of scalable solutions</strong>. Specialist in building robust systems applying <strong>SOLID</strong>, <strong>DDD</strong> and <strong>TDD</strong> principles.",
+        "Since September 2026 I have been the <strong>CTO of Sul Alimentos</strong>, a meat distributor, where I am building the <strong>order management</strong> and <strong>delivery route tracking</strong> system. It is built on my own projects: <strong>LoginHUB</strong> handles sign-in and <strong>MoneyAPP</strong>, from the LifeBusinessSuit (LBS), covers the financial side. Before that, ten years as a software engineer in <strong>development and architecture of scalable solutions</strong>, applying <strong>SOLID</strong>, <strong>DDD</strong> and <strong>TDD</strong>.",
 
     // Education
     educationTitle: "Academic Background",
@@ -131,6 +131,10 @@ export default {
     expBadgeGoto: "Feb 2026 – Aug 2026",
     expDurationGoto:
         "<i class='fas fa-hourglass-half text-secondary me-1' aria-hidden='true'></i>6 months",
+    expBadgeSul: "Sep 2026 – Present",
+    expDurationSul: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Ongoing",
+    tagOrders: "Orders",
+    tagRoutes: "Routes",
     expCurrentBadge: "<i class='fas fa-star me-1 text-warning' aria-hidden='true'></i>Jan 2022 – Present",
     expCurrent: "<i class='fas fa-bolt me-1' aria-hidden='true'></i>Ongoing — my own company",
     roleAwl: "CEO & Solutions Architect",
@@ -272,6 +276,17 @@ export default {
     friB2: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Full-stack</strong> role building reactive and modern front-ends with React and Vue.js.",
     friB3: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i>Construction of scalable microservices using the .NET ecosystem.",
     friB4: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i>Message queue synchronization for inventory and logistics integration.",
+
+    // Modal Sul Alimentos
+    sulDate:
+        "<i class='fas fa-calendar-alt me-2' aria-hidden='true'></i><strong>Sep 2026 – Present</strong>",
+    sulDesc:
+        "I took over technology at <strong>Sul Alimentos</strong>, a meat distributor, to build its <strong>order management</strong> and delivery <strong>route tracking</strong> system, reusing projects I had already built.",
+    sulB1: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Order management:</strong> the whole path of an order, from intake to delivery, in a single system.",
+    sulB2: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Route tracking:</strong> planning and following the delivery routes.",
+    sulB3: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Sign-in through LoginHUB:</strong> the multi-tenant identity provider I built (JWT + Magic Link) becomes the system's login.",
+    sulB4: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Finance with MoneyAPP:</strong> the LBS_MoneyAPP core, from the LifeBusinessSuit, reused for the financial side.",
+    sulB5: "<i class='fas fa-check-circle text-primary me-2' aria-hidden='true'></i><strong>Technical leadership:</strong> architecture, stack choices and the company's engineering standards.",
 
     // Modal GotoBiz
     gotoDate:

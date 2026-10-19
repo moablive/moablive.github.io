@@ -9,6 +9,36 @@ import type { Cargo } from "./types";
  */
 export const cargos: Cargo[] = [
     {
+        id: "sul-alimentos",
+        modalId: "modalSulAlimentos",
+        periodo: { i18n: "expBadgeSul" },
+        icone: "fa-truck",
+        cargo: "CTO",
+        empresa: "Sul Alimentos",
+        duracaoKey: "expDurationSul",
+        tags: [{ i18n: "tagOrders" }, { i18n: "tagRoutes" }, "LoginHUB", "MoneyAPP"],
+        atual: true,
+        cargoCompleto: "Chief Technology Officer (CTO)",
+        modal: {
+            tituloIcone: "fa-truck",
+            dataKey: "sulDate",
+            descKey: "sulDesc",
+            listaTituloKey: "modalChallenges",
+            itensKeys: ["sulB1", "sulB2", "sulB3", "sulB4", "sulB5"],
+            techTituloKey: "modalTech",
+            destaque: "primary",
+            techs: [
+                { texto: "Vue.js", variante: "bg-primary" },
+                { texto: "TypeScript", variante: "bg-primary" },
+                { texto: "Node.js", variante: "bg-primary" },
+                { texto: "PostgreSQL", variante: "bg-secondary" },
+                { texto: "Docker", variante: "bg-secondary" },
+                { texto: "LoginHUB", variante: "bg-dark" },
+                { texto: "LBS_MoneyAPP", variante: "bg-dark" },
+            ],
+        },
+    },
+    {
         id: "gotobiz",
         modalId: "modalGotoBiz",
         periodo: { i18n: "expBadgeGoto" },

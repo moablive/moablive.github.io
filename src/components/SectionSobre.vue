@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const terminal = [
     { i: 0, html: '<span class="tok-kw">const</span> <span class="tok-var">moablive</span> = {' },
+    { i: 1, html: '<span class="tok-prop">role</span>: <span class="tok-str">"CTO @ Sul Alimentos"</span>,' },
     { i: 1, html: '<span class="tok-prop">stack</span>: [<span class="tok-str">".NET"</span>, <span class="tok-str">"Node.js"</span>],' },
     { i: 1, html: '<span class="tok-prop">frontend</span>: [<span class="tok-str">"Vue.js"</span>, <span class="tok-str">"React"</span>, <span class="tok-str">"Angular"</span>],' },
     { i: 1, html: '<span class="tok-prop">focus</span>: [' },
@@ -14,7 +15,7 @@ const terminal = [
 
 const numeros = [
     { id: "anos", valor: "10", labelKey: "statYears" },
-    { id: "empresas", valor: "06", labelKey: "statCompanies" },
+    { id: "empresas", valor: "07", labelKey: "statCompanies" },
     { id: "projetos", valor: "11", labelKey: "statProjects" },
 ];
 </script>
