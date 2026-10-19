@@ -2,10 +2,13 @@ import type { Formacao } from "./types";
 
 const DBX = "https://www.dropbox.com/scl/fi";
 
+/** Linha do tempo da formação, do mais novo para o mais antigo. */
 export const formacoes: Formacao[] = [
     {
         id: "unipds",
         sigla: "PDS",
+        ano: "2026",
+        nivelKey: "eduLevelPos",
         cursoKey: "eduCourse0",
         instituicao: "UNIPDS",
         siteInstituicao: "https://unipds.com.br/",
@@ -16,6 +19,8 @@ export const formacoes: Formacao[] = [
     {
         id: "xpe",
         sigla: "XPE",
+        ano: "2026",
+        nivelKey: "eduLevelMba",
         cursoKey: "eduCourse1",
         instituicao: "XP Educação (XPE)",
         siteInstituicao: "https://www.xpeducacao.com.br/",
@@ -26,6 +31,8 @@ export const formacoes: Formacao[] = [
     {
         id: "pucrs",
         sigla: "PUC",
+        ano: "2024",
+        nivelKey: "eduLevelPos",
         cursoKey: "eduCourse2",
         instituicao: "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)",
         siteInstituicao: "https://portal.pucrs.br/",
@@ -37,6 +44,8 @@ export const formacoes: Formacao[] = [
     {
         id: "lasalle",
         sigla: "La Salle",
+        ano: "2021",
+        nivelKey: "eduLevelBach",
         cursoKey: "eduCourse3",
         instituicao: "Universidade La Salle",
         siteInstituicao: "https://www.unilasalle.edu.br/canoas",
@@ -44,5 +53,18 @@ export const formacoes: Formacao[] = [
         concluido: true,
         credencial: `${DBX}/qq3tjq4nv3g6k9y8gze2u/Bacharelado-Ci-ncia-da-Computa-o.pdf?rlkey=5q47mn6tnrj1do7a0t0yj54w4&st=2y2xn363&dl=0`,
         credencialAriaKey: "btnViewCredLasalleAria",
+    },
+    {
+        id: "alcides-maya",
+        sigla: "AM",
+        ano: "2016",
+        nivelKey: "eduLevelTech",
+        cursoKey: "eduCourse4",
+        instituicao: "Escola Técnica Alcides Maya",
+        siteInstituicao: "https://alcidesmaya.edu.br/",
+        periodoKey: "eduDate4",
+        concluido: true,
+        credencialAriaKey: "btnVisitInstAria",
+        notaKey: "eduNoteAlcides",
     },
 ];

@@ -42,6 +42,10 @@ export interface Certificado {
 export interface Formacao {
     id: string;
     sigla: string;
+    /** Ano de conclusão: é o marco que aparece no trilho da linha do tempo. */
+    ano: string;
+    /** Nível do curso (técnico, graduação, pós, MBA). */
+    nivelKey: string;
     cursoKey: string;
     instituicao: string;
     siteInstituicao: string;
@@ -50,6 +54,8 @@ export interface Formacao {
     /** Link do diploma; ausente = leva ao site da instituição. */
     credencial?: string;
     credencialAriaKey: string;
+    /** Observação curta embaixo do período (ex.: "formado aos 18 anos"). */
+    notaKey?: string;
 }
 
 export interface Cargo {
