@@ -5,6 +5,18 @@ const DBX = "https://www.dropbox.com/scl/fi";
 /** Linha do tempo da formação, do mais novo para o mais antigo. */
 export const formacoes: Formacao[] = [
     {
+        id: "pucrs-mestrado",
+        sigla: "PUC",
+        ano: "2026",
+        nivelKey: "eduLevelMsc",
+        cursoKey: "eduCourse5",
+        instituicao: "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)",
+        siteInstituicao: "https://portal.pucrs.br/",
+        periodoKey: "eduDate5",
+        concluido: false,
+        credencialAriaKey: "btnVisitInstAria",
+    },
+    {
         id: "unipds",
         sigla: "PDS",
         ano: "2026",
