@@ -17,7 +17,15 @@ const PRODUCAO = "https://loginhub.astralwavelabel.com/login";
             <div class="relative grid gap-8 lg:grid-cols-12 lg:items-center">
                 <div class="lg:col-span-7">
                     <p class="label-mono mb-4 text-white/75">{{ $t("featureTitle") }}</p>
-                    <h2 class="text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
+                    <h2 class="flex items-center gap-4 text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
+                        <!-- Brasão do PWA do LoginHUB; o nome ao lado já é o texto acessível. -->
+                        <img
+                            src="/loginhub.svg"
+                            alt=""
+                            class="h-[1.4em] w-[1.4em] shrink-0 rounded-[22%] ring-2 ring-white/40"
+                            width="56"
+                            height="56"
+                        />
                         LoginHUB
                     </h2>
                     <p class="mt-4 max-w-xl text-[15px] leading-relaxed text-white/85">{{ $t("featureSubtitle") }}</p>
