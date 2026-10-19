@@ -71,6 +71,15 @@ export default {
     aboutExperience:
         "Since September 2026 I have been the <strong>CTO of Sul Alimentos</strong>, a meat distributor, where I am building the <strong>order management</strong> and <strong>delivery route tracking</strong> system. It is built on my own projects: <strong>LoginHUB</strong> handles sign-in and <strong>MoneyAPP</strong>, from the LifeBusinessSuit (LBS), covers the financial side. Before that, ten years as a software engineer in <strong>development and architecture of scalable solutions</strong>, applying <strong>SOLID</strong>, <strong>DDD</strong> and <strong>TDD</strong>.",
 
+    // Especialidades
+    specTitle: "Core Expertise",
+    specSubtitle: "The five technologies that define my work the most — from the Sul Alimentos system to the LifeBusinessSuit and the legacy systems I modernized.",
+    specTs: "My everyday language, front and back: types end to end, from the database to the screen.",
+    specNode: "APIs, bots and the whole LifeBusinessSuit: LoginHUB, MoneyAPP, TodoAPP and NotesAPP.",
+    specDotnet: ".NET 8 and microservices: modernizing legacy monoliths with Clean Architecture and DDD.",
+    specCs: "Domain rules, Web APIs and industrial automation with AutoCAD and SOLIDWORKS.",
+    specPy: "AI applied to engineering, data analysis and everyday automation.",
+
     // Education
     educationTitle: "Academic Background",
     eduCourse0: "Postgraduate in AI Engineering",

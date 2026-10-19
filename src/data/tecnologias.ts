@@ -12,8 +12,8 @@ export const gruposTech: GrupoTech[] = [
     {
         id: "front",
         tituloKey: "techFront",
-        icones: `${SK}react,vite,tailwind,vue,angular,bootstrap,html,css&theme=dark`,
-        alt: "React, Vite, Tailwind, Vue, Angular, Bootstrap, HTML, CSS",
+        icones: `${SK}vue,vite,tailwind,bootstrap,html,css&theme=dark`,
+        alt: "Vue, Vite, Tailwind, Bootstrap, HTML, CSS",
     },
     {
         id: "devops",

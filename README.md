@@ -43,14 +43,14 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 │   ├── data/                   # ── o conteúdo do site vive aqui ──
 │   │   ├── types.ts
 │   │   ├── projetos.ts         #   12 projetos + os 4 filtros do portfólio
-│   │   ├── formacao.ts         #   4 formações
+│   │   ├── formacao.ts         #   6 formações (linha do tempo, do mestrado ao técnico)
 │   │   ├── certificados.ts     #   7 certificados
-│   │   ├── trajetoria.ts       #   5 cargos + 1 empreitada, cada um com o conteúdo do seu modal
+│   │   ├── trajetoria.ts       #   6 cargos + 1 empreitada, cada um com o conteúdo do seu modal
 │   │   └── tecnologias.ts      #   grupos de stack + links de contato
 │   ├── i18n/
 │   │   ├── index.ts            #   configuração do vue-i18n
-│   │   ├── pt-BR.ts            #   241 chaves
-│   │   └── en-US.ts            #   241 chaves
+│   │   ├── pt-BR.ts            #   262 chaves
+│   │   └── en-US.ts            #   262 chaves
 │   ├── composables/
 │   │   ├── useTheme.ts         #   claro/escuro + <meta name="theme-color">
 │   │   ├── useLocale.ts        #   idioma + <html lang>, title, meta description e tags og:
@@ -58,7 +58,7 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 │   │   ├── useScrollSpy.ts     #   IntersectionObserver marca a seção visível no menu
 │   │   ├── useVisitCounter.ts  #   contador com fallback e timeout
 │   │   └── useLabel.ts         #   resolve texto literal vs. chave de tradução
-│   ├── components/             # 23 componentes (.vue)
+│   ├── components/             # 24 componentes (.vue)
 │   │   ├── AppNavbar / AppFooter / SecaoTitulo
 │   │   ├── ControlesFlutuantes ─ LangSwitch + ThemeToggle
 │   │   ├── Section*.vue        #   uma por seção da página
@@ -67,8 +67,13 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 │   └── assets/
 │       ├── style.css           #   @theme, .dark e os utilitários próprios
 │       └── astral-wave-logo.png
+├── cv/                         # currículo em PDF: conteudo.mjs (pt-BR e en), estilo.css, build.mjs
 ├── public/                     # copiado para dist/ sem processamento
 │   ├── 404.html                #   página estática, não depende do bundle
+│   ├── cv/                     #   os PDFs do currículo (npm run cv) — o "Baixar PDF" aponta para eles
+│   ├── credenciais/            #   certificados e diplomas (diplomas só em cópia tarjada, sem RG/nascimento)
+│   ├── lbs/                    #   brasão da LifeBusinessSuit e ícones dos PWAs
+│   ├── loginhub.svg            #   brasão do PWA do LoginHUB
 │   ├── astral-wave.png
 │   ├── robots.txt
 │   ├── sitemap.xml
@@ -82,11 +87,13 @@ Página única, sem `vue-router` — logo, nenhuma rota fantasma para o GitHub P
 ### As seções, na ordem
 
 `sobre` · `formacao` (01) · `certificados` (02) · `trajetoria` (03) · `empreitadas` (04) ·
-`tecnologias` (05) · `login-hub-feature` · `portfolio` (06) · `github-stats` (07) · `contato` (08) ·
-`visitas` (09)
+`tecnologias` (05) · `lbs-feature` · `portfolio` (06) · `github-stats` (07) · `contato` (08) ·
+`visitas` (09) · `especialidades` (10)
 
-O menu lista nove delas — o destaque do LoginHUB e o contador de visitas não entram na navegação,
-mas continuam na página.
+O menu lista nove delas — a LifeBusinessSuit (com o LoginHUB dentro, desde 19/10/2026), o contador
+de visitas e as especialidades não entram na navegação, mas continuam na página.
+
+Nada do site depende de Dropbox: currículo, certificados e diplomas são servidos de `public/`.
 
 ## Onde mexer no quê
 

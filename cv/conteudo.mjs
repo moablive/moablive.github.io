@@ -19,7 +19,7 @@ const pt = {
     arquivo: "Guilherme_Bonato_CV-BR.pdf",
     titulo: "CTO & Arquiteto de Soluções",
     resumo:
-        "CTO na <b>Sul Alimentos</b>, onde construo o sistema de controle de pedidos e de tráfego de rotas sobre a minha <b>LifeBusinessSuit</b> (LoginHUB + MoneyAPP). 10 anos construindo sistemas que sobrevivem ao segundo ano em produção: back-end em <b>C# / .NET 8</b>, <b>Node.js</b>, <b>Go</b> e <b>Python</b>; front-end em <b>React</b>, <b>Vue</b> e <b>Angular</b>; <b>Clean Architecture, DDD, CQRS, SOLID</b>. Perfil híbrido raro, unindo <b>infraestrutura de redes e segurança da informação</b> ao desenvolvimento.",
+        "CTO na <b>Sul Alimentos</b>, onde construo o sistema de controle de pedidos e de tráfego de rotas sobre a minha <b>LifeBusinessSuit</b> (LoginHUB + MoneyAPP). 10 anos construindo sistemas que sobrevivem ao segundo ano em produção: back-end em <b>C# / .NET 8</b>, <b>Node.js</b>, <b>Go</b> e <b>Python</b>; front-end em <b>Vue</b>; <b>Clean Architecture, DDD, CQRS, SOLID</b>. Perfil híbrido raro, unindo <b>infraestrutura de redes e segurança da informação</b> ao desenvolvimento.",
     local: "Porto Alegre / Canoas — RS, Brasil",
     rotulos: {
         stack: "Stack principal",
@@ -42,7 +42,7 @@ const pt = {
     ],
     stack: [
         ["Back-end", "C# · .NET 8 / .NET Core / Framework 4.8 · Node.js · TypeScript · Python · Go"],
-        ["Front-end", "React · Vue.js · Angular · Vite · Tailwind CSS · Razor Pages"],
+        ["Front-end", "Vue.js · Vite · Tailwind CSS · Razor Pages"],
         ["Dados", "SQL Server · PostgreSQL · MySQL · MongoDB · Redis · EF Core · Dapper · Drizzle"],
         ["Mensageria & eventos", "Apache Kafka · Azure Service Bus / Queue Storage"],
         ["Cloud & DevOps", "Docker · AWS · Azure · Google Cloud · Cloudflare (WAF/CDN/DNS) · Nginx · Linux · Git · Azure DevOps · CI/CD"],
@@ -206,7 +206,7 @@ const en = {
     arquivo: "Guilherme_Bonato_CV-US.pdf",
     titulo: "CTO & Solutions Architect",
     resumo:
-        "CTO at <b>Sul Alimentos</b>, where I am building the order management and delivery route tracking system on top of my own <b>LifeBusinessSuit</b> (LoginHUB + MoneyAPP). 10 years building systems that survive their second year in production: back-end in <b>C# / .NET 8</b>, <b>Node.js</b>, <b>Go</b> and <b>Python</b>; front-end in <b>React</b>, <b>Vue</b> and <b>Angular</b>; <b>Clean Architecture, DDD, CQRS, SOLID</b>. Rare hybrid background in <b>network infrastructure and application security</b>.",
+        "CTO at <b>Sul Alimentos</b>, where I am building the order management and delivery route tracking system on top of my own <b>LifeBusinessSuit</b> (LoginHUB + MoneyAPP). 10 years building systems that survive their second year in production: back-end in <b>C# / .NET 8</b>, <b>Node.js</b>, <b>Go</b> and <b>Python</b>; front-end in <b>Vue</b>; <b>Clean Architecture, DDD, CQRS, SOLID</b>. Rare hybrid background in <b>network infrastructure and application security</b>.",
     local: "Porto Alegre / Canoas — RS, Brazil",
     rotulos: {
         stack: "Core stack",
@@ -229,7 +229,7 @@ const en = {
     ],
     stack: [
         ["Back-end", "C# · .NET 8 / .NET Core / Framework 4.8 · Node.js · TypeScript · Python · Go"],
-        ["Front-end", "React · Vue.js · Angular · Vite · Tailwind CSS · Razor Pages"],
+        ["Front-end", "Vue.js · Vite · Tailwind CSS · Razor Pages"],
         ["Data", "SQL Server · PostgreSQL · MySQL · MongoDB · Redis · EF Core · Dapper · Drizzle"],
         ["Messaging & events", "Apache Kafka · Azure Service Bus / Queue Storage"],
         ["Cloud & DevOps", "Docker · AWS · Azure · Google Cloud · Cloudflare (WAF/CDN/DNS) · Nginx · Linux · Git · Azure DevOps · CI/CD"],

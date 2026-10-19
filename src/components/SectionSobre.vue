@@ -3,7 +3,7 @@ const terminal = [
     { i: 0, html: '<span class="tok-kw">const</span> <span class="tok-var">moablive</span> = {' },
     { i: 1, html: '<span class="tok-prop">role</span>: <span class="tok-str">"CTO @ Sul Alimentos"</span>,' },
     { i: 1, html: '<span class="tok-prop">stack</span>: [<span class="tok-str">".NET"</span>, <span class="tok-str">"Node.js"</span>],' },
-    { i: 1, html: '<span class="tok-prop">frontend</span>: [<span class="tok-str">"Vue.js"</span>, <span class="tok-str">"React"</span>, <span class="tok-str">"Angular"</span>],' },
+    { i: 1, html: '<span class="tok-prop">frontend</span>: [<span class="tok-str">"Vue.js"</span>, <span class="tok-str">"Vite"</span>, <span class="tok-str">"Tailwind"</span>],' },
     { i: 1, html: '<span class="tok-prop">focus</span>: [' },
     { i: 2, html: '<span class="tok-str">"Clean Architecture"</span>,' },
     { i: 2, html: '<span class="tok-str">"Microservices"</span>,' },

@@ -71,6 +71,15 @@ export default {
     aboutExperience:
         "Desde setembro de 2026 sou <strong>CTO da Sul Alimentos</strong>, casa de carnes onde estou construindo o sistema de <strong>controle de pedidos</strong> e de <strong>tráfego de rotas de entrega</strong>. O sistema nasce sobre projetos meus: o <strong>LoginHUB</strong> cuida do login e o <strong>MoneyAPP</strong>, da LifeBusinessSuit (LBS), entra na parte financeira. Antes disso, foram dez anos como engenheiro de software em <strong>desenvolvimento e arquitetura de soluções escaláveis</strong>, aplicando <strong>SOLID</strong>, <strong>DDD</strong> e <strong>TDD</strong>.",
 
+    // Especialidades
+    specTitle: "Especialidades",
+    specSubtitle: "As cinco tecnologias que mais definem o meu trabalho — do sistema da Sul Alimentos à LifeBusinessSuit e aos legados que modernizei.",
+    specTs: "Minha linguagem do dia a dia, no front e no back: tipos de ponta a ponta do banco à tela.",
+    specNode: "APIs, bots e a LifeBusinessSuit inteira: LoginHUB, MoneyAPP, TodoAPP e NotesAPP.",
+    specDotnet: ".NET 8 e microsserviços: modernização de monolitos legados com Clean Architecture e DDD.",
+    specCs: "Regras de domínio, Web APIs e automação industrial com AutoCAD e SOLIDWORKS.",
+    specPy: "IA aplicada à engenharia, análise de dados e automação do dia a dia.",
+
     // Formação
     educationTitle: "Formação Acadêmica",
     eduCourse0: "Pós-Graduação em Engenharia de IA",

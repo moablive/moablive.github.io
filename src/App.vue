@@ -17,6 +17,7 @@ import SectionPortfolio from "@/components/SectionPortfolio.vue";
 import SectionGithubStats from "@/components/SectionGithubStats.vue";
 import SectionContato from "@/components/SectionContato.vue";
 import SectionVisitas from "@/components/SectionVisitas.vue";
+import SectionEspecialidades from "@/components/SectionEspecialidades.vue";
 import CargoModal from "@/components/CargoModal.vue";
 import ProjetoArqModal from "@/components/ProjetoArqModal.vue";
 import ModalLoginHub from "@/components/ModalLoginHub.vue";
@@ -53,6 +54,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
         <SectionGithubStats />
         <SectionContato />
         <SectionVisitas />
+        <SectionEspecialidades />
     </main>
 
     <CargoModal v-for="cargo in todosCargos" :key="cargo.id" :cargo="cargo" />
