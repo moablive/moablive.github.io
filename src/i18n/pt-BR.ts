@@ -40,7 +40,6 @@ export default {
     altEmail: "E-mail de Guilherme Bonato",
     altGithub: "GitHub de moablive",
     location: "Porto Alegre, RS — Brasil",
-    envLabel: "Ambiente:",
     roleCcsFull: "Tech Lead",
     roleSafewebFull: "Full Stack Engineer",
     roleSeniorFull: "Senior Software Engineer",
@@ -149,13 +148,6 @@ export default {
     techFront: "<i class='fas fa-laptop-code me-2' aria-hidden='true'></i>Front-End &amp; UI",
     techDevops: "<i class='fas fa-network-wired me-2' aria-hidden='true'></i>DevOps, Infra &amp; Cloud",
     techData: "<i class='fas fa-database me-2' aria-hidden='true'></i>Dados &amp; Versionamento",
-
-    // Destaque
-    featureTitle: "Destaque de Arquitetura · LBS",
-    featureSubtitle: "Identity Provider (IdP) Enterprise Multi-tenant",
-    featureBtnArch:
-        "<i class='fas fa-network-wired me-2' aria-hidden='true'></i> Ver Arquitetura da Solução",
-    featureBtnProd: "<i class='fas fa-rocket me-2' aria-hidden='true'></i> Acessar Produção",
 
     // Portfólio
     portfolioTitle: "Portfólio",
@@ -335,5 +327,6 @@ export default {
     lbsEnvLabel: "Ecossistema Node.js",
     lbsBtnGithub: "Ver LifeBusinessSuit no GitHub",
     lbsBtnGithubShort: "Repo",
+    lbsBtnArchTitle: "Ver a arquitetura",
     lbsBtnGithubTitle: "Repositório no GitHub",
 } as const;

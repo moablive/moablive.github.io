@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useModal } from "@/composables/useModal";
+
+const { abrir } = useModal();
 const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
 
 /** Os apps da suíte, com o nome padronizado do repositório (`LBS_*`).
@@ -11,8 +14,8 @@ const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
     Cada app é um PWA instalável; `icone` é o ícone 192px do manifest de produção,
     reduzido para 96px em public/lbs/. O LoginHUB vem primeiro: é o login
     central da suíte, e o repositório dele não segue o padrão `LBS_*`. */
-const APPS: Array<{ id: string; nome: string; icone: string; prod?: string; repo?: string }> = [
-    { id: "loginhub", nome: "LoginHUB", icone: "/lbs/loginhub.svg", prod: "https://loginhub.astralwavelabel.com/login", repo: "LoginHUB" },
+const APPS: Array<{ id: string; nome: string; icone: string; prod?: string; repo?: string; arq?: string }> = [
+    { id: "loginhub", nome: "LoginHUB", icone: "/lbs/loginhub.svg", prod: "https://loginhub.astralwavelabel.com/login", repo: "LoginHUB", arq: "modalLoginHub" },
     { id: "money", nome: "LBS_MoneyAPP", icone: "/lbs/money.png", prod: "https://money.astralwavelabel.com" },
     { id: "todo", nome: "LBS_TodoAPP", icone: "/lbs/todo.png", prod: "https://todo.astralwavelabel.com" },
     { id: "notes", nome: "LBS_NotesAPP", icone: "/lbs/notes.png", prod: "https://notes.astralwavelabel.com" },
@@ -99,6 +102,17 @@ const repoDe = (app: (typeof APPS)[number]) => `https://github.com/moablive/${ap
                             >
                                 <i class="fas fa-server" aria-hidden="true"></i> {{ app.nome }}
                             </span>
+                            <!-- O LoginHUB tem modal de arquitetura próprio (era o destaque
+                                 separado acima desta seção até 19/10/2026). -->
+                            <button
+                                v-if="app.arq"
+                                type="button"
+                                :title="$t('lbsBtnArchTitle')"
+                                class="flex items-center justify-center px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20 shrink-0"
+                                @click="abrir(app.arq, $event)"
+                            >
+                                <i class="fas fa-network-wired" aria-hidden="true"></i>
+                            </button>
                             <a
                                 :href="repoDe(app)"
                                 target="_blank"
