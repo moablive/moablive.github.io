@@ -151,7 +151,7 @@ export default {
     techData: "<i class='fas fa-database me-2' aria-hidden='true'></i>Dados &amp; Versionamento",
 
     // Destaque
-    featureTitle: "Destaque de Arquitetura",
+    featureTitle: "Destaque de Arquitetura · LBS",
     featureSubtitle: "Identity Provider (IdP) Enterprise Multi-tenant",
     featureBtnArch:
         "<i class='fas fa-network-wired me-2' aria-hidden='true'></i> Ver Arquitetura da Solução",
@@ -330,7 +330,7 @@ export default {
     footerRights: "Todos os direitos reservados.",
         lbsFeatureTitle: "Destaque em Node.js",
     lbsTitle: "LifeBusinessSuit",
-    lbsSubtitle: "A LBS é a suíte que concentra boa parte do know-how da minha empresa: produtividade e finanças num ecossistema só, todo em Node.js e TypeScript. Cada app — LBS_MoneyAPP, LBS_TodoAPP e LBS_NotesAPP — é um PWA próprio, instalável no celular e no computador, e todos entram pelo mesmo login do LoginHUB.",
+    lbsSubtitle: "A LBS é a suíte que concentra boa parte do know-how da minha empresa: produtividade e finanças num ecossistema só, todo em Node.js e TypeScript. O LoginHUB é o login central da suíte, e cada app — LBS_MoneyAPP, LBS_TodoAPP e LBS_NotesAPP — é um PWA próprio, instalável no celular e no computador, que entra por ele.",
     lbsPwaLabel: "Um PWA por app",
     lbsEnvLabel: "Ecossistema Node.js",
     lbsBtnGithub: "Ver LifeBusinessSuit no GitHub",

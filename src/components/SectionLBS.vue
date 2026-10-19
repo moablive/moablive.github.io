@@ -9,14 +9,16 @@ const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
     Web Push por conta própria, então o link aqui viraria um 404.
 
     Cada app é um PWA instalável; `icone` é o ícone 192px do manifest de produção,
-    reduzido para 96px em public/lbs/. */
-const APPS: Array<{ id: string; nome: string; icone: string; prod?: string }> = [
+    reduzido para 96px em public/lbs/. O LoginHUB vem primeiro: é o login
+    central da suíte, e o repositório dele não segue o padrão `LBS_*`. */
+const APPS: Array<{ id: string; nome: string; icone: string; prod?: string; repo?: string }> = [
+    { id: "loginhub", nome: "LoginHUB", icone: "/lbs/loginhub.svg", prod: "https://loginhub.astralwavelabel.com/login", repo: "LoginHUB" },
     { id: "money", nome: "LBS_MoneyAPP", icone: "/lbs/money.png", prod: "https://money.astralwavelabel.com" },
     { id: "todo", nome: "LBS_TodoAPP", icone: "/lbs/todo.png", prod: "https://todo.astralwavelabel.com" },
     { id: "notes", nome: "LBS_NotesAPP", icone: "/lbs/notes.png", prod: "https://notes.astralwavelabel.com" },
 ];
 
-const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
+const repoDe = (app: (typeof APPS)[number]) => `https://github.com/moablive/${app.repo ?? app.nome}`;
 </script>
 
 <template>
@@ -98,7 +100,7 @@ const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
                                 <i class="fas fa-server" aria-hidden="true"></i> {{ app.nome }}
                             </span>
                             <a
-                                :href="repoDe(app.nome)"
+                                :href="repoDe(app)"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 :title="$t('lbsBtnGithubTitle')"
