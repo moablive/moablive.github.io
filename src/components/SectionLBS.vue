@@ -6,11 +6,14 @@ const GITHUB_URL = "https://github.com/moablive/LifeBusinessSuit";
 
     O LBS_NotifyAPP saiu em 19/09/2026: a central de notificação foi
     descontinuada e o repositório, apagado. Cada app da suíte passou a entregar
-    Web Push por conta própria, então o link aqui viraria um 404. */
-const APPS: Array<{ id: string; nome: string; prod?: string }> = [
-    { id: "money", nome: "LBS_MoneyAPP", prod: "https://money.astralwavelabel.com" },
-    { id: "todo", nome: "LBS_TodoAPP", prod: "https://todo.astralwavelabel.com" },
-    { id: "notes", nome: "LBS_NotesAPP", prod: "https://notes.astralwavelabel.com" },
+    Web Push por conta própria, então o link aqui viraria um 404.
+
+    Cada app é um PWA instalável; `icone` é o ícone 192px do manifest de produção,
+    reduzido para 96px em public/lbs/. */
+const APPS: Array<{ id: string; nome: string; icone: string; prod?: string }> = [
+    { id: "money", nome: "LBS_MoneyAPP", icone: "/lbs/money.png", prod: "https://money.astralwavelabel.com" },
+    { id: "todo", nome: "LBS_TodoAPP", icone: "/lbs/todo.png", prod: "https://todo.astralwavelabel.com" },
+    { id: "notes", nome: "LBS_NotesAPP", icone: "/lbs/notes.png", prod: "https://notes.astralwavelabel.com" },
 ];
 
 const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
@@ -28,7 +31,15 @@ const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
             <div class="relative grid gap-8 lg:grid-cols-12 lg:items-center">
                 <div class="lg:col-span-7">
                     <p class="label-mono mb-4 text-white/75">{{ $t("lbsFeatureTitle") }}</p>
-                    <h2 class="text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
+                    <h2 class="flex items-center gap-4 text-[clamp(1.75rem,4.5vw,2.75rem)] leading-tight font-extrabold tracking-[-0.03em]">
+                        <!-- Brasão corporativo da suíte; o título ao lado já é o texto acessível. -->
+                        <img
+                            src="/lbs/lbs.svg"
+                            alt=""
+                            class="h-[1.6em] w-[1.6em] shrink-0 rounded-[22%] shadow-lg ring-1 ring-white/30"
+                            width="64"
+                            height="64"
+                        />
                         {{ $t("lbsTitle") }}
                     </h2>
                     <p class="mt-4 max-w-xl text-[15px] leading-relaxed text-white/85">{{ $t("lbsSubtitle") }}</p>
@@ -36,6 +47,10 @@ const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
                     <p class="label-mono mt-6 inline-flex flex-wrap items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
                         <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-[#68a063]" aria-hidden="true"></span>
                         {{ $t("lbsEnvLabel") }}
+                    </p>
+                    <p class="label-mono mt-3 ml-2 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        {{ $t("lbsPwaLabel") }}
                     </p>
                     
                     <div class="mt-6 flex flex-wrap items-center gap-2">
@@ -69,9 +84,11 @@ const repoDe = (nome: string) => `https://github.com/moablive/${nome}`;
                                 :href="app.prod"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20 whitespace-nowrap"
+                                class="flex-1 flex items-center gap-3 py-2 pr-4 pl-2 text-xs font-semibold text-white transition-colors hover:bg-white/12 border-r border-white/20 whitespace-nowrap"
                             >
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> {{ app.nome }}
+                                <img :src="app.icone" alt="" class="h-8 w-8 shrink-0 rounded-[22%] bg-white/10 object-cover" width="32" height="32" loading="lazy" />
+                                <span class="flex-1">{{ app.nome }}</span>
+                                <i class="fas fa-external-link-alt text-white/60" aria-hidden="true"></i>
                             </a>
                             <!-- Sem frontend público: o nome vira rótulo, e só o repositório é link. -->
                             <span

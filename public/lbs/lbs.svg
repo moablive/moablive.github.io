@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="LifeBusinessSuit">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b3b36"/>
+      <stop offset="1" stop-color="#05201e"/>
+    </linearGradient>
+    <linearGradient id="ouro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d58a"/>
+      <stop offset="1" stop-color="#c79a3b"/>
+    </linearGradient>
+    <linearGradient id="verde" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="14" y="14" width="484" height="484" rx="100" fill="none" stroke="url(#ouro)" stroke-opacity=".55" stroke-width="4"/>
+  <!-- Hexágono: a suíte como uma estrutura só. -->
+  <path d="M256 70 417 163v186L256 442 95 349V163Z" fill="none" stroke="url(#ouro)" stroke-width="14" stroke-linejoin="round"/>
+  <!-- Três camadas empilhadas: os apps da suíte sobre a mesma base. -->
+  <path d="M256 268 362 207 256 146 150 207Z" fill="url(#verde)"/>
+  <path d="M150 248 256 309 362 248" fill="none" stroke="#6ee7b7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 289 256 350 362 289" fill="none" stroke="url(#ouro)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="402" text-anchor="middle" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="10" fill="url(#ouro)">LBS</text>
+</svg>
