@@ -329,8 +329,8 @@ export default {
     // Rodapé / FAB
     footerRights: "Todos os direitos reservados.",
         lbsFeatureTitle: "Destaque em Node.js",
-    lbsTitle: "LifeBusinessSuit (LBS)",
-    lbsSubtitle: "A suíte que concentra boa parte do know-how da minha empresa: produtividade e finanças num ecossistema só, todo em Node.js e TypeScript. Cada app — LBS_MoneyAPP, LBS_TodoAPP e LBS_NotesAPP — é um PWA próprio, instalável no celular e no computador, e todos entram pelo mesmo login do LoginHUB.",
+    lbsTitle: "LifeBusinessSuit",
+    lbsSubtitle: "A LBS é a suíte que concentra boa parte do know-how da minha empresa: produtividade e finanças num ecossistema só, todo em Node.js e TypeScript. Cada app — LBS_MoneyAPP, LBS_TodoAPP e LBS_NotesAPP — é um PWA próprio, instalável no celular e no computador, e todos entram pelo mesmo login do LoginHUB.",
     lbsPwaLabel: "Um PWA por app",
     lbsEnvLabel: "Ecossistema Node.js",
     lbsBtnGithub: "Ver LifeBusinessSuit no GitHub",
