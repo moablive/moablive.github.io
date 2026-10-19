@@ -9,8 +9,8 @@ export const formacoes: Formacao[] = [
         cursoKey: "eduCourse0",
         instituicao: "UNIPDS",
         siteInstituicao: "https://unipds.com.br/",
-        periodoKey: "eduExpected",
-        concluido: false,
+        periodoKey: "eduDate3",
+        concluido: true,
         credencialAriaKey: "btnVisitInstAria",
     },
     {
@@ -19,8 +19,8 @@ export const formacoes: Formacao[] = [
         cursoKey: "eduCourse1",
         instituicao: "XP Educação (XPE)",
         siteInstituicao: "https://www.xpeducacao.com.br/",
-        periodoKey: "eduExpected",
-        concluido: false,
+        periodoKey: "eduDate3",
+        concluido: true,
         credencialAriaKey: "btnVisitInstAria",
     },
     {

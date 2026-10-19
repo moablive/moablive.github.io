@@ -80,8 +80,7 @@ export default {
     eduCourse3: "Bacharelado em Ciência da Computação",
     eduStatusOngoing: "<i class='fas fa-spinner fa-spin me-1' aria-hidden='true'></i> Em andamento",
     eduStatusDone: "<i class='fas fa-check-circle me-1' aria-hidden='true'></i> Concluído",
-    eduExpected:
-        "<i class='far fa-calendar-alt me-2' aria-hidden='true'></i>Conclusão prevista: Dez/2026",
+    eduDate3: "<i class='far fa-calendar-alt me-2' aria-hidden='true'></i>2026",
     eduDate1: "<i class='far fa-calendar-alt me-2' aria-hidden='true'></i>2022 – 2024",
     eduDate2: "<i class='far fa-calendar-alt me-2' aria-hidden='true'></i>2016 – 2021",
     btnVisitInst: "Visitar instituição",
