@@ -16,11 +16,10 @@ const links = [
 ];
 
 // Cada idioma tem a sua versão do currículo; o botão segue o idioma da página.
+// Os PDFs são gerados por `npm run cv` (cv/build.mjs) e ficam em public/cv/.
 const CURRICULOS: Record<string, string> = {
-    "pt-BR":
-        "https://www.dropbox.com/scl/fi/cl6oukvlk5pg3e1bslk2v/Guilherme_Bonato_CV_2026-BR.pdf?rlkey=8l3826ofyd5eo6htkcixohjnb&st=5eg8ilh1&dl=1",
-    "en-US":
-        "https://www.dropbox.com/scl/fi/ugjb6vk8jdh8gnzgo1zbb/Guilherme_Bonato_CV_2026-US.pdf?rlkey=hpk6ivlgou4yjm0szdkocu5f9&st=63dpm260&dl=1",
+    "pt-BR": "/cv/Guilherme_Bonato_CV-BR.pdf",
+    "en-US": "/cv/Guilherme_Bonato_CV-US.pdf",
 };
 
 const { locale } = useI18n({ useScope: "global" });

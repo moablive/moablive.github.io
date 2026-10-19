@@ -1,0 +1,415 @@
+/* Currículo em PDF: A4, três páginas fixas. Cores seguem as do site (src/assets/style.css). */
+@page {
+    size: A4;
+    margin: 0;
+}
+:root {
+    --roxo: #5b21b6;
+    --roxo-2: #7c3aed;
+    --roxo-claro: #ede9fe;
+    --tinta: #16141f;
+    --tinta-2: #4b4a57;
+    --tinta-3: #8a8896;
+    --linha: #e6e4ee;
+    --fundo-lateral: #f6f5fb;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    color: var(--tinta);
+    font-size: 8.4pt;
+    line-height: 1.45;
+    background: #fff;
+}
+b {
+    font-weight: 700;
+    color: var(--tinta);
+}
+ul,
+ol {
+    list-style: none;
+}
+
+.pagina {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+}
+.pagina:last-child {
+    page-break-after: auto;
+    break-after: auto;
+}
+
+/* Topo da página 1 */
+.topo {
+    display: flex;
+    gap: 7mm;
+    align-items: center;
+    padding: 9mm 12mm 8mm;
+    color: #fff;
+    background: linear-gradient(120deg, #2e1065 0%, var(--roxo) 55%, var(--roxo-2) 100%);
+}
+.topo b {
+    color: #fff;
+}
+.foto {
+    width: 30mm;
+    height: 30mm;
+    border-radius: 50%;
+    border: 1.2mm solid rgba(255, 255, 255, 0.25);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.topo h1 {
+    font-size: 25pt;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+}
+.cargo-titulo {
+    margin-top: 1.5mm;
+    font-size: 11.5pt;
+    font-weight: 600;
+    color: #ddd6fe;
+}
+.resumo {
+    margin-top: 2.5mm;
+    font-size: 8.6pt;
+    color: rgba(255, 255, 255, 0.86);
+}
+.contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6mm 6mm;
+    padding: 3mm 12mm;
+    background: #16141f;
+    color: #e9e7f2;
+    font-size: 7.8pt;
+}
+.contato i {
+    color: #c4b5fd;
+    margin-right: 1.6mm;
+}
+
+/* Corpo em duas colunas */
+.corpo {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 52mm 1fr;
+}
+.corpo aside {
+    background: var(--fundo-lateral);
+    padding: 6mm 5mm 6mm 7mm;
+}
+.corpo main {
+    padding: 6mm 10mm 6mm 7mm;
+}
+.corpo.sem-topo aside,
+.corpo.sem-topo main {
+    padding-top: 9mm;
+}
+.cheia {
+    flex: 1;
+    padding: 9mm 12mm 6mm;
+}
+
+.secao {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    margin: 4.5mm 0 2.6mm;
+    font-size: 8.6pt;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.secao:first-child {
+    margin-top: 0;
+}
+.secao .marca {
+    width: 2.6mm;
+    height: 2.6mm;
+    border-radius: 0.7mm;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-2));
+}
+.secao small {
+    font-size: 7.4pt;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tinta-3);
+}
+
+/* Lateral */
+.grupo {
+    margin-bottom: 3mm;
+}
+.grupo h4 {
+    font-size: 7pt;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--roxo);
+}
+.grupo p {
+    color: var(--tinta-2);
+    font-size: 7.8pt;
+}
+
+.linha {
+    position: relative;
+    padding-left: 4.5mm;
+    border-left: 0.4mm solid #d9d3f5;
+}
+.linha li {
+    position: relative;
+    margin-bottom: 3mm;
+}
+.linha li::before {
+    content: "";
+    position: absolute;
+    left: -6.1mm;
+    top: 0.9mm;
+    width: 2.6mm;
+    height: 2.6mm;
+    border-radius: 50%;
+    background: #fff;
+    border: 0.5mm solid var(--roxo-2);
+}
+.linha li.andamento::before {
+    background: var(--roxo-2);
+}
+.linha h4 {
+    font-size: 8pt;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.linha p {
+    color: var(--tinta-2);
+    font-size: 7.6pt;
+}
+.linha .data {
+    color: var(--tinta-3);
+}
+.selo {
+    display: inline-block;
+    margin: 0.6mm 0;
+    padding: 0.3mm 1.6mm;
+    border-radius: 4mm;
+    background: #fef3c7;
+    color: #b45309;
+    font-size: 6.4pt;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.certs li {
+    margin-bottom: 2.2mm;
+}
+.certs b {
+    display: block;
+    font-size: 7.8pt;
+    line-height: 1.3;
+}
+.certs span {
+    color: var(--tinta-3);
+    font-size: 7.2pt;
+}
+.idioma {
+    color: var(--tinta-2);
+}
+
+/* Números */
+.numeros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3mm;
+    margin-bottom: 1mm;
+}
+.numeros div {
+    border-radius: 2.5mm;
+    background: #16141f;
+    color: #fff;
+    text-align: center;
+    padding: 2.6mm 1mm;
+}
+.numeros strong {
+    display: block;
+    font-size: 15pt;
+    font-weight: 800;
+    line-height: 1.1;
+}
+.numeros span {
+    font-size: 6.4pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c4b5fd;
+}
+
+/* Cargos */
+.cargo {
+    position: relative;
+    padding-left: 4.5mm;
+    margin-bottom: 4mm;
+}
+.cargo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.1mm;
+    width: 2.4mm;
+    height: 2.4mm;
+    border-radius: 50%;
+    border: 0.5mm solid var(--roxo-2);
+}
+.cargo.atual::before {
+    background: var(--roxo-2);
+}
+.cargo header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+}
+.cargo h3 {
+    font-size: 9.6pt;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+.periodo {
+    flex-shrink: 0;
+    padding: 0.4mm 2mm;
+    border-radius: 1.2mm;
+    background: var(--roxo-claro);
+    color: var(--roxo);
+    font-size: 6.8pt;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.cargo.atual .periodo {
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-2));
+    color: #fff;
+}
+.empresa {
+    margin: 0.4mm 0 1.4mm;
+    color: var(--tinta-3);
+    font-size: 7.8pt;
+}
+.empresa b {
+    color: var(--roxo);
+}
+.cargo li,
+.diferenciais li {
+    position: relative;
+    padding-left: 3mm;
+    margin-bottom: 0.9mm;
+    color: var(--tinta-2);
+}
+.cargo li::before,
+.diferenciais li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.75mm;
+    width: 1.2mm;
+    height: 1.2mm;
+    border-radius: 0.3mm;
+    background: #a78bfa;
+}
+.stack {
+    margin-top: 1.2mm;
+    color: var(--tinta-3);
+    font-size: 7.2pt;
+}
+.stack b {
+    color: var(--roxo);
+    letter-spacing: 0.1em;
+    margin-right: 1mm;
+}
+
+/* Página 3 */
+.negocio {
+    border: 0.4mm solid #c4b5fd;
+    border-radius: 3mm;
+    padding: 4mm 5mm 1mm;
+    background: #faf8ff;
+}
+.faixa {
+    display: inline-block;
+    margin-bottom: 2.5mm;
+    padding: 0.6mm 2.4mm;
+    border-radius: 1.2mm;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-2));
+    color: #fff;
+    font-size: 6.6pt;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.projetos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+}
+.projetos article {
+    border: 0.3mm solid var(--linha);
+    border-radius: 3mm;
+    padding: 3.6mm 4.4mm;
+}
+.projetos article.destaque {
+    grid-column: 1 / -1;
+    border: none;
+    color: #fff;
+    background: linear-gradient(120deg, #064e3b 0%, #047857 60%, #059669 100%);
+}
+.projetos article.destaque b,
+.projetos article.destaque h3 {
+    color: #fff;
+}
+.projetos article.destaque p {
+    color: rgba(255, 255, 255, 0.86);
+}
+.projetos article.destaque .tipo,
+.projetos article.destaque .stack {
+    color: #a7f3d0;
+}
+.tipo {
+    font-size: 6.6pt;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--roxo);
+}
+.projetos h3 {
+    margin: 0.6mm 0 1mm;
+    font-size: 10pt;
+    font-weight: 800;
+}
+.projetos p {
+    color: var(--tinta-2);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 12mm;
+    padding: 3mm 0 6mm;
+    border-top: 0.3mm solid var(--linha);
+    color: var(--tinta-3);
+    font-size: 7pt;
+}

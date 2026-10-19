@@ -98,7 +98,7 @@ mas continuam na página.
 | Adicionar um cargo ou uma empreitada (com modal) | `src/data/trajetoria.ts` — o modal sai do mesmo objeto |
 | Reordenar as seções | ordem das tags no `<template>` de `src/App.vue` |
 | Mexer no menu | array `links` em `src/components/AppNavbar.vue` |
-| Trocar o link do currículo | mapa `CURRICULOS` em `src/components/AppNavbar.vue` (um PDF por idioma) |
+| Atualizar o currículo em PDF | `cv/conteudo.mjs` (os dois idiomas) e `npm run cv` → `public/cv/*.pdf`; o botão "Baixar PDF" (`CURRICULOS` em `AppNavbar.vue`) aponta para eles |
 | Traduzir um texto novo | `src/i18n/pt-BR.ts` **e** `en-US.ts` (o build cobra os dois) |
 | Liberar um nome próprio no verificador | `scripts/i18n-allowlist.json` |
 | Mudar cores/fontes do sistema | bloco `@theme` em `src/assets/style.css` |
@@ -117,7 +117,13 @@ npm run dev        # http://localhost:5173, com hot reload
 npm run check:i18n # verifica a cobertura de tradução
 npm run build      # check:i18n + vue-tsc + prerender -> dist/
 npm run preview    # serve o dist/ em http://localhost:8080
+npm run cv         # gera public/cv/*.pdf (pt-BR e en) com o Chromium da máquina
 ```
+
+O currículo em PDF não é gerado no CI: `npm run cv` monta o HTML de `cv/conteudo.mjs` com
+`cv/estilo.css` (A4, três páginas fixas) e imprime com o Chromium local; os PDFs vão versionados.
+Mudou cargo, formação ou projeto no site? Atualize `cv/conteudo.mjs` também e rode o `cv`.
+`npm run cv -- --html` só escreve o HTML em `cv/.saida/`, para ajustar o layout no navegador.
 
 O `build` roda `check:i18n` e `vue-tsc --noEmit` antes de compilar: falha de tradução ou erro de
 tipo derruba o build — e portanto o deploy — em vez de publicar página quebrada.

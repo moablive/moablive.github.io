@@ -21,3 +21,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+# HTML intermediário do currículo (npm run cv)
+cv/.saida/
