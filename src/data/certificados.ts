@@ -1,8 +1,8 @@
 import type { Certificado } from "./types";
 
-// Certificados de curso moram no próprio site (public/credenciais/, desde 19/10/2026).
-// Os dois diplomas seguem no Dropbox: têm RG e data de nascimento.
-const DBX = "https://www.dropbox.com/scl/fi";
+// Todas as credenciais moram no próprio site, em public/credenciais/ (saíram do Dropbox
+// em 19/10/2026). Os diplomas da La Salle e da PUCRS são cópias tarjadas (sem RG e sem
+// data de nascimento, só imagem): diploma novo entra do mesmo jeito, nunca o original.
 
 export const certificados: Certificado[] = [
     {
@@ -12,7 +12,7 @@ export const certificados: Certificado[] = [
         instituicaoIcone: "fa-university",
         marcaDagua: "fa-graduation-cap",
         dataKey: "certDateAug23",
-        href: `${DBX}/qq3tjq4nv3g6k9y8gze2u/Bacharelado-Ci-ncia-da-Computa-o.pdf?rlkey=5q47mn6tnrj1do7a0t0yj54w4&st=2y2xn363&dl=0`,
+        href: "/credenciais/diploma-bacharelado-ciencia-computacao-la-salle.pdf",
         ctaKey: "btnViewDiploma",
     },
     {
@@ -22,7 +22,7 @@ export const certificados: Certificado[] = [
         instituicaoIcone: "fa-university",
         marcaDagua: "fa-award",
         dataKey: "certDateMay25",
-        href: `${DBX}/mcp1ijkizj6hzgfuxh3zg/p-s-gradua-o-em-Desenvolvimento-Full-Stack.pdf?rlkey=ukplg9rosjbm8ilm7j926focs&st=kro372xu&dl=0`,
+        href: "/credenciais/certificado-pos-full-stack-pucrs.pdf",
         ctaKey: "btnViewCert",
     },
     {
