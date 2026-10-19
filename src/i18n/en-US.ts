@@ -73,12 +73,14 @@ export default {
 
     // Especialidades
     specTitle: "Core Expertise",
-    specSubtitle: "The five technologies that define my work the most — from the Sul Alimentos system to the LifeBusinessSuit and the legacy systems I modernized.",
+    specSubtitle: "The technologies that define my work the most — from the Sul Alimentos system to the LifeBusinessSuit and the legacy systems I modernized.",
     specTs: "My everyday language, front and back: types end to end, from the database to the screen.",
     specNode: "APIs, bots and the whole LifeBusinessSuit: LoginHUB, MoneyAPP, TodoAPP and NotesAPP.",
     specDotnet: ".NET 8 and microservices: modernizing legacy monoliths with Clean Architecture and DDD.",
-    specCs: "Domain rules, Web APIs and industrial automation with AutoCAD and SOLIDWORKS.",
     specPy: "AI applied to engineering, data analysis and everyday automation.",
+    specLinux: "Linux servers in production: Docker, networking and the infrastructure that hosts everything I build.",
+    specBash: "The terminal is where I work: deploy, backup and server automation scripts.",
+    specCloudflare: "The edge of every project I run: tunnels, DNS, WAF and CDN in front of each app.",
 
     // Education
     educationTitle: "Academic Background",

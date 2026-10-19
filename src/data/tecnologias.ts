@@ -6,8 +6,8 @@ export const gruposTech: GrupoTech[] = [
     {
         id: "core",
         tituloKey: "techCore",
-        icones: `${SK}ts,nodejs,dotnet,cs,python&theme=dark`,
-        alt: "TypeScript, Node.js, .NET, C#, Python",
+        icones: `${SK}ts,nodejs,dotnet,python&theme=dark`,
+        alt: "TypeScript, Node.js, .NET, Python",
     },
     {
         id: "front",
