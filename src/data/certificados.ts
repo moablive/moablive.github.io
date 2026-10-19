@@ -1,5 +1,7 @@
 import type { Certificado } from "./types";
 
+// Certificados de curso moram no próprio site (public/credenciais/, desde 19/10/2026).
+// Os dois diplomas seguem no Dropbox: têm RG e data de nascimento.
 const DBX = "https://www.dropbox.com/scl/fi";
 
 export const certificados: Certificado[] = [
@@ -31,7 +33,7 @@ export const certificados: Certificado[] = [
         marcaDagua: "fa-server",
         dataKey: "certDateAug23",
         credencial: "UC-10b5faba...",
-        href: `${DBX}/jdecd4rt4cstq7tusby2q/Web-API-com.NET-6.pdf?rlkey=uaahfzb6oab9uj6vm9cztg0ya&st=l8dxlcks&dl=0`,
+        href: "/credenciais/web-api-dotnet6-efcore-docker.pdf",
         ctaKey: "btnViewCred",
     },
     {
@@ -42,7 +44,7 @@ export const certificados: Certificado[] = [
         marcaDagua: "fa-stream",
         dataKey: "certDateMay25",
         credencial: "UC-338a8bc9...",
-        href: `${DBX}/aqha8h5uungn1n1zweo38/Apache-Kafka-.Net-Core.pdf?rlkey=uty5trxxmut2zwf1938gkpvmm&st=grphqc0q&dl=0`,
+        href: "/credenciais/apache-kafka-dotnet-core.pdf",
         ctaKey: "btnViewCred",
     },
     {
@@ -53,7 +55,7 @@ export const certificados: Certificado[] = [
         marcaDagua: "fa-cube",
         dataKey: "certDateOct23",
         credencial: "UC-55a2ec41...",
-        href: `${DBX}/s48l70lai4mu9578189wt/Arquitetura-Limpa-e-Hexagonal-TS.pdf?rlkey=llnj1gdzrokqmdsbfdtuuc9x6&st=pg8wxq4v&dl=0`,
+        href: "/credenciais/arquitetura-limpa-hexagonal-ts.pdf",
         ctaKey: "btnViewCred",
     },
     {
@@ -64,7 +66,7 @@ export const certificados: Certificado[] = [
         marcaDagua: "fa-code",
         dataKey: "certDateJul23",
         credencial: "itykxs5udh",
-        href: `${DBX}/hezm8p5eq1u5aeoymompp/C.pdf?rlkey=0izi4dy3cmchsq38ly7ngwqso&st=gz79dm4i&dl=0`,
+        href: "/credenciais/csharp-completo-cod3r.pdf",
         ctaKey: "btnViewCred",
     },
     {
@@ -75,7 +77,7 @@ export const certificados: Certificado[] = [
         marcaDagua: "fa-database",
         dataKey: "certDateAug23",
         credencial: "UC-42a26bf7...",
-        href: `${DBX}/ltej7kb94bp2mtbpcpe7h/DAPPER-ORM.pdf?rlkey=qq3qk84hhvw2foo5fgsgkxvpu&st=84ubxdrd&dl=0`,
+        href: "/credenciais/dapper-orm-dotnet.pdf",
         ctaKey: "btnViewCred",
     },
 ];
