@@ -13,6 +13,7 @@ import SectionTrajetoria from "@/components/SectionTrajetoria.vue";
 import SectionEmpreitadas from "@/components/SectionEmpreitadas.vue";
 import SectionTecnologias from "@/components/SectionTecnologias.vue";
 import SectionLBS from "@/components/SectionLBS.vue";
+import SectionOmegaShell from "@/components/SectionOmegaShell.vue";
 import SectionPortfolio from "@/components/SectionPortfolio.vue";
 import SectionGithubStats from "@/components/SectionGithubStats.vue";
 import SectionContato from "@/components/SectionContato.vue";
@@ -50,6 +51,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", aoTeclar));
         <SectionEmpreitadas />
         <SectionTecnologias />
         <SectionLBS />
+        <SectionOmegaShell />
         <SectionPortfolio />
         <SectionGithubStats />
         <SectionContato />

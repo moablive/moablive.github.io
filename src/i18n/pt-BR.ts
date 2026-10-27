@@ -13,8 +13,6 @@ export default {
     projMoneyApp: "PWA de controle financeiro pessoal. Dashboard em dark mode com transações, contas, assinaturas, investimentos e empréstimos — mais um bot de Telegram.",
     projLoginHub:
         "Identity Provider multi-tenant em monorepo: API Express e SPA React no mesmo repositório, com Drizzle ORM sobre PostgreSQL, JWT, Magic Link e master keys.",
-    projAstralWave:
-        "Marketplace e selo de música eletrônica da minha empresa. Back-end poliglota (.NET Core, Node.js e Go) atrás da Cloudflare como gateway, com checkout em Pix, confirmação por webhook e entrega automatizada dos arquivos WAV.",
     projPortfolio:
         "Este portfólio. SPA em Vue 3 e TypeScript, prerenderizada com vite-ssg para o conteúdo chegar pronto aos buscadores. Tailwind CSS 4 com tema claro e escuro por tokens, i18n PT/EN validado por um verificador no build e deploy contínuo no GitHub Pages via GitHub Actions.",
     projPortfolioTitle: "Portfólio",
@@ -213,11 +211,6 @@ export default {
     arqPortB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Prerender:</strong> vite-ssg roda a SPA no build e grava o HTML final; os modais ficam no DOM com <em>v-show</em> em vez de <em>v-if</em>, para o conteúdo ser indexado mesmo fechado.",
     arqPortB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Tema por tokens:</strong> Tailwind CSS 4 com as cores em custom properties, redefinidas na classe <em>.dark</em> — trocar de tema não recarrega folha de estilo nenhuma.",
     arqPortB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>i18n verificado no build:</strong> um script compara PT e EN, acusa chave órfã e texto literal esquecido no componente; erro derruba o deploy antes de publicar.",
-    arqAwlDesc:
-        "Plataforma da Astral Wave: marketplace e selo, com a Cloudflare na frente de tudo e um back-end dividido por afinidade de carga.",
-    arqAwlB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Borda como gateway:</strong> DNS e tráfego na Cloudflare, com WAF e CDN respondendo antes da origem — baixa latência global e mitigação de DDoS fora da aplicação.",
-    arqAwlB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Back-end poliglota:</strong> .NET Core no processamento crítico e nas regras de domínio, Node.js nas APIs leves de I/O e Go nos serviços de alta concorrência.",
-    arqAwlB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Pagamento e entrega:</strong> checkout em Pix, com webhook confirmando o pedido e disparando a liberação automática dos arquivos WAV.",
     arqMoneyDesc:
         "PWA de finanças pessoais: SPA em Vue conversando com uma API Express, com um bot de Telegram como segunda porta de entrada.",
     arqMoneyB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Front instalável:</strong> PWA em Vue e TypeScript, com Vite no build e Tailwind na interface — dashboard pensado para uso diário no celular.",
@@ -351,4 +344,22 @@ export default {
     lbsBtnGithubShort: "Repo",
     lbsBtnArchTitle: "Ver a arquitetura",
     lbsBtnGithubTitle: "Repositório no GitHub",
+    // OmegaShell (27/10/2026): destaque e card.
+    projOmegaShell: "Gerenciador multi-IA para múltiplos servidores, no navegador: as sessões de Claude, Gemini e terminais (tmux) de vários servidores numa tela só, ao vivo, com scripts de manutenção e menus em botões no estilo do Cmd+Tab.",
+    arqOmegaDesc: "PWA de terminal com login 2FA (LoginHUB) que entra por SSH com chave restrita; o gerenciador (omega, em Bash) fala com a página por sequências de terminal, e a página desenha os botões.",
+    arqOmegaB1: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Multi-servidor:</strong> sessões tmux do servidor principal, de um segundo servidor e de um Mac pelo SSH, num bloco por servidor, com o estado de cada IA ao vivo (trabalhando, pronta, esperando).",
+    arqOmegaB2: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Botões sem API:</strong> o omega e os menus do tmux escrevem o menu em JSON numa sequência OSC; a página desenha os botões e o clique só digita a tecla — nenhum comando sai do navegador.",
+    arqOmegaB3: "<i class='fas fa-check-circle text-brand me-2' aria-hidden='true'></i><strong>Acesso fechado:</strong> login com e-mail, senha e TOTP; a chave SSH só abre a sessão tmux da conta (comando forçado, sem túnel), atrás da Cloudflare.",
+    omegaFeatureTitle: "Destaque em IA e infraestrutura",
+    omegaTitle: "OmegaShell",
+    omegaSubtitle: "O OmegaShell é o painel de onde eu comando vários agentes de IA ao mesmo tempo: Claude, Gemini e terminais rodando em tmux em servidores diferentes, todos numa tela só do navegador — instalável como app no computador e no celular.",
+    omegaF1: "Sessões de todos os servidores ao vivo: quem está trabalhando, pronto ou esperando você.",
+    omegaF2: "Nova sessão em dois cliques: servidor, IA (Claude, Gemini ou terminal) e nome.",
+    omegaF3: "Scripts de manutenção por servidor, com dependências, execução em ordem e histórico.",
+    omegaF4: "Tudo em botões no estilo do Cmd+Tab: ⌥ Tab abre os menus, ⌥ C as cores e ⌥ G os grupos de abas.",
+    omegaEnvLabel: "Multi-IA · multi-servidor",
+    omegaPwaLabel: "PWA instalável",
+    omegaBtnGithub: "Ver OmegaShell no GitHub",
+    omegaShotSessoes: "Tela de Sessões do OmegaShell: um bloco por servidor com as sessões de Claude, Gemini e terminal",
+    omegaShotOptab: "Painel do Option+Tab com as abas e as ações do terminal",
 } as const;
