@@ -112,7 +112,7 @@ export const projetos: Projeto[] = [
     },
     {
         id: "py-crud",
-        titulo: "py_CRUD_PRODUTO",
+        titulo: "py-crud-produto",
         descKey: "projPyCrud",
         logo: `${SI}/python/FFC107`,
         logoAlt: "Python",
@@ -125,7 +125,7 @@ export const projetos: Projeto[] = [
     },
     {
         id: "py-imager",
-        titulo: "py_ImagerConverter",
+        titulo: "py-image-converter",
         descKey: "projPyImg",
         logo: `${SI}/python/FFC107`,
         logoAlt: "Python",
